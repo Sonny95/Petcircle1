@@ -2,9 +2,10 @@ import App from "../../App";
 
 const DogPage  = () => {
     return(
+        <>
     <div className="DogMenu" style={{padding:10}}>
 
-    <div style={{hiehgt:300,width:100,float:'left', marginLeft:100 }}>
+    <div style={{hiehgt:300,width:100,}}>
         Food
         Dry Food
         Wet Food
@@ -13,7 +14,7 @@ const DogPage  = () => {
         Grain Free
         Freeze and Air Dried
     </div>
-    <div style={{hiehgt:300,width:100,float:'left'}}>
+    <div style={{hiehgt:300,width:100}}>
         Treats
         Natural Treats
         Dental Treats
@@ -22,7 +23,7 @@ const DogPage  = () => {
         Long Lasting Treats
         Biscuits
     </div>
-        <div style={{hiehgt:300,width:100,float:'left'}}>
+        <div style={{hiehgt:300,width:100}}>
            Other Suppllies
             Toys
             Flea and Worning
@@ -36,7 +37,7 @@ const DogPage  = () => {
             Technology
             House and Travel
         </div>
-        <div style={{hiehgt:300,width:100,float:'left'}}>
+        <div style={{hiehgt:300,width:100}}>
             Top Dog Brands
             Advance
             Black Hawk
@@ -52,6 +53,7 @@ const DogPage  = () => {
             Taste of the wild
         </div>
     </div>
+        </>
 )
 }
 
