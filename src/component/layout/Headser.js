@@ -5,7 +5,15 @@ import DogPage from "../contents/DogPage";
 import CatPage from "../contents/CatPage";
 import BirdPage from "../contents/BirdPage";
 import OtherPetsPage from "../contents/OtherPetsPage";
-import {MenuBox, MenuContainer, MenuUnit} from "../../resources/styledComponent/header";
+import {
+    CartBox, CartImg, CreatButton, HeaderLoginBox, HeadLogo, HeadTopBox, HeadTopContainer, LoginImg,
+    MenuBox,
+    MenuContainer,
+    MenuUnit, SearchBox,
+    ShipHeader,
+    ShipHeaderBox, ShipHeaderLetter, SigninButtom
+} from "../../resources/styledComponent/header";
+import AutoDelivery from "../../resources/Photo/auto-delivery-icon.svg"
 
 const Header = (props) => {
     const {getActiveKey} = props;
@@ -61,65 +69,56 @@ const Header = (props) => {
         <>
 
             <div onClick={() => setActiveKey(null)}>
-                <div style={{
-                    backgroundColor: '#414141',
-                    width: '100%',
-                    height: 30,
-                    color: 'white',
-                    textAlign: 'center',
-                    paddingTop: 5
-                }}>
-                    <div style={{width: 1400, height: '100%', margin: '0px auto'}}>
-                        <strong style={{fontSize: 14, float: 'left', marginLeft: 600}}>Free metro shipping on orders
-                            $49+</strong>
+                <ShipHeader>
+                    <ShipHeaderBox>
+                        <ShipHeaderLetter>Free metro shipping on orders
+                            $49+</ShipHeaderLetter>
 
-                        <div style={{float: 'right', height: '100%', width: 300, fontSize: 12}}>
-                            <img src={Login} style={{height: 18, width: 18}}/>
-                            <span style={{marginLeft: 15, marginTop: -5}}>Sign In | Create Account</span>
+                        <HeaderLoginBox>
+                            <LoginImg src={Login} ></LoginImg>
+                            <SigninButtom>Sign In  | </SigninButtom>
+                            <CreatButton>Create Account</CreatButton>
+                            <CartImg src={Cart} />
+                            <span>$0.00</span>
+                            <CartBox>0
+                            </CartBox>
 
-                            <img src={Cart} style={{height: 18, width: 28, marginLeft: 10}}/>
-                            <span style={{}}>$0.00</span>
-                            <div style={{
-                                color: 'black',
-                                backgroundColor: 'yellow',
-                                width: 30,
-                                height: 20,
-                                borderRadius: 10,
-                                float: 'right'
-                            }}>0
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+                        </HeaderLoginBox>
+                    </ShipHeaderBox>
+                </ShipHeader>
 
 
-                <div className="Head_Top"
-                     style={{backgroundColor: '#00b1b9', width: '100%', height: 80, color: 'white'}}>
-                    <div style={{maxWidth: 1500, height: '100%', margin: '0px auto'}}>
+                <HeadTopContainer>
+                    <HeadTopBox>
+                        <HeadLogo src="https://www.petcircle.com.au/petcircle-assets/images/PC-Logo.svg"/>
+                        <SearchBox>
 
-                        <img src="https://www.petcircle.com.au/petcircle-assets/images/PC-Logo.svg"
-                             style={{height: 90, width: 90, marginTop: -12, float: 'left'}}/>
-                        <div style={{width: 'calc(100% - 430px)', float: 'left', marginLeft: 20}}>
-                            <input placeholder={'search for .....'} value={text} onChange={changeText} type="text"
+                            <input placeholder={'search for eg.brands litter, flea, shampoo...'} value={text} onChange={changeText} type="text"
                                    style={{
-                                       height: 28,
+                                       height: 33,
                                        marginTop: 25,
-                                       width: '100%'
+                                       width: '100%',
+                                       Border:'none',
+                                       borderRadius:6,
+                                       color:'black'
                                    }}/>
                             {text.length !== 0 &&
                             <div style={{backgroundColor: 'white', width: 'calc(100% + 6.5px)', color: 'black'}}>
                                 {productlist.map(value => <div>{value}</div>)}
                             </div>}
-                        </div>
+                        </SearchBox>
 
-                        <div style={{width: 300, height: 50, float: 'right', marginTop: 20, fontSize: 18}}>
+                        <div style={{width: 240, height: 23, float: 'left', marginTop: 20, fontSize: 18}}>
                             Save up to 20% off
                         </div>
+                        <div style={{width: 240, height: 20, float: 'left', fontSize: 13}}>
+                            Selected brands
+                        </div>
+                        <img src={AutoDelivery} style={{width:100, height:50}}/>
 
-                    </div>
+                    </HeadTopBox>
 
-                </div>
+                </HeadTopContainer>
             </div>
             <MenuContainer>
                 <MenuBox length={menuList.length} >
