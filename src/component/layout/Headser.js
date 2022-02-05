@@ -6,12 +6,26 @@ import CatPage from "../contents/CatPage";
 import BirdPage from "../contents/BirdPage";
 import OtherPetsPage from "../contents/OtherPetsPage";
 import {
-    CartBox, CartImg, CreatButton, HeaderLoginBox, HeadLogo, HeadTopBox, HeadTopContainer, LoginImg,
+    AutoImg,
+    CartBox,
+    CartImg,
+    CreatButton,
+    HeaderLoginBox,
+    HeadLogo,
+    HeadTopBox,
+    HeadTopContainer,
+    Letter1Box, Letter2Box,
+    LetterContainer,
+    LoginImg,
     MenuBox,
-    MenuContainer,
-    MenuUnit, SearchBox,
+    MenuContainer, MenuOpenBox,
+    MenuUnit,
+    SearchBox,
+    SearchInput,
     ShipHeader,
-    ShipHeaderBox, ShipHeaderLetter, SigninButtom
+    ShipHeaderBox,
+    ShipHeaderLetter,
+    SigninButtom
 } from "../../resources/styledComponent/header";
 import AutoDelivery from "../../resources/Photo/auto-delivery-icon.svg"
 
@@ -93,28 +107,22 @@ const Header = (props) => {
                         <HeadLogo src="https://www.petcircle.com.au/petcircle-assets/images/PC-Logo.svg"/>
                         <SearchBox>
 
-                            <input placeholder={'search for eg.brands litter, flea, shampoo...'} value={text} onChange={changeText} type="text"
-                                   style={{
-                                       height: 33,
-                                       marginTop: 25,
-                                       width: '100%',
-                                       Border:'none',
-                                       borderRadius:6,
-                                       color:'black'
-                                   }}/>
+                            <SearchInput placeholder={'search for eg.brands litter, flea, shampoo...'} value={text} onChange={changeText} type="text"/>
                             {text.length !== 0 &&
                             <div style={{backgroundColor: 'white', width: 'calc(100% + 6.5px)', color: 'black'}}>
                                 {productlist.map(value => <div>{value}</div>)}
                             </div>}
                         </SearchBox>
+                        <LetterContainer>
 
-                        <div style={{width: 240, height: 23, float: 'left', marginTop: 20, fontSize: 18}}>
+                        <Letter1Box>
                             Save up to 20% off
-                        </div>
-                        <div style={{width: 240, height: 20, float: 'left', fontSize: 13}}>
+                        </Letter1Box>
+                        <Letter2Box>
                             Selected brands
-                        </div>
-                        <img src={AutoDelivery} style={{width:100, height:50}}/>
+                        </Letter2Box>
+                        <AutoImg src={AutoDelivery} />
+                        </LetterContainer>
 
                     </HeadTopBox>
 
@@ -144,16 +152,10 @@ const Header = (props) => {
                 </MenuBox>
             </MenuContainer>
 
-            {/*menu bar*/}
-            <div style={{
-                position: 'absolute',
-                backgroundColor: 'white',
-                width: '100vw',
-                zIndex: 1,
-                borderBottom: '1px solid lightGray'
-            }}>
+
+            <MenuOpenBox>
                 {getPage(activeKey)}
-            </div>
+            </MenuOpenBox>
 
 
         </>

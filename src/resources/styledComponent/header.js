@@ -107,3 +107,45 @@ export const SearchBox = styled.div`
   float: left;
   margin-left: 20px;
   `
+
+export const SearchInput = styled.input`
+  height: 33px;
+  margin-top: 25px;
+  width: 100%;
+  Border:none;
+  border-radius:6px;
+  color:black;
+  `
+
+export const LetterContainer = styled.div`
+  width:500px;
+  height:50px;
+  float:right;
+  margin-top:15px;
+  `
+
+export const Letter1Box = styled.div`
+  width: 400px;
+  height: 23px;
+  float: left;
+  font-size: 18px;
+  `
+export  const Letter2Box = styled.div`
+  width: 200px;
+  height: 20px;
+  float: left;
+  font-size: 13px;
+`
+
+export const AutoImg = styled.img`
+  width:100px;
+  height:50px;
+  `
+
+export const MenuOpenBox = styled.div`
+  position: absolute;
+  background-color: white;
+  width: 100vw;
+  z-index: 1;
+  border-bottom: 1px solid lightGray;
+  `

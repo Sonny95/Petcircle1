@@ -34,6 +34,16 @@ const Contents = () => {
         {name: 'Small Pet', src: SmallP1},
         {name: 'Horse', src: Hores}]
 
+    const productList = [
+        {name : 'P1', src : P1},
+        {name : 'P2', src : P2},
+        {name : 'P3', src : P3},
+        {name : 'P4', src : P4},
+        {name : 'P5', src : P5},
+        {name : 'P6', src : P6},
+
+    ]
+
     return (
         <>
             <div>
