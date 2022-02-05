@@ -24,7 +24,34 @@ import P4 from "../../resources/Photo/44.png";
 import P5 from "../../resources/Photo/55.png";
 import P6 from "../../resources/Photo/66.png";
 import React from "react";
-import {BodyBaner, BodyContainer, SubText} from "../../resources/styledComponent/contents";
+import {
+    AdBox,
+    AdContainer,
+    BetterRange,
+    BigCatButton,
+    BigDogButton,
+    BigDogImg,
+    BodyBaner,
+    BodyBox,
+    BodyButtonBox,
+    BodyButtonContainer,
+    BodyButtonImg,
+    BodyContainer,
+    ButtonContainer,
+    CatButtonContainer, CatFoodImg, CatSmallButton, CatTreatImg,
+    DogButtonLetter,
+    DogFood, LitterImg, ProductArea, ProductBox, ProductContainer,
+    SmallPetBox,
+    SmallPetContainer,
+    SmallPetImg,
+    SubText,
+    ToyBox,
+    ToyImg,
+    ToyLetter, ToysImg,
+    WormingBox,
+    WormingImg,
+    WormingLetter
+} from "../../resources/styledComponent/contents";
 
 const Contents = () => {
 
@@ -34,6 +61,12 @@ const Contents = () => {
         {name: 'Small Pet', src: SmallP1},
         {name: 'Horse', src: Hores}]
 
+    const adList = [
+        {name : 'Ad1', src: Ad1 },
+        {name : 'Ad2', src: Ad2 },
+        {name : 'Ad3', src: Ad3 }
+    ]
+
     const productList = [
         {name : 'P1', src : P1},
         {name : 'P2', src : P2},
@@ -41,8 +74,9 @@ const Contents = () => {
         {name : 'P4', src : P4},
         {name : 'P5', src : P5},
         {name : 'P6', src : P6},
-
     ]
+
+
 
     return (
         <>
@@ -51,206 +85,91 @@ const Contents = () => {
             </div>
 
             <BodyContainer>
-                <div style={{
-                    width: 1250,
-                    height: '100%',
-                    margin: '0px auto',
-                    color: 'white',
-                    textAlign: 'left',
-                    marginTop:20
-                }}>
-                    <h2 style={{marginBottom: 40, color: 'black'}}>Better Range</h2>
-                    <div style={{
-                        backgroundColor: '#00b1b9',
-                        height: 70,
-                        width: 400,
-                        float: 'left',
-                        borderRadius: '6px 6px 0 0'
-                    }}>
-                        <img src={Dog1} style={{width: 150, height: 90, marginTop: -20, marginLeft: 30}}/>
-                        <div style={{float: 'right', margin: '18px 15px', fontSize: 20}}>Shop Dog ></div>
-                    </div>
+                <BodyBox>
+                    <BetterRange>Better Range</BetterRange>
+                    <BigDogButton>
+                        <BigDogImg src={Dog1} />
+                        <DogButtonLetter> Shop Dog ></DogButtonLetter>
+                    </BigDogButton>
 
-                    <div style={{
-                        backgroundColor: '#00b1b9',
-                        height: 70,
-                        width: 400,
-                        float: "left",
-                        borderRadius: '6px 6px 0 0',
-                        marginLeft: 26
-                    }}>
-                        <img src={Cat1} style={{width: 150, height: 92, marginTop: -22, marginLeft: 30}}/>
-                        <div style={{float: 'right', margin: '18px 15px', fontSize: 20}}>Shop Cat ></div>
-                    </div>
+                    <BigCatButton>
+                        <BigDogImg src={Cat1} />
+                        <DogButtonLetter> Shop Cat ></DogButtonLetter>
+                    </BigCatButton>
 
 
-                    <div style={{float: "right", color: '#00737f'}}>
+                    <SmallPetContainer>
 
                         {petList.map((value, index) => {
                             return <div style={{height: 65, width: 400, marginBottom: 2, backgroundColor: '#f5f6f8',
                                borderRadius : index === 0 ? '8px 8px 0px 0px' :  index === petList.length -1 ? ' 0px 0px 8px 8px' : ''
                             }}>
-                                <img src={value.src} style={{width: 80, height: 65, marginLeft: 30}}/>
+                                <SmallPetImg src={value.src} />
                                 <SubText>{value.name} ></SubText>
                             </div>
                         })}
 
-                    </div>
-                    <div className="dogButton" style={{height: 270, width: 404, float: 'left'}}>
-                        <div style={{
-                            backgroundColor: '#f5f6f8',
-                            height: 130,
-                            width: 200,
-                            float: 'left',
-                            margin: '3px 2px 2px 0'
-                        }}>
-                            <img src={Dfood}
-                                 style={{height: 50, width: 90, marginTop: '40px', marginLeft: '30px'}}/>
-                            <span style={{
-                                color: '#00737f',
-                                fontSize: 18,
-                                float: 'right',
-                                marginTop: '50px',
-                                marginRight: '20px'
-                            }}> Food </span>
-                        </div>
-                        <div style={{
-                            backgroundColor: '#f5f6f8',
-                            height: 130,
-                            width: 200,
-                            float: 'left',
-                            margin: '3px 2px 2px 0'
-                        }}>
-                            <img src={Dtreats}
-                                 style={{height: 55, width: 90, marginTop: '35px', marginLeft: '30px'}}/>
-                            <span style={{
-                                color: '#00737f',
-                                fontSize: 18,
-                                float: 'right',
-                                marginTop: '50px',
-                                marginRight: '20px'
-                            }}> Treats </span>
-                        </div>
-                        <div style={{
-                            backgroundColor: '#f5f6f8',
-                            height: 130,
-                            width: 200,
-                            float: 'right',
-                            margin: '0 2px 2px 0',
-                            borderRadius: '0 0 9px 0'
-                        }}>
-                            <img src={Dworm}
-                                 style={{height: 50, width: 60, marginTop: '40px', marginLeft: '30px'}}/>
-                            <div style={{
-                                color: '#00737f',
-                                fontSize: 18,
-                                float: 'right',
-                                height: '10%0',
-                                width: 60,
-                                marginTop: '38px',
-                                marginRight: '35px'
-                            }}> Flea & Worming
-                            </div>
-                        </div>
-                        <div style={{
-                            backgroundColor: '#f5f6f8',
-                            height: 130,
-                            width: 200,
-                            float: 'right',
-                            margin: '0 2px 2px 0',
-                            borderRadius: '0 0 0 9px'
-                        }}>
-                            <img src={Dtoys}
-                                 style={{height: 85, width: 100, marginTop: '20px', marginLeft: '30px'}}/>
-                            <span style={{
-                                color: '#00737f',
-                                fontSize: 18,
-                                float: 'right',
-                                marginTop: '50px',
-                                marginRight: '20px'
-                            }}> Toys </span>
-                        </div>
-                    </div>
+                    </SmallPetContainer>
+                    <BodyButtonContainer>
+                        <BodyButtonBox>
+                            <BodyButtonImg src={Dfood}/>
+                            <DogFood> Food </DogFood>
+                        </BodyButtonBox>
+                        <BodyButtonBox>
+                            <BodyButtonImg src={Dtreats}/>
+                            <DogFood> Treats </DogFood>
+                        </BodyButtonBox>
+                        <WormingBox>
+                            <WormingImg src={Dworm}/>
+                            <WormingLetter> Flea & Worming
+                            </WormingLetter>
+                        </WormingBox>
 
-                    <div className="catButton" style={{height: 270, width: 404, float: 'left', marginLeft: 21}}>
-                        <div style={{
-                            backgroundColor: '#f5f6f8',
-                            height: 130,
-                            width: 200,
-                            float: 'left',
-                            margin: '3px 2px 2px 0'
-                        }}>
-                            <img src={Cfood}
-                                 style={{height: 50, width: 80, marginTop: '40px', marginLeft: '30px'}}/>
-                            <span style={{
-                                color: '#00737f',
-                                fontSize: 18,
-                                float: 'right',
-                                marginTop: '50px',
-                                marginRight: '30px'
-                            }}> Food </span>
-                        </div>
-                        <div style={{
-                            backgroundColor: '#f5f6f8',
-                            height: 130,
-                            width: 200,
-                            float: 'left',
-                            margin: '3px 2px 2px 0'
-                        }}>
-                            <img src={Ctreats}
-                                 style={{height: 70, width: 90, marginTop: '30px', marginLeft: '20px'}}/>
-                            <span style={{
-                                color: '#00737f',
-                                fontSize: 18,
-                                float: 'right',
-                                marginTop: '50px',
-                                marginRight: '20px'
-                            }}> Treats </span>
-                        </div>
-                        <div style={{
-                            backgroundColor: '#f5f6f8',
-                            height: 130,
-                            width: 200,
-                            float: 'right',
-                            margin: '0 2px 2px 0',
-                            borderRadius: '0 0 9px 0'
-                        }}>
-                            <img src={Clitter}
-                                 style={{height: 70, width: 90, marginTop: '30px', marginLeft: '25px'}}/>
-                            <span style={{
-                                color: '#00737f',
-                                fontSize: 18,
-                                float: 'right',
-                                marginTop: '50px',
-                                marginRight: '20px'
-                            }}> Litter </span>
-                        </div>
-                        <div style={{
-                            backgroundColor: '#f5f6f8',
-                            height: 130,
-                            width: 200,
-                            float: 'right',
-                            margin: '0 2px 2px 0',
-                            borderRadius: '0 0 0 9px'
-                        }}>
-                            <img src={Ctoys}
-                                 style={{height: 80, width: 100, marginTop: '20px', marginLeft: '30px'}}/>
-                            <span style={{
-                                color: '#00737f',
-                                fontSize: 18,
-                                float: 'right',
-                                marginTop: '50px',
-                                marginRight: '20px'
-                            }}> Toys </span>
-                        </div>
-                    </div>
-                </div>
+                        <ToyBox>
+                            <ToyImg src={Dtoys}/>
+                            <ToyLetter> Toys </ToyLetter>
+                        </ToyBox>
+                    </BodyButtonContainer>
+
+
+
+
+
+
+
+                    <CatButtonContainer>
+                        <CatSmallButton>
+                            <CatFoodImg src={Cfood}/>
+                            <DogFood> Food </DogFood>
+                        </CatSmallButton>
+                        <CatSmallButton>
+                            <CatTreatImg src={Ctreats}/>
+                            <DogFood> Treats </DogFood>
+                        </CatSmallButton>
+                        <CatSmallButton>
+                            <LitterImg src={Clitter}/>
+                            <DogFood> Litter </DogFood>
+                        </CatSmallButton>
+                        <CatSmallButton>
+                            <ToysImg src={Ctoys}/>
+                            <DogFood> Toys </DogFood>
+                        </CatSmallButton>
+                    </CatButtonContainer>
+                </BodyBox>
             </BodyContainer>
 
-            <div style={{width: '100%', height: 230}}>
-                <div className="bodyBottom"
-                     style={{width: 1250, height: '100%', margin: '0px auto', color: 'white'}}>
-                    <h2 style={{color: 'black'}}>Better Price</h2>
+            <AdContainer>
+                <AdBox>
+                    <BetterRange>Better Price</BetterRange>
+
+                    {/*{adList.map((value, index) => {*/}
+                    {/*    return <div style={{height: 150, width: 400, marginTop: 10, borderRadius: 10, float: 'left'}}>*/}
+                    {/*        <div src={value.src} />*/}
+                    {/*    </div>*/}
+
+                    {/*})}*/}
+
+
                     <img src={Ad1}
                          style={{height: 150, width: 400, marginTop: 15, borderRadius: 10, float: 'left'}}/>
                     <img src={Ad2} style={{
@@ -263,22 +182,19 @@ const Contents = () => {
                     }}/>
                     <img src={Ad3}
                          style={{height: 150, width: 400, marginTop: 15, borderRadius: 10, float: 'right'}}/>
-                </div>
-            </div>
+                </AdBox>
+            </AdContainer>
 
-            <div style={{width: '100%', height: 470, backgroundColor: '#f5f6f8'}}>
-                <div className="bodyBottom" style={{width: 1250, height: '100%', margin: '0px auto'}}>
-                    <h2 style={{color: 'black', paddingTop: 25}}>Shop Aussie Made Products</h2>
+
+
+
+            <ProductContainer>
+                <ProductBox>
+                    <BetterRange>Shop Aussie Made Products</BetterRange>
+
+
                     <div>
-                        <div style={{
-                            height: 350,
-                            width: 188,
-                            float: 'left',
-                            border: '1px solid #c7ccd6',
-                            borderRadius: 6,
-                            backgroundColor: 'white',
-                            textAlign: 'center'
-                        }}>
+                        <ProductArea>
                             <img src={P1} style={{height: 140, width: 140}}/>
                             <div style={{float: 'left', textAlign: 'left', padding: 8}}>
                                 <div style={{fontSize: 15}}>
@@ -297,17 +213,8 @@ const Contents = () => {
                                 fontSize: 18
                             }}> + Add to Cart
                             </button>
-                        </div>
-                        <div style={{
-                            height: 350,
-                            width: 188,
-                            float: 'left',
-                            marginLeft: 22,
-                            border: '1px solid #c7ccd6',
-                            borderRadius: 6,
-                            backgroundColor: 'white',
-                            textAlign: 'center'
-                        }}>
+                        </ProductArea>
+                        <ProductArea>
                             <img src={P2} style={{height: 140, width: 140}}/>
                             <div style={{float: 'left', textAlign: 'left', padding: 10}}>
                                 <div style={{fontSize: 15}}>
@@ -328,18 +235,9 @@ const Contents = () => {
                                 fontSize: 18
                             }}> + Add to Cart
                             </button>
-                        </div>
+                        </ProductArea>
 
-                        <div style={{
-                            height: 350,
-                            width: 188,
-                            float: 'left',
-                            marginLeft: 20,
-                            border: '1px solid #c7ccd6',
-                            borderRadius: 6,
-                            backgroundColor: 'white',
-                            textAlign: 'center'
-                        }}>
+                        <ProductArea>
                             <img src={P3} style={{height: 140, width: 140}}/>
                             <div style={{float: 'left', textAlign: 'left', padding: 10}}>
                                 <div style={{fontSize: 15}}>
@@ -360,17 +258,8 @@ const Contents = () => {
                                 fontSize: 18
                             }}> + Add to Cart
                             </button>
-                        </div>
-                        <div style={{
-                            height: 350,
-                            width: 188,
-                            float: 'left',
-                            marginLeft: 22,
-                            border: '1px solid #c7ccd6',
-                            borderRadius: 6,
-                            backgroundColor: 'white',
-                            textAlign: 'center'
-                        }}>
+                        </ProductArea>
+                        <ProductArea>
                             <img src={P4} style={{height: 140, width: 140}}/>
                             <div style={{float: 'left', textAlign: 'left', padding: 10}}>
                                 <div style={{fontSize: 15}}>
@@ -391,17 +280,8 @@ const Contents = () => {
                                 fontSize: 18
                             }}> + Add to Cart
                             </button>
-                        </div>
-                        <div style={{
-                            height: 350,
-                            width: 188,
-                            float: 'left',
-                            marginLeft: 22,
-                            border: '1px solid #c7ccd6',
-                            borderRadius: 6,
-                            backgroundColor: 'white',
-                            textAlign: 'center'
-                        }}>
+                        </ProductArea>
+                        <ProductArea>
                             <img src={P5} style={{height: 140, width: 140}}/>
                             <div style={{float: 'left', textAlign: 'left', padding: 10}}>
                                 <div style={{fontSize: 15}}>
@@ -422,17 +302,8 @@ const Contents = () => {
                                 fontSize: 18
                             }}> + Add to Cart
                             </button>
-                        </div>
-                        <div style={{
-                            height: 350,
-                            width: 188,
-                            float: 'right',
-                            marginLeft: 20,
-                            border: '1px solid #c7ccd6',
-                            borderRadius: 6,
-                            backgroundColor: 'white',
-                            textAlign: 'center'
-                        }}>
+                        </ProductArea>
+                        <ProductArea>
                             <img src={P6} style={{height: 140, width: 140}}/>
                             <div style={{float: 'left', textAlign: 'left', padding: 10}}>
                                 <div style={{fontSize: 15}}>
@@ -453,10 +324,10 @@ const Contents = () => {
                                 fontSize: 18
                             }}> + Add to Cart
                             </button>
-                        </div>
+                        </ProductArea>
                     </div>
-                </div>
-            </div>
+                </ProductBox>
+            </ProductContainer>
         </>
     )
 }

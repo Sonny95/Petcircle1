@@ -118,14 +118,14 @@ export const SearchInput = styled.input`
   `
 
 export const LetterContainer = styled.div`
-  width:500px;
+  width:300px;
   height:50px;
   float:right;
   margin-top:15px;
   `
 
 export const Letter1Box = styled.div`
-  width: 400px;
+  width: 200px;
   height: 23px;
   float: left;
   font-size: 18px;
