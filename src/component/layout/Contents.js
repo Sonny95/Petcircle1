@@ -24,7 +24,7 @@ import P4 from "../../resources/Photo/44.png";
 import P5 from "../../resources/Photo/55.png";
 import P6 from "../../resources/Photo/66.png";
 import React from "react";
-import {SubText} from "../../resources/styledComponent/contents";
+import {BodyBaner, BodyContainer, SubText} from "../../resources/styledComponent/contents";
 
 const Contents = () => {
 
@@ -47,16 +47,17 @@ const Contents = () => {
     return (
         <>
             <div>
-                <img src={HeadImg} style={{width: '100%'}}/>
+                <BodyBaner src={HeadImg}/>
             </div>
 
-            <div className="Body" style={{width: '100%', height: 430}}>
+            <BodyContainer>
                 <div style={{
                     width: 1250,
                     height: '100%',
                     margin: '0px auto',
                     color: 'white',
-                    textAlign: 'left'
+                    textAlign: 'left',
+                    marginTop:20
                 }}>
                     <h2 style={{marginBottom: 40, color: 'black'}}>Better Range</h2>
                     <div style={{
@@ -244,7 +245,7 @@ const Contents = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </BodyContainer>
 
             <div style={{width: '100%', height: 230}}>
                 <div className="bodyBottom"
