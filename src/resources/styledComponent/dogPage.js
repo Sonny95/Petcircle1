@@ -19,7 +19,7 @@ export const DogButtonBox = styled.div`
 export const DpSmallButton = styled.button`
   height:40px;
   width:120px;
-  border-color: #282c34;
+  border:1px solid #01abb8;
   border-radius: 6px;
   color:#01abb8;
   margin:10px 10px;

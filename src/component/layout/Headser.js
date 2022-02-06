@@ -5,7 +5,6 @@ import DogPage from "../contents/DogPage";
 import CatPage from "../contents/CatPage";
 import BirdPage from "../contents/BirdPage";
 import OtherPetsPage from "../contents/OtherPetsPage";
-import SignPage from "../contents/SignPage"
 import {
     AutoImg,
     CartBox,

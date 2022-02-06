@@ -6,18 +6,30 @@ import {
     MenuLane,
     ShopAllLetter
 } from "../../resources/styledComponent/dogPage";
-import DogSale from "../../resources/Photo/shop-dog-sale.png";
-import S1 from "../../resources/Photo/shop-puppy.png";
-import S2 from "../../resources/Photo/shop-small-dog.png";
-import S3 from "../../resources/Photo/shop-large-dog.png";
-import DogSaleAll from "../../resources/Photo/dog-shop-all.png";
-import {PetsMenuBox, PetsMenuLane} from "../../resources/styledComponent/otherPets";
+import {
+    OtherPetsBanner,
+    OtherPetsBox,
+    OtherPetsContainer, PetsBannerBox,
+    PetsMenuBox,
+    PetsMenuLane
+} from "../../resources/styledComponent/otherPets";
+import O1 from "../../resources/Photo/O1.png"
+import O2 from "../../resources/Photo/O2.png"
+import O3 from "../../resources/Photo/O3.png"
+import O4 from "../../resources/Photo/O4.png"
+import O5 from "../../resources/Photo/O5.png"
+import O6 from "../../resources/Photo/O6.png"
+import O7 from "../../resources/Photo/O7.png"
+import O8 from "../../resources/Photo/O8.png"
+
+
+
 
 const OtherPetsPage  = () =>
     <>
 
-        <div className="OtherPetsMenu" style={{width:1400, height:500,margin:'0px auto',padding:10}}>
-            <div style={{width:1400}}>
+        <OtherPetsContainer>
+            <OtherPetsBox>
                 <PetsMenuBox>
                     <CapitalMenu>Fish</CapitalMenu>
                     <PetsMenuLane></PetsMenuLane>
@@ -72,12 +84,20 @@ const OtherPetsPage  = () =>
                     <div>Toys</div>
                     <div>Stable Supplies</div>
                 </PetsMenuBox>
-            </div>
+            </OtherPetsBox>
 
+            <PetsBannerBox>
+            <OtherPetsBanner src={O1}/>
+            <OtherPetsBanner src={O2}/>
+            <OtherPetsBanner src={O3}/>
+            <OtherPetsBanner src={O4}/>
+            <OtherPetsBanner src={O5}/>
+            <OtherPetsBanner src={O6}/>
+            <OtherPetsBanner src={O7}/>
+            <OtherPetsBanner src={O8}/>
+            </PetsBannerBox>
 
-
-
-        </div>
+        </OtherPetsContainer>
     </>
 
 
