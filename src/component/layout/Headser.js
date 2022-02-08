@@ -5,6 +5,7 @@ import DogPage from "../contents/DogPage";
 import CatPage from "../contents/CatPage";
 import BirdPage from "../contents/BirdPage";
 import OtherPetsPage from "../contents/OtherPetsPage";
+import BrandsPage from "../contents/BrandsPage"
 import {
     AutoImg,
     CartBox,
@@ -70,6 +71,8 @@ const Header = (props) => {
                 return <BirdPage/>
             case 4 :
                 return <OtherPetsPage/>
+            case 5 :
+                return <BrandsPage/>
         }
     }
 

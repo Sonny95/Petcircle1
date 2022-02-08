@@ -1,15 +1,14 @@
 import styled from "styled-components"
 
 export const OtherPetsContainer = styled.div`
-  width:1400px;
+  width:100%;
   height:500px;
-  padding:10px;
   
   `
 export const OtherPetsBox = styled.div`
 width:1380px;
 padding:10px;
-  
+  margin: 0px auto;
 `
 export const PetsMenuLane = styled.div`
     width:280px;
@@ -25,7 +24,7 @@ export const PetsMenuBox = styled.div`
   `
 
 export const OtherPetsBanner = styled.img`
-    width:250px;
+    width:270px;
     height:70px;
   margin:3px 20px;
     `

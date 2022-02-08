@@ -29,7 +29,7 @@ export const MenuBox = styled.div`
 export const ShipHeader = styled.div `
   background-color: #414141;
   width: 100%;
-  height: 30px;
+  height: 40px;
   color: white;
   text-align: center;
   padding-top: 5px;
@@ -51,6 +51,7 @@ export const LoginImg = styled.img`
   width: 18px;
   float: left;
   margin-left: 10px;
+  
 `
 export const SigninButtom = styled.div`
   float:left;
@@ -66,7 +67,7 @@ export  const HeaderLoginBox = styled.div`
   float: right;
   height: 100%;
   width: 300px;
-  font-size: 12px;
+  font-size: 15px;
 `
 
 export const CartBox = styled.div`
