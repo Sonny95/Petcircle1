@@ -8,7 +8,7 @@ import {
     SignUpInputContainer, SignUpQuestion
 } from "../../resources/styledComponent/brands";
 
-const BrandsPage =()=>
+const SignUp =()=>
     <>
             <SignUpBodyContainer>
                     <SignUpBanner src={SignUpDogCat}></SignUpBanner>
@@ -51,4 +51,4 @@ const BrandsPage =()=>
 
         </>
 
-export default BrandsPage;
+export default SignUp;

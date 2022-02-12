@@ -10,6 +10,9 @@ import Footer from "./component/layout/Footer";
 import CatPage from "./component/contents/exam/CatPage";
 import DogPage from "./component/contents/exam/DogPage";
 import Contents from "./component/layout/Contents";
+import SignUp from "./component/contents/SignUp";
+import Brands from "./component/contents/Brands";
+import Tips from "./component/contents/Tips";
 
 const App = () => {
     const [activeKey, setActiveKey] = useState(null);
@@ -27,11 +30,16 @@ const App = () => {
                     <BrowserRouter>
                         <Header getActiveKey={getKey} closeKey={closeKey}/>
                         <div onClick={() => setCloseKey(!closeKey)} style={{opacity: activeKey === null ? 1 : 0.3}}>
+
                         <Routes>
                             <Route path="/" element={<Contents/>} />
-                            <Route path="/dog" element={<DogPage />} />
+                            <Route path="/dog/:postId" element={<DogPage />} />
                             <Route path="/cat" element={<CatPage />} />
+                            <Route path="/signUp" element={<SignUp />} />
+                            <Route path="/brands" element={<Brands />} />
+                            <Route path="/tips" element={<Tips />} />
                         </Routes>
+
                         </div>
                     </BrowserRouter>
                     <Footer/>

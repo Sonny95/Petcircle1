@@ -5,7 +5,7 @@ import DogPage from "../contents/DogPage";
 import CatPage from "../contents/CatPage";
 import BirdPage from "../contents/BirdPage";
 import OtherPetsPage from "../contents/OtherPetsPage";
-import BrandsPage from "../contents/BrandsPage"
+import SignUp from "../contents/SignUp"
 import {
     AutoImg,
     CartBox,
@@ -29,12 +29,14 @@ import {
     SigninButtom
 } from "../../resources/styledComponent/header";
 import AutoDelivery from "../../resources/Photo/auto-delivery-icon.svg"
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {menuStore} from "../../util/zustandStore";
 
 const Header = (props) => {
     const {getActiveKey} = props;
     let navigate = useNavigate();
-    const [activeKey, setActiveKey] = useState(null);
+
+    const {activeKey, setActiveKey} = menuStore(state => state);
 
     const [text, setText] = useState('');
     const [productlist, setProductList] = useState([]);
@@ -51,29 +53,29 @@ const Header = (props) => {
 
     //ㄱ자바스크립트 객체란 무엇인가
     const menuList = [
-        {color: 'yellow', name: 'Sale', link : '/'},
-        {color: 'blue', name: 'Dog', link : '/dog'},
-        {color: 'gray', name: 'Cat', link : '/cat'},
-        {color: 'lightGreen', name: 'Bird', link : '/bird'},
-        {color: 'violet', name: 'Other Pets', link : '/otherpet'},
+        {color: 'yellow', name: 'Sale'},
+        {color: 'blue', name: 'Dog'},
+        {color: 'gray', name: 'Cat'},
+        {color: 'lightGreen', name: 'Bird'},
+        {color: 'violet', name: 'Other Pets'},
         {color: 'orange', name: 'Brands', link : '/brands'},
-        {color: 'navy', name: 'Vet tips', link : 'vettyopes'}
+        {color: 'navy', name: 'Vet tips', link : '/tips'}
     ];
 
 
     const product = ['apple', 'alergy', 'desk', 'drill', 'game', 'goal', 'table', 'tea']
     const getPage = (param) => {
+        console.log(activeKey,'activeKey')
         switch (param) {
             case 1 :
-                return <DogPage getActiveKey={getActiveKey}/>
+                return <DogPage/>
             case 2 :
                 return <CatPage/>
             case 3 :
                 return <BirdPage/>
             case 4 :
                 return <OtherPetsPage/>
-            case 5 :
-                return <BrandsPage/>
+
         }
     }
 
@@ -94,8 +96,8 @@ const Header = (props) => {
 
                         <HeaderLoginBox>
                             <LoginImg src={Login} ></LoginImg>
-                            <SigninButtom>Sign In  | </SigninButtom>
-                            <CreatButton>Create Account</CreatButton>
+                            <SigninButtom> Sign In  | </SigninButtom>
+                            <CreatButton onClick={()=>navigate('/signUp')}>Create Account</CreatButton>
                             <CartImg src={Cart} />
                             <span>$0.00</span>
                             <CartBox>0
@@ -108,7 +110,7 @@ const Header = (props) => {
 
                 <HeadTopContainer>
                     <HeadTopBox>
-                        <HeadLogo src="https://www.petcircle.com.au/petcircle-assets/images/PC-Logo.svg"/>
+                        <HeadLogo onClick={()=>navigate('/')} src="https://www.petcircle.com.au/petcircle-assets/images/PC-Logo.svg"/>
                         <SearchBox>
 
                             <SearchInput placeholder={'search for eg.brands litter, flea, shampoo...'} value={text} onChange={changeText} type="text"/>
@@ -136,13 +138,13 @@ const Header = (props) => {
                 <MenuBox length={menuList.length} >
                     {menuList.map((res, index) => {
 
-
                         return <MenuUnit style={{
                             backgroundColor: activeKey === index ? res.color : ''
                         }} onClick={() => {
                             setActiveKey(index);
-                            navigate(`${res.link}`);
-                            // props.tester(index);
+                            if(res.link){
+                                navigate(`${res.link}`)
+                            }
                         }}>
                             <div style={{
                                 backgroundColor: index === 0 && res.color,

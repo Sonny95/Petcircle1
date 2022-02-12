@@ -9,5 +9,13 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
+}
+
+.moveSpan {
+  cursor : pointer;
+
+}
+.moveSpan:hover{
+  text-decoration: underline;
 }

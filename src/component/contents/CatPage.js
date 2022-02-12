@@ -13,6 +13,7 @@ import CS2 from "../../resources/Photo/shop-indoor.png"
 import CS3 from "../../resources/Photo/shop-outdoor.png"
 import CatAll from "../../resources/Photo/cat-shop-all.png"
 
+import {useNavigate} from "react-router-dom";
 
 const CatPage  = () =>
     <>
