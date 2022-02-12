@@ -29,10 +29,11 @@ import {
     SigninButtom
 } from "../../resources/styledComponent/header";
 import AutoDelivery from "../../resources/Photo/auto-delivery-icon.svg"
+import {useNavigate} from "react-router-dom";
 
 const Header = (props) => {
     const {getActiveKey} = props;
-
+    let navigate = useNavigate();
     const [activeKey, setActiveKey] = useState(null);
 
     const [text, setText] = useState('');
@@ -50,13 +51,13 @@ const Header = (props) => {
 
     //ㄱ자바스크립트 객체란 무엇인가
     const menuList = [
-        {color: 'yellow', name: 'Sale'},
-        {color: 'blue', name: 'Dog'},
-        {color: 'gray', name: 'Cat'},
-        {color: 'lightGreen', name: 'Bird'},
-        {color: 'violet', name: 'Other Pets'},
-        {color: 'orange', name: 'Brands'},
-        {color: 'navy', name: 'Vet tips'}
+        {color: 'yellow', name: 'Sale', link : '/'},
+        {color: 'blue', name: 'Dog', link : '/dog'},
+        {color: 'gray', name: 'Cat', link : '/cat'},
+        {color: 'lightGreen', name: 'Bird', link : '/bird'},
+        {color: 'violet', name: 'Other Pets', link : '/otherpet'},
+        {color: 'orange', name: 'Brands', link : '/brands'},
+        {color: 'navy', name: 'Vet tips', link : 'vettyopes'}
     ];
 
 
@@ -64,7 +65,7 @@ const Header = (props) => {
     const getPage = (param) => {
         switch (param) {
             case 1 :
-                return <DogPage/>
+                return <DogPage getActiveKey={getActiveKey}/>
             case 2 :
                 return <CatPage/>
             case 3 :
@@ -118,13 +119,13 @@ const Header = (props) => {
                         </SearchBox>
                         <LetterContainer>
 
-                        <Letter1Box>
-                            Save up to 20% off
-                        </Letter1Box>
-                        <Letter2Box>
-                            Selected brands
-                        </Letter2Box>
-                        <AutoImg src={AutoDelivery} />
+                            <Letter1Box>
+                                Save up to 20% off
+                            </Letter1Box>
+                            <Letter2Box>
+                                Selected brands
+                            </Letter2Box>
+                            <AutoImg src={AutoDelivery} />
                         </LetterContainer>
 
                     </HeadTopBox>
@@ -140,7 +141,8 @@ const Header = (props) => {
                             backgroundColor: activeKey === index ? res.color : ''
                         }} onClick={() => {
                             setActiveKey(index);
-                            props.tester(index)
+                            navigate(`${res.link}`);
+                            // props.tester(index);
                         }}>
                             <div style={{
                                 backgroundColor: index === 0 && res.color,

@@ -12,9 +12,12 @@ import {
     DpSmallButton, MenuLane, ShopAllLetter
 } from "../../resources/styledComponent/dogPage";
 import DogSaleAll from "../../resources/Photo/dog-shop-all.png"
+import {useNavigate} from "react-router-dom";
 
 
-const DogPage  = () => {
+const DogPage  = (props) => {
+    const {getActiveKey} =props;
+        let navigate = useNavigate();
     return(
         <>
 
@@ -34,7 +37,10 @@ const DogPage  = () => {
     <DogMenuBox>
         <CapitalMenu>Treats</CapitalMenu>
         <MenuLane></MenuLane>
-        <div>Natural Treats</div>
+        <div onClick={()=> {
+            getActiveKey(false);
+            navigate('/dog');
+        }} style={{cursor : 'pointer'}}>Natural Treats</div>
         <div>Dental Treats</div>
         <div>Training Treats</div>
         <div>Freeze and Air Dried</div>

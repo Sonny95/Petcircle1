@@ -1,4 +1,4 @@
-import Header from "../component/layout/Headser";
+import Header from "../component/layout/Header";
 import Contents from "../component/layout/Contents";
 import Footer from "../component/layout/Footer";
 import React, {useState} from "react";
