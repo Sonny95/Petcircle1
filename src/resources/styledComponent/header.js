@@ -56,12 +56,15 @@ export const LoginImg = styled.img`
 export const SigninButtom = styled.div`
   float:left;
   margin-left:15px;
+  cursor:pointer;
+  text-decoration-line: underline;
   `
 
 export const CreatButton = styled.div`
    float:left;
   margin-left:5px;
   cursor : pointer;
+  text-decoration-line: underline;
   `
 
 export  const HeaderLoginBox = styled.div`

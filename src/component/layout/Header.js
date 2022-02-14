@@ -96,7 +96,7 @@ const Header = (props) => {
 
                         <HeaderLoginBox>
                             <LoginImg src={Login} ></LoginImg>
-                            <SigninButtom> Sign In  | </SigninButtom>
+                            <SigninButtom onClick={()=>navigate('/LoginPage')}> Sign In  | </SigninButtom>
                             <CreatButton onClick={()=>navigate('/signUp')}>Create Account</CreatButton>
                             <CartImg src={Cart} />
                             <span>$0.00</span>

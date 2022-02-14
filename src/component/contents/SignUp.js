@@ -6,7 +6,7 @@ import {
     SignUpBanner,
     SignUpBodyContainer, SignUpBox, SignUpButton, SignUpInput,
     SignUpInputContainer, SignUpQuestion
-} from "../../resources/styledComponent/brands";
+} from "../../resources/styledComponent/signup";
 
 const SignUp =()=>
     <>
