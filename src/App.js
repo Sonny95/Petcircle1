@@ -14,6 +14,8 @@ import SignUp from "./component/contents/SignUp";
 import Brands from "./component/contents/Brands";
 import Tips from "./component/contents/Tips";
 import LoginPage from "./component/contents/LoginPage";
+import BirdPage from "./component/contents/exam/BirdPage";
+import OtherPetsPage from "./component/contents/exam/OtherPetsPage";
 
 const App = () => {
     const [activeKey, setActiveKey] = useState(null);
@@ -35,7 +37,9 @@ const App = () => {
                         <Routes>
                             <Route path="/" element={<Contents/>} />
                             <Route path="/dog/:postId" element={<DogPage />} />
-                            <Route path="/cat" element={<CatPage />} />
+                            <Route path="/cat/:postId" element={<CatPage />} />
+                            <Route path="/bird/:postId" element={<BirdPage />} />
+                            <Route path="/other/:postId" element={<OtherPetsPage />} />
                             <Route path="/signUp" element={<SignUp />} />
                             <Route path="/LoginPage" element={<LoginPage />} />
                             <Route path="/brands" element={<Brands />} />

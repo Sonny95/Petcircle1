@@ -25,7 +25,17 @@ export const BodyBox = styled.div`
 export const BetterRange = styled.div`
   margin-bottom: 40px;
   color: black;
-  font-size: 30px;
+  font-size: 25px;
+  `
+export const BetterPrice = styled.div`
+  color: black;
+  font-size: 25px;
+  `
+export const ProductLetter = styled.div`
+  color: black;
+  font-size: 25px;
+  margin: 30px 0px;
+  padding-top: 10px;
   `
 
 export const BigDogButton = styled.div`
@@ -180,11 +190,11 @@ export const ToysImg = styled.img`
 `
 export const AdContainer = styled.div`
   width: 100%;
-  height: 295px;
+  height: 220px;
 `
 export const AdBox = styled.div`
   width: 1250px;
-  height: 100%;
+  height: 220px;
   margin: 0px auto;
   color: white;
 `
@@ -193,6 +203,7 @@ export const ProductContainer = styled.div`
   height: 470px;
   background-color: #f5f6f8;
 `
+
 export const ProductBox = styled.div`
   width: 1250px;
   height: 100%;
@@ -200,7 +211,7 @@ export const ProductBox = styled.div`
 `
 export const ProductArea = styled.div`
   height: 350px;
-  width: 188px;
+  width: 191px;
   float: left;
   border: 1px solid #c7ccd6;
   border-radius: 6px;
@@ -208,21 +219,28 @@ export const ProductArea = styled.div`
   text-align: center;
   margin-left:20px;
 `
-// export const CatFoodLetter = styled.div`
-// `
-// export const DogButtonLetter = styled.div`
-// `
-// export const DogButtonLetter = styled.div`
-// `
-// export const CatFoodLetter = styled.div`
-// `
-// export const DogButtonLetter = styled.div`
-// `
-// export const CatFoodLetter = styled.div`
-// `
-// export const DogButtonLetter = styled.div`
-// `
+export const ProductAreaFirst = styled.div`
+  height: 350px;
+  width: 191px;
+  float: left;
+  border: 1px solid #c7ccd6;
+  border-radius: 6px;
+  background-color: white;
+  text-align: center;
+`
 
+export const ProductBigBox = styled.div`
+    width:1250px;
+  
+`
+export const ProductButton = styled.button`
+  height: 30px;
+  width: 160px;
+  background-color: #efeb63;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  `
 
 
 

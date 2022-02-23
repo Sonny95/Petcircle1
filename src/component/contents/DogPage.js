@@ -15,7 +15,7 @@ import {
 } from "../../resources/styledComponent/dogPage";
 import DogSaleAll from "../../resources/Photo/dog-shop-all.png"
 
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useRef} from "react";
 import {menuStore} from "../../util/zustandStore";
 
@@ -39,8 +39,24 @@ const DogPage = () => {
                 {children}
             </div>
         )
-
     }
+
+    const GoAll = ({children}) => {
+
+        const movepage = () => {
+            const str = children;
+            const words = str.split(' ');
+
+            navigate(`/dog/${words[words.length -1].toLowerCase()}`);
+            setActiveKey(null);
+        }
+
+        return (
+            <ShopAllLetter className={'moveSpan'} onClick={movepage}>{children}</ShopAllLetter>
+        )
+    }
+
+
 
     return (
         <>
@@ -55,7 +71,7 @@ const DogPage = () => {
                         <GoSpan>Vet Diets</GoSpan>
                         <GoSpan>Grain Free</GoSpan>
                         <GoSpan>Freeze and Air Dried</GoSpan>
-                        <ShopAllLetter className={'moveSpan'}>Shop all Food</ShopAllLetter>
+                        <GoAll>Shop all Food</GoAll>
                     </DogMenuBox>
                     <DogMenuBox>
                         <CapitalMenu>Treats</CapitalMenu>
@@ -66,10 +82,10 @@ const DogPage = () => {
                         <GoSpan>Freeze and Air Dried</GoSpan>
                         <GoSpan>Long Lasting Treats</GoSpan>
                         <GoSpan>Biscuits</GoSpan>
-                        <ShopAllLetter className={'moveSpan'}>Shop all Food</ShopAllLetter>
+                        <GoAll>Shop all Treats</GoAll>
                     </DogMenuBox>
                     <DogMenuBox>
-                        <CapitalMenu>Other Suppllies</CapitalMenu>
+                        <CapitalMenu>Other Supplies</CapitalMenu>
                         <MenuLane></MenuLane>
                         <GoSpan>Toys</GoSpan>
                         <GoSpan>Flea and Worning</GoSpan>
@@ -82,7 +98,7 @@ const DogPage = () => {
                         <GoSpan>Clothes</GoSpan>
                         <GoSpan>Technology</GoSpan>
                         <GoSpan>House and Travel</GoSpan>
-                        <ShopAllLetter className={'moveSpan'}>Shop all Food</ShopAllLetter>
+                        <GoAll>Shop all Supplies</GoAll>
                     </DogMenuBox>
                     <DogMenuBox>
                         <CapitalMenu>Top Dog Brands</CapitalMenu>
@@ -99,7 +115,7 @@ const DogPage = () => {
                         <GoSpan>Royal Cannin Veterinary Diet</GoSpan>
                         <GoSpan>Supercoat</GoSpan>
                         <GoSpan>Taste of the wild</GoSpan>
-                        <ShopAllLetter className={'moveSpan'}>Shop all Food</ShopAllLetter>
+                        <GoAll>Shop all Brands</GoAll>
                     </DogMenuBox>
                 </div>
 

@@ -11,90 +11,122 @@ import S2 from "../../resources/Photo/shop-small-dog.png";
 import S3 from "../../resources/Photo/shop-large-dog.png";
 import BirdSaleBanner from "../../resources/Photo/shop-bird-sale.png"
 import BirdSaleAll from "../../resources/Photo/bird-shop-all-new.png"
-const BirdPage  = () =>
-    <>
+import {useNavigate} from "react-router-dom";
+import {menuStore} from "../../util/zustandStore";
 
-        <div className="DogMenu" style={{width:1400, height:420,margin:'0px auto',padding:10}}>
-            <div style={{width:900}}>
-                <DogMenuBox>
-                    <CapitalMenu>Food</CapitalMenu>
-                    <MenuLane></MenuLane>
-                    <div>ChickenFood</div>
-                    <div>Wild Bird Food</div>
-                    <div>Parrot Food</div>
-                    <div>Budge Food</div>
-                    <div>Cockatiel Food</div>
-                    <div>Finch And Canary Food</div>
-                    <ShopAllLetter>Shop all Food</ShopAllLetter>
-                </DogMenuBox>
-                <DogMenuBox>
-                    <CapitalMenu>Perches and Toys</CapitalMenu>
-                    <MenuLane></MenuLane>
-                    <div>Perches</div>
-                    <div>hanging Toys</div>
-                    <div>Activity Toys</div>
-                    <div>Foraging Toys</div>
-                    <div>Swing Toys</div>
-                    <div>Bird Gyms</div>
-                </DogMenuBox>
-                <DogMenuBox>
-                    <CapitalMenu>Other Suppllies</CapitalMenu>
-                    <MenuLane></MenuLane>
-                    <div>Cages and Accessories</div>
-                    <div>Treats</div>
-                    <div>Health and Grooming</div>
-                    <div>Feeding Accessories</div>
-                    <div>Bedding and Nesting</div>
-                    <ShopAllLetter>Shop all Food</ShopAllLetter>
-                </DogMenuBox>
-                <DogMenuBox>
-                    <CapitalMenu>Top Bird Brands</CapitalMenu>
-                    <MenuLane></MenuLane>
-                    <div>Barastoc</div>
-                    <div>birdie</div>
-                    <div>Harmony</div>
-                    <div>Kazoo</div>
-                    <div>Laucke</div>
-                    <div>Passwell</div>
-                    <div>Peckish</div>
-                    <div>Peters</div>
-                    <div>Trill</div>
-                    <div>Vetafarm</div>
-                    <div>Whistler</div>
-                    <div>Wombaroo</div>
-                    <ShopAllLetter>Shop all Food</ShopAllLetter>
-                </DogMenuBox>
+
+
+const BirdPage = () => {
+    let navigate = useNavigate();
+    const {activeKey, setActiveKey} = menuStore(state => state);
+
+    const GoSpan = ({children}) => {
+
+        const movePage = () => {
+            navigate(`/bird/${children.toLowerCase().replace(/ /gi, '-')}`);
+            setActiveKey(null);
+        }
+
+        return (
+            <div onClick={movePage} className={'moveSpan'}>
+                {children}
             </div>
+        )
+    }
+
+    const GoAll = ({children}) => {
+
+        const movepage = () => {
+            const str = children;
+            const words = str.split(' ');
+
+            navigate(`/bird/${words[words.length - 1].toLowerCase()}`);
+            setActiveKey(null);
+        }
+
+        return (
+            <ShopAllLetter className={'moveSpan'} onClick={movepage}>{children}</ShopAllLetter>
+        )
+    }
+
+    return (
+        <>
+
+            <div className="DogMenu" style={{width: 1400, height: 420, margin: '0px auto', padding: 10}}>
+                <div style={{width: 900}}>
+                    <DogMenuBox>
+                        <CapitalMenu>Food</CapitalMenu>
+                        <MenuLane></MenuLane>
+                        <GoSpan>ChickenFood</GoSpan>
+                        <GoSpan>Wild Bird Food</GoSpan>
+                        <GoSpan>Parrot Food</GoSpan>
+                        <GoSpan>Budge Food</GoSpan>
+                        <GoSpan>Cockatiel Food</GoSpan>
+                        <GoSpan>Finch And Canary Food</GoSpan>
+                        <GoAll>Shop all Food</GoAll>
+                    </DogMenuBox>
+                    <DogMenuBox>
+                        <CapitalMenu>Perches and Toys</CapitalMenu>
+                        <MenuLane></MenuLane>
+                        <GoSpan>Perches</GoSpan>
+                        <GoSpan>hanging Toys</GoSpan>
+                        <GoSpan>Activity Toys</GoSpan>
+                        <GoSpan>Foraging Toys</GoSpan>
+                        <GoSpan>Swing Toys</GoSpan>
+                        <GoSpan>Bird Gyms</GoSpan>
+                        <GoAll>Shop all Toys</GoAll>
+                    </DogMenuBox>
+                    <DogMenuBox>
+                        <CapitalMenu>Other Supplies</CapitalMenu>
+                        <MenuLane></MenuLane>
+                        <GoSpan>Cages and Accessories</GoSpan>
+                        <GoSpan>Treats</GoSpan>
+                        <GoSpan>Health and Grooming</GoSpan>
+                        <GoSpan>Feeding Accessories</GoSpan>
+                        <GoSpan>Bedding and Nesting</GoSpan>
+                        <GoAll>Shop all Supplies</GoAll>
+                    </DogMenuBox>
+                    <DogMenuBox>
+                        <CapitalMenu>Top Bird Brands</CapitalMenu>
+                        <MenuLane></MenuLane>
+                        <GoSpan>Barastoc</GoSpan>
+                        <GoSpan>birdie</GoSpan>
+                        <GoSpan>Harmony</GoSpan>
+                        <GoSpan>Kazoo</GoSpan>
+                        <GoSpan>Laucke</GoSpan>
+                        <GoSpan>Passwell</GoSpan>
+                        <GoSpan>Peckish</GoSpan>
+                        <GoSpan>Peters</GoSpan>
+                        <GoSpan>Trill</GoSpan>
+                        <GoSpan>Vetafarm</GoSpan>
+                        <GoSpan>Whistler</GoSpan>
+                        <GoSpan>Wombaroo</GoSpan>
+                        <GoAll>Shop all Brands</GoAll>
+                    </DogMenuBox>
+                </div>
 
 
+                <div style={{float: 'right', height: '100%', width: 450}}>
+                    <DpMenuContainer>
+                        <img src={BirdSaleBanner} style={{height: 90, width: 430, marginBottom: 20}}/>
+                        <DpLetter>Shop by Species</DpLetter>
 
-            <div style={{float:'right',height:'100%',width:450}}>
-                <DpMenuContainer>
-                    <img src={BirdSaleBanner} style={{height:90,width:430,marginBottom:20}}/>
-                    <DpLetter>Shop by Species</DpLetter>
-
-                    <DpSmallButton>Chickens</DpSmallButton>
-                    <DpSmallButton>Wild Bird</DpSmallButton>
-                    <DpSmallButton>Parrot</DpSmallButton>
-                    <DpSmallButton>Budgie</DpSmallButton>
-                    <DpSmallButton>Finch</DpSmallButton>
-                    <DpSmallButton>Cockatiel</DpSmallButton>
-
-
-                    <DogSaleImg src={BirdSaleAll}/>
+                        <DpSmallButton>Chickens</DpSmallButton>
+                        <DpSmallButton>Wild Bird</DpSmallButton>
+                        <DpSmallButton>Parrot</DpSmallButton>
+                        <DpSmallButton>Budgie</DpSmallButton>
+                        <DpSmallButton>Finch</DpSmallButton>
+                        <DpSmallButton>Cockatiel</DpSmallButton>
 
 
+                        <DogSaleImg src={BirdSaleAll}/>
 
 
-
-
-
-                </DpMenuContainer>
+                    </DpMenuContainer>
+                </div>
             </div>
-        </div>
-    </>
+        </>
+    )
+}
 
-
-
-
-export default BirdPage;
+    export default BirdPage;

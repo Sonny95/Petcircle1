@@ -7,7 +7,7 @@ const Footer = () =>{
         <div className="Footer" style={{float:'left', width : '100vw'}}>
             <div className="FooterTop"
                  style={{backgroundColor: '#f5f6f8', width: '100%', height: 190, padding: 50}}>
-                <div style={{margin: '0px auto', width: 1400, height: '100%'}}>
+                <div style={{margin: '0px auto', width: 1300, height: '100%'}}>
                     <div style={{float: 'left'}}>
                         <h2> Get the best deals!</h2>
                         <h4>hear first about our exclusive offers and pet care advice.</h4>

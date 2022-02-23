@@ -26,7 +26,7 @@ import {
     ShipHeader,
     ShipHeaderBox,
     ShipHeaderLetter,
-    SigninButtom
+    SigninButtom, SigninButton
 } from "../../resources/styledComponent/header";
 import AutoDelivery from "../../resources/Photo/auto-delivery-icon.svg"
 import {Link, useNavigate} from "react-router-dom";
@@ -65,7 +65,6 @@ const Header = (props) => {
 
     const product = ['apple', 'alergy', 'desk', 'drill', 'game', 'goal', 'table', 'tea']
     const getPage = (param) => {
-        console.log(activeKey,'activeKey')
         switch (param) {
             case 1 :
                 return <DogPage/>
@@ -96,13 +95,13 @@ const Header = (props) => {
 
                         <HeaderLoginBox>
                             <LoginImg src={Login} ></LoginImg>
-                            <SigninButtom onClick={()=>navigate('/LoginPage')}> Sign In  | </SigninButtom>
-                            <CreatButton onClick={()=>navigate('/signUp')}>Create Account</CreatButton>
-                            <CartImg src={Cart} />
-                            <span>$0.00</span>
-                            <CartBox>0
-                            </CartBox>
+                            <SigninButton className={'moveSpan'} onClick={()=>navigate('/LoginPage')}>Sign In  |</SigninButton>
+                            <CreatButton className={'moveSpan'} onClick={()=>navigate('/signUp')}>Create Account</CreatButton>
 
+
+                            <CartImg src={Cart} />
+                            <span >$0.00</span>
+                            <CartBox>0</CartBox>
                         </HeaderLoginBox>
                     </ShipHeaderBox>
                 </ShipHeader>

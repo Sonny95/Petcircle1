@@ -27,6 +27,7 @@ import React from "react";
 import {
     AdBox,
     AdContainer,
+    BetterPrice,
     BetterRange,
     BigCatButton,
     BigDogButton,
@@ -38,16 +39,28 @@ import {
     BodyButtonImg,
     BodyContainer,
     ButtonContainer,
-    CatButtonContainer, CatFoodImg, CatSmallButton, CatTreatImg,
+    CatButtonContainer,
+    CatFoodImg,
+    CatSmallButton,
+    CatTreatImg,
     DogButtonLetter,
-    DogFood, LitterImg, ProductArea, ProductBox, ProductContainer,
+    DogFood,
+    LitterImg,
+    ProductArea,
+    ProductAreaFirst,
+    ProductBigBox,
+    ProductBox,
+    ProductButton,
+    ProductContainer,
+    ProductLetter,
     SmallPetBox,
     SmallPetContainer,
     SmallPetImg,
     SubText,
     ToyBox,
     ToyImg,
-    ToyLetter, ToysImg,
+    ToyLetter,
+    ToysImg,
     WormingBox,
     WormingImg,
     WormingLetter
@@ -160,7 +173,7 @@ const Contents = () => {
 
             <AdContainer>
                 <AdBox>
-                    <BetterRange>Better Price</BetterRange>
+                    <BetterPrice>Better Price</BetterPrice>
 
                     {/*{adList.map((value, index) => {*/}
                     {/*    return <div style={{height: 150, width: 400, marginTop: 10, borderRadius: 10, float: 'left'}}>*/}
@@ -190,11 +203,11 @@ const Contents = () => {
 
             <ProductContainer>
                 <ProductBox>
-                    <BetterRange>Shop Aussie Made Products</BetterRange>
+                    <ProductLetter>Shop Aussie Made Products</ProductLetter>
 
 
-                    <div>
-                        <ProductArea>
+                    <ProductBigBox>
+                        <ProductAreaFirst>
                             <img src={P1} style={{height: 140, width: 140}}/>
                             <div style={{float: 'left', textAlign: 'left', padding: 8}}>
                                 <div style={{fontSize: 15}}>
@@ -204,16 +217,8 @@ const Contents = () => {
                                 <div>★★★★☆ 7</div>
                                 <strong style={{fontSize: 25, margin: '5px auto'}}>$125.99</strong>
                             </div>
-                            <button style={{
-                                height: 30,
-                                width: 160,
-                                backgroundColor: '#efeb63',
-                                border: 'none',
-                                borderRadius: 6,
-                                fontSize: 18
-                            }}> + Add to Cart
-                            </button>
-                        </ProductArea>
+                            <ProductButton> + Add to Cart</ProductButton>
+                        </ProductAreaFirst>
                         <ProductArea>
                             <img src={P2} style={{height: 140, width: 140}}/>
                             <div style={{float: 'left', textAlign: 'left', padding: 10}}>
@@ -226,15 +231,7 @@ const Contents = () => {
                                     <strong style={{fontSize: 25, marginTop: '5px auto'}}>$11.9</strong>
                                 </div>
                             </div>
-                            <button style={{
-                                height: 40,
-                                width: 170,
-                                backgroundColor: '#efeb63',
-                                border: 'none',
-                                borderRadius: 6,
-                                fontSize: 18
-                            }}> + Add to Cart
-                            </button>
+                            <ProductButton> + Add to Cart</ProductButton>
                         </ProductArea>
 
                         <ProductArea>
@@ -249,15 +246,7 @@ const Contents = () => {
                                     <strong style={{fontSize: 25, margin: '5px auto'}}>$53.36</strong>
                                 </div>
                             </div>
-                            <button style={{
-                                height: 40,
-                                width: 170,
-                                backgroundColor: '#efeb63',
-                                border: 'none',
-                                borderRadius: 6,
-                                fontSize: 18
-                            }}> + Add to Cart
-                            </button>
+                            <ProductButton> + Add to Cart</ProductButton>
                         </ProductArea>
                         <ProductArea>
                             <img src={P4} style={{height: 140, width: 140}}/>
@@ -271,15 +260,7 @@ const Contents = () => {
                                     <strong style={{fontSize: 25, margin: '5px auto'}}>$22.36</strong>
                                 </div>
                             </div>
-                            <button style={{
-                                height: 40,
-                                width: 170,
-                                backgroundColor: '#efeb63',
-                                border: 'none',
-                                borderRadius: 6,
-                                fontSize: 18
-                            }}> + Add to Cart
-                            </button>
+                            <ProductButton> + Add to Cart</ProductButton>
                         </ProductArea>
                         <ProductArea>
                             <img src={P5} style={{height: 140, width: 140}}/>
@@ -293,15 +274,7 @@ const Contents = () => {
                                     <strong style={{fontSize: 25, margin: '5px auto'}}>$101.24</strong>
                                 </div>
                             </div>
-                            <button style={{
-                                height: 40,
-                                width: 170,
-                                backgroundColor: '#efeb63',
-                                border: 'none',
-                                borderRadius: 6,
-                                fontSize: 18
-                            }}> + Add to Cart
-                            </button>
+                            <ProductButton> + Add to Cart</ProductButton>
                         </ProductArea>
                         <ProductArea>
                             <img src={P6} style={{height: 140, width: 140}}/>
@@ -315,17 +288,9 @@ const Contents = () => {
                                     <strong style={{fontSize: 25, margin: '5px auto'}}>$35.96</strong>
                                 </div>
                             </div>
-                            <button style={{
-                                height: 40,
-                                width: 170,
-                                backgroundColor: '#efeb63',
-                                border: 'none',
-                                borderRadius: 6,
-                                fontSize: 18
-                            }}> + Add to Cart
-                            </button>
+                            <ProductButton> + Add to Cart</ProductButton>
                         </ProductArea>
-                    </div>
+                    </ProductBigBox>
                 </ProductBox>
             </ProductContainer>
         </>

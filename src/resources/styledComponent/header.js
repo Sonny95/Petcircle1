@@ -51,26 +51,24 @@ export const LoginImg = styled.img`
   width: 18px;
   float: left;
   margin-left: 10px;
-  
+  margin-top: 4px;
 `
-export const SigninButtom = styled.div`
+export const SigninButton = styled.div`
   float:left;
   margin-left:15px;
-  cursor:pointer;
-  text-decoration-line: underline;
   `
+
+
 
 export const CreatButton = styled.div`
    float:left;
   margin-left:5px;
-  cursor : pointer;
-  text-decoration-line: underline;
   `
 
 export  const HeaderLoginBox = styled.div`
   float: right;
   height: 100%;
-  width: 300px;
+  width: 320px;
   font-size: 15px;
 `
 
@@ -81,6 +79,7 @@ export const CartBox = styled.div`
   height: 20px;
   border-radius: 10px;
   float: right;
+  margin-top: 2px;
 `
 
 export const CartImg = styled.img`
