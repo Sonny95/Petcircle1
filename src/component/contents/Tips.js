@@ -6,8 +6,10 @@ import Vet5 from "../../resources/Photo/VetArticles1.jpg"
 import Vet6 from "../../resources/Photo/VetArticles2.jpg"
 import Vet7 from "../../resources/Photo/VetArticles3.png"
 import {
+    ArticleCapital,
+    ArticleLetter,
     ArticleListBox,
-    ArtlcleListImg,
+    ArtlcleListImg, NewDogBox, ShwMore,
     Tips1,
     Tips1Background,
     Tips1Letter,
@@ -21,18 +23,13 @@ import {
     VetSearchBarContainer,
     VetSearchButton
 } from "../../resources/styledComponent/tips";
-
+import { Space } from 'antd';
+import {PlusSquareTwoTone } from '@ant-design/icons';
 
 const VetList = [
     {src: Vet2, key: '1'},
     {src: Vet3, key: '2'},
     {src: Vet4, key: '3'}
-]
-
-const VetArticleList = [
-    {src: Vet5, key: '1'},
-    {src: Vet6, key: '2'},
-    {src: Vet7, key: '3'},
 ]
 
 
@@ -64,39 +61,46 @@ const Tips = () => {
                     <VetSearchButton>Search</VetSearchButton>
                 </VetSearchBarContainer>
 
-
                 <ArticleListBox>
-                    {VetArticleList.map((value, index) => {
-                        return (
-                            <ArtlcleListImg src={value.src}></ArtlcleListImg>
-                        )
-                    })}
+
+<NewDogBox>
+    <ArtlcleListImg src={Vet5}></ArtlcleListImg>
+                    <ArticleCapital>New dog & puppy basics</ArticleCapital>
+                    <ArticleLetter>New puppy guide</ArticleLetter>
+                    <ArticleLetter>Biting, chewing, pooping: A puppy training guide</ArticleLetter>
+                    <ArticleLetter>Puppy food guide</ArticleLetter>
+                    <ArticleLetter>How to choose the right dog breed</ArticleLetter>
+                    <ArticleLetter>Our best dog names for 2020</ArticleLetter>
+    <div>
+    <space><PlusSquareTwoTone style={{float:'left'}} /></space>
+                    <ShwMore>show more</ShwMore>
+
+    </div>
+</NewDogBox>
+                    <NewDogBox>
+                        <ArtlcleListImg src={Vet6}></ArtlcleListImg>
+                    <ArticleCapital>Dog & cat nutrition</ArticleCapital>
+                    <ArticleLetter>Premium pet food: Is it worth it?</ArticleLetter>
+                    <ArticleLetter>Does grain free dog food cause heart disease?</ArticleLetter>
+                    <ArticleLetter>Which pet food is Australian-made?</ArticleLetter>
+                    <ArticleLetter>What is the best food for a sensitive stomach?</ArticleLetter>
+                    <ArticleLetter>Signs your dog may have a food allergy</ArticleLetter>
+                    <div>show more</div>
+
+                        </NewDogBox>
+
+                    <NewDogBox>
+                        <ArtlcleListImg src={Vet7}></ArtlcleListImg>
+                    <ArticleCapital>Dog & cat health</ArticleCapital>
+                    <ArticleLetter>Hemp and cannabis oil for pets</ArticleLetter>
+                    <ArticleLetter>Your guide to fleas, ticks and worms</ArticleLetter>
+                    <ArticleLetter>How to stop your dog scratching once and for all</ArticleLetter>
+                    <ArticleLetter>Ehrlichiosis in Australia: the new, tick-borne disease</ArticleLetter>
+                    <ArticleLetter>Daily habits for pet health</ArticleLetter>
+                    <div>show more</div>
+                    </NewDogBox>
                 </ArticleListBox>
-                <div>New dog & puppy basics</div>
-                <div>New puppy guide</div>
-                <div>Biting, chewing, pooping: A puppy training guide</div>
-                <div>Puppy food guide</div>
-                <div>How to choose the right dog breed</div>
-                <div>Our best dog names for 2020</div>
-                <div>show more</div>
 
-
-                <div>Dog & cat nutrition</div>
-                <div>Premium pet food: Is it worth it?</div>
-                <div>Does grain free dog food cause heart disease?</div>
-                <div>Which pet food is Australian-made?</div>
-                <div>What is the best food for a sensitive stomach?</div>
-                <div>Signs your dog may have a food allergy</div>
-                <div>show more</div>
-
-
-                <div>Dog & cat health</div>
-                <div>Hemp and cannabis oil for pets</div>
-                <div>Your guide to fleas, ticks and worms</div>
-                <div>How to stop your dog scratching once and for all</div>
-                <div>Ehrlichiosis in Australia: the new, tick-borne disease</div>
-                <div>Daily habits for pet health</div>
-                <div>show more</div>
 
             </TipsBigContainer2>
         </TipsBigContainer>

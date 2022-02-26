@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const TipsBigContainer = styled.div`
   width: 100%;
   background-color: #e5e5e5;
-  height:1000px;
+  height: 1500px;
 `
 export const TipsBigContainer2 = styled.div`
   width: 1350px;
@@ -48,38 +48,64 @@ export const VetArticleLetter2 = styled.div`
 `
 
 export const VetSearchBar = styled.input`
-    width:700px;
-  height:45px;
-  float:left;
+  width: 700px;
+  height: 45px;
+  float: left;
   border: 1px solid #c7ccd6;;
   border-radius: 6px;
   font-size: 17px;
-  `
+`
 
 export const VetSearchBarContainer = styled.div`
-    width:860px;
-  margin:0px auto;
-  `
+  width: 860px;
+  margin: 0px auto;
+`
 export const VetSearchButton = styled.button`
-    width:150px;
-  height:45px;
-  cursor:pointer;
+  width: 150px;
+  height: 45px;
+  cursor: pointer;
   background-color: #01abb8;
-  float:right;
+  float: right;
   border-radius: 6px;
   border: none;
   color: white;
   font-size: 17px;
-  `
+`
 
 export const ArticleListBox = styled.div`
-width:100%
-height:500px;
+  width: 100%
+  height: 500px;
 `
 
 export const ArtlcleListImg = styled.img`
-  margin: 40px 11px;
+  margin: 40px 11px 10px 11px;
   border-radius: 6px;
-  height:180px;
-  width:420px;
-  `
+  height: 180px;
+  width: 420px;
+`
+
+export const NewDogBox = styled.div`
+  width: 443px;
+  height: 500px;
+  float: left;
+`
+
+export const ArticleLetter = styled.div`
+  margin: 2px 11px;
+  text-decoration-line: underline;
+  color:#01abb8;
+  font-size:18px;
+  cursor:pointer;
+`
+
+export const ArticleCapital = styled.div`
+    margin: 0px 11px 10px 11px;
+    font-size:23px;
+  font-weight: 700;
+    `
+
+export const ShwMore = styled.div`
+    font-size:16px;
+    font-weight: 700;
+    color:#01abb8;
+    `
