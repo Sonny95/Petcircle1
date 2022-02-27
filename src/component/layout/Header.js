@@ -26,7 +26,7 @@ import {
     ShipHeader,
     ShipHeaderBox,
     ShipHeaderLetter,
-    SigninButtom, SigninButton
+    SigninButton
 } from "../../resources/styledComponent/header";
 import AutoDelivery from "../../resources/Photo/auto-delivery-icon.svg"
 import {Link, useNavigate} from "react-router-dom";
@@ -94,10 +94,11 @@ const Header = (props) => {
                             $49+</ShipHeaderLetter>
 
                         <HeaderLoginBox>
+
                             <LoginImg src={Login} ></LoginImg>
+
                             <SigninButton className={'moveSpan'} onClick={()=>navigate('/LoginPage')}>Sign In  |</SigninButton>
                             <CreatButton className={'moveSpan'} onClick={()=>navigate('/signUp')}>Create Account</CreatButton>
-
 
                             <CartImg src={Cart} />
                             <span >$0.00</span>
@@ -105,7 +106,6 @@ const Header = (props) => {
                         </HeaderLoginBox>
                     </ShipHeaderBox>
                 </ShipHeader>
-
 
                 <HeadTopContainer>
                     <HeadTopBox>
@@ -144,7 +144,8 @@ const Header = (props) => {
                         }} onClick={() => {
                             setActiveKey(index);
                             if(res.link){
-                                navigate(`${res.link}`)
+                                setActiveKey(null);
+                                navigate(`${res.link}`);
                             }
                         }}>
                             <div style={{
