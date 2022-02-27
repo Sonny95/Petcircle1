@@ -16,27 +16,31 @@ export const MenuContainer = styled.div`
   width: 100%;
   color: white;
   text-align: center;
-  
+  font-weight: 500;
 `
+export const MenuBigBox = styled.div`
+margin:0px auto;
+width:1300px;
+height:100%`
 
 export const MenuBox = styled.div`
-  width : ${props => props.length * 190}px;
+  width : ${props => props.length * 200}px;
   height: 35px;
   margin: 0px auto; 
-  font-size: 20px;
+  font-size: 18px;
   
 `
 export const ShipHeader = styled.div `
   background-color: #414141;
   width: 100%;
-  height: 40px;
+  height: 35px;
   color: white;
   text-align: center;
   padding-top: 5px;
 `
 
 export const ShipHeaderBox = styled.div `
-  width: 1400px;
+  width: 1300px;
   height: 100%;
   margin: 0px auto;
   `
@@ -44,7 +48,7 @@ export const ShipHeaderBox = styled.div `
 export const ShipHeaderLetter = styled.strong`
   font-size: 14px;
   float: left;
-  margin-left: 600px;
+  margin-left: 500px;
   `
 export const LoginImg = styled.img`
   height: 18px;
@@ -68,13 +72,13 @@ export const CreatButton = styled.div`
 export  const HeaderLoginBox = styled.div`
   float: right;
   height: 100%;
-  width: 320px;
+  width: 330px;
   font-size: 15px;
 `
 
 export const CartBox = styled.div`
   color: black;
-  background-color: yellow;
+  background-color: #f8df02;
   width: 30px;
   height: 20px;
   border-radius: 10px;
@@ -96,7 +100,7 @@ export const HeadTopContainer = styled.div`
     `
 
 export const HeadTopBox = styled.div`
-    max-width: 1500px;
+    max-width: 1300px;
     height: 100%;
     margin: 0px auto;
     `
@@ -150,7 +154,7 @@ export const AutoImg = styled.img`
 export const MenuOpenBox = styled.div`
   position: absolute;
   background-color: white;
-  width: 100vw;
+  width: 100%;
   z-index: 1;
   border-bottom: 1px solid lightGray;
   `

@@ -3,10 +3,11 @@ import styled from "styled-components";
 export const TipsBigContainer = styled.div`
   width: 100%;
   background-color: #e5e5e5;
-  height: 1500px;
+  height: 2500px;
 `
 export const TipsBigContainer2 = styled.div`
   width: 1350px;
+  height: 100%;
   margin: 0px auto;
   padding: 10px;
 `
@@ -27,7 +28,17 @@ export const Tips1Background = styled.div`
 export const Tips1LetterBox = styled.div`
   float: right;
   color: #ffffff;
-  font-size: 25px;
+  height:50px;
+  width:700px;
+  margin:50px auto;
+`
+
+export const VetTipLetter1 = styled.div`
+font-size: 50px;
+  font-weight: 500;
+`
+export const VetTipLetter2 = styled.div`
+font-size: 20px;
 `
 
 export const VetListImg = styled.img`
@@ -72,10 +83,6 @@ export const VetSearchButton = styled.button`
   font-size: 17px;
 `
 
-export const ArticleListBox = styled.div`
-  width: 100%
-  height: 500px;
-`
 
 export const ArtlcleListImg = styled.img`
   margin: 40px 11px 10px 11px;
@@ -93,19 +100,69 @@ export const NewDogBox = styled.div`
 export const ArticleLetter = styled.div`
   margin: 2px 11px;
   text-decoration-line: underline;
-  color:#01abb8;
-  font-size:18px;
-  cursor:pointer;
+  color: #01abb8;
+  font-size: 18px;
+  cursor: pointer;
 `
 
 export const ArticleCapital = styled.div`
-    margin: 0px 11px 10px 11px;
-    font-size:23px;
+  margin: 0px 11px 10px 11px;
+  font-size: 23px;
   font-weight: 700;
-    `
+`
 
-export const ShwMore = styled.div`
-    font-size:16px;
-    font-weight: 700;
-    color:#01abb8;
-    `
+export const ShowMore = styled.div`
+  font-size: 20px;
+  font-weight: 700;
+  color: #01abb8;
+`
+export const DiscoverContainer = styled.div`
+  height: 600px;
+  margin: 0px auto;
+`
+
+export const ArticleUnderLine = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: #01abb8;
+  margin: 70px auto;
+`
+
+export const DiscoverImg = styled.img`
+  height: 420px;
+  width: 400px;
+  margin-top: 15px;
+  
+`
+
+export const DiscoverBox = styled.div`
+  margin: 0px 21px 32px 22px;
+  border-radius: 6px;
+  float: left;
+`
+export const TipsBox = styled.div`
+  margin: 0px auto;
+`
+
+export const TipsListingBox = styled.div`
+
+  margin: 0px auto;
+`
+
+export const VetArticleLetterBox = styled.div`
+  margin: 0px auto;
+  height: 200px;
+  `
+
+export const VetTipsArticleImgBox = styled.div`
+  margin: 0px auto;
+  height: 1000px;
+  `
+
+export const VetTipsArticleTitle = styled.div`
+    float:bottom;
+  color:white;
+  `
+export const VetTipsExplain = styled.div`
+  padding-left: 15px;
+  `

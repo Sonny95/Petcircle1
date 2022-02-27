@@ -16,6 +16,8 @@ import Tips from "./component/contents/Tips";
 import LoginPage from "./component/contents/LoginPage";
 import BirdPage from "./component/contents/exam/BirdPage";
 import OtherPetsPage from "./component/contents/exam/OtherPetsPage";
+import { Space } from 'antd';
+import {CommentOutlined} from '@ant-design/icons';
 
 const App = () => {
     const [activeKey, setActiveKey] = useState(null);
@@ -56,9 +58,30 @@ const App = () => {
                         bottom: 0,
                         left: 0,
                         backgroundColor: '#f5f5f5',
-                        boxShadow: '0 2px 2px outset rgb(0 0 0 / 15%)'
+                        border: '0.5px solid #c7ccd6',
+                        padding:'0px 10px',
+                        cursor:'pointer'
                     }}>
-                        4.7 ★★★★★ Google Customer reviews
+                        <div style={{color:'orange'}}>4.7 ★★★★★</div>
+                        <div style={{fontWeight:500,fontSize:'13px',marginTop:-5}}>Google</div>
+                        <div style={{fontWeight:400,fontSize:'13px',marginTop:-5}}>Customer reviews</div>
+
+                </div>
+                <div style={{
+                    position: 'fixed',
+                    width: 100,
+                    height: 40,
+                    bottom: 20,
+                    right: 20,
+                    backgroundColor: '#4186c6',
+                    border: 'none',
+                    padding:'0px 10px',
+                    borderRadius:30,
+                    cursor:'pointer'
+                }}>
+
+                    <div style={{color:'white',fontSize:20,margin:'0px 20px'}}>  Chat</div>
+
 
                 </div>
             </div>

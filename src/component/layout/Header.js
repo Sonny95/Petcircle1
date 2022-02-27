@@ -17,7 +17,7 @@ import {
     HeadTopContainer,
     Letter1Box, Letter2Box,
     LetterContainer,
-    LoginImg,
+    LoginImg, MenuBigBox,
     MenuBox,
     MenuContainer, MenuOpenBox,
     MenuUnit,
@@ -53,7 +53,7 @@ const Header = (props) => {
 
     //ㄱ자바스크립트 객체란 무엇인가
     const menuList = [
-        {color: 'yellow', name: 'Sale'},
+        {color: '#f8df02', name: 'Sale'},
         {color: 'blue', name: 'Dog'},
         {color: 'gray', name: 'Cat'},
         {color: 'lightGreen', name: 'Bird'},
@@ -133,7 +133,9 @@ const Header = (props) => {
 
                 </HeadTopContainer>
             </div>
+
             <MenuContainer>
+<MenuBigBox>
                 <MenuBox length={menuList.length} >
                     {menuList.map((res, index) => {
 
@@ -147,8 +149,8 @@ const Header = (props) => {
                         }}>
                             <div style={{
                                 backgroundColor: index === 0 && res.color,
-                                padding: 3,
-                                color: fontTrigger === index ? res.color : ''
+                                color: index === 0 && 'black',
+                                padding: 4,
                             }}
                                  onPointerOver={(e) => setFontTrigger(index)}
                                  onPointerOut={() => setFontTrigger(null)}>{res.name}</div>
@@ -156,6 +158,7 @@ const Header = (props) => {
                     })}
 
                 </MenuBox>
+</MenuBigBox>
             </MenuContainer>
 
 

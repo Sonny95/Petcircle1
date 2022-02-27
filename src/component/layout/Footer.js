@@ -4,9 +4,9 @@ const Footer = () =>{
 
 
     return (
-        <div className="Footer" style={{float:'left', width : '100vw'}}>
+        <div className="Footer" style={{float:'left', width : '100%'}}>
             <div className="FooterTop"
-                 style={{backgroundColor: '#f5f6f8', width: '100%', height: 190, padding: 50}}>
+                 style={{ width: '100%', height: 230, padding: 50}}>
                 <div style={{margin: '0px auto', width: 1300, height: '100%'}}>
                     <div style={{float: 'left'}}>
                         <h2> Get the best deals!</h2>
@@ -39,7 +39,7 @@ const Footer = () =>{
 
             <div style={{
                 fontSize: 18,
-                height: 280,
+                height: 350,
                 backgroundColor: '#00b1b9',
                 padding: 50,
                 color: 'white'

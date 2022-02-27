@@ -10,6 +10,25 @@ import DG9 from "../resources/img/dog/natures-cuts-kangaroo-sausages.png";
 import DG10 from "../resources/img/dog/natures-cuts-liver-training-treats.png";
 import DG11 from "../resources/img/dog/pooch-treats-peanut-butter-cups-dog-treats.png";
 import DG12 from "../resources/img/dog/ziwi-peak-good-dog-treat-venison.png";
+import Dg13 from "../resources/img/dog/DogAddImg/absolute-holistic-air-dried-dog-treats-lamb-confit.png"
+import Dg14 from "../resources/img/dog/DogAddImg/absolute-holistic-air-dried-dog-treats-ocean-farm-blue-mackerel-and-lamb.png"
+import Dg15 from "../resources/img/dog/DogAddImg/absolute-holistic-air-dried-dog-treats-red-meat-beef-and-vension.png"
+import Dg16 from "../resources/img/dog/DogAddImg/blackdog-biscuits-regular-multi-mix.png"
+import Dg17 from "../resources/img/dog/DogAddImg/blackdog-roo-crinkles.png"
+import Dg18 from "../resources/img/dog/DogAddImg/k9-natural-dog-treats-beef-healthy-bites.png"
+import Dg19 from "../resources/img/dog/DogAddImg/love-em-liver-pup-rewards.png"
+import Dg20 from "../resources/img/dog/DogAddImg/natures-cuts-chunky-liver.png"
+import Dg21 from "../resources/img/dog/DogAddImg/optimum-dog-treat-joint-and-mobility-health-with-chicken-and-salmon.png"
+import Dg22 from "../resources/img/dog/DogAddImg/schmackos-tasty-bites-cheesy-nibbles-cheese-beef.png"
+import Dg23 from "../resources/img/dog/DogAddImg/tidbits-dog-treats-banana-and-yoghurt-buttons.png"
+import Dg24 from "../resources/img/dog/DogAddImg/vitapet-jerhigh-chicken-sticks.png"
+import Dg25 from "../resources/img/dog/DogAddImg/vitapet-trainers-sweet-potato-chunks-dog-treat.png"
+import Dg26 from "../resources/img/dog/DogAddImg/zeez-kangaroo-chips-sweet-potato-and-parsley.png"
+import Dg27 from "../resources/img/dog/DogAddImg/ziwi-peak-good-dog-treat-beef.png"
+import Discover1 from "../resources/img/dog/DogAddImg/Discover1.png"
+import Discover2 from "../resources/img/dog/DogAddImg/Discover2.png"
+import Discover3 from "../resources/img/dog/DogAddImg/Discover3.png"
+
 
 export const VarietyList = [
     {name: 'Natural Food', count: 1, key :0},
@@ -64,6 +83,7 @@ export const productList = [
         star: 5,
         review: 9,
         mount: '150g',
+        mount2: '300g',
         price: '$15.20',
         state: 'none'
     },
@@ -74,6 +94,7 @@ export const productList = [
         star: 5,
         review: 5   ,
         mount: '150g',
+        mount2: '300g',
         price: '$8.99',
         state: 'none'
     },
@@ -81,9 +102,10 @@ export const productList = [
         source: DG3,
         title: 'BIG DOG',
         subTitle: 'Freeze Dried Kangaroo Little Bites, 160G',
-        star: 'Leave the first review',
-        review: '0',
+        // star: 'none',
+        // review: 'Leave the first review',
         mount: '160g',
+        mount2: '320g',
         price: '$15.29',
         state: 'none'
     },
@@ -95,6 +117,7 @@ export const productList = [
         star: 5,
         review: 6,
         mount: '100g',
+        mount2: '200g',
         price: '$6.26',
         state: 'none'
     },
@@ -106,11 +129,12 @@ export const productList = [
         star: 5,
         review: 4,
         mount: '150g',
+        mount2: '300g',
         price: '$8.87',
         state: 'none'
     },
-    {source: DG8, title: 'POOCH TREATS', subTitle: 'Beef Liver Dog Treats, 200G', star: 4, review: 18, mount: '200g', price: '$5.94', state: 'none'},
-    {source: DG9, title: 'NATURES CUTS', subTitle: 'Kangaroo Sausages, 300G', star: 5, review: 2, mount: '300g', price: '$17.96', state: 'none'},
+    {source: DG8, title: 'POOCH TREATS', subTitle: 'Beef Liver Dog Treats, 200G', star: 4, review: 18, mount: '200g',mount2: '400g', price: '$5.94', state: 'none'},
+    {source: DG9, title: 'NATURES CUTS', subTitle: 'Kangaroo Sausages, 300G', star: 5, review: 2, mount: '300g',mount2: '600g', price: '$17.96', state: 'none'},
     {
         source: DG10,
         title: 'NATURES CUTS',
@@ -118,6 +142,7 @@ export const productList = [
         star: 5,
         review: 11,
         mount: '250g',
+        mount2: '500g',
         price: '$17.06',
         state: 'none'
     },
@@ -128,6 +153,7 @@ export const productList = [
         star: 5,
         review: 5,
         mount: '4packs',
+        mount2: '8packs',
         price: '$6.99',
         state: 'none'
     },
@@ -138,7 +164,179 @@ export const productList = [
         star: 5,
         review: 2,
         mount: '85g',
+        mount2: '500g',
         price: '$16.14',
         state: 'none'
     },
+    {
+        source: Dg13,
+        title: 'ABSOLUTE HOLISTIC',
+        subTitle: 'Air Dried Dog Treats Lamb Confit, 100G',
+        // star: 0,
+        // review: 'Leave the first review',
+        mount: '100g',
+        mount2: '200g',
+        price: '$11.04',
+        state: 'none'
+    },
+    {
+        source: Dg14,
+        title: 'ABSOLUTE HOLISTIC',
+        subTitle: 'Air Dried Dog Treats Ocean Farm Blue Mackerel And Lamb, 100G',
+        star: 5,
+        review: 4,
+        mount: '100g',
+        mount2: '200g',
+        price: '$10.35',
+        state: 'none'
+    },
+    {
+        source: Dg15,
+        title: 'ABSOLUTE HOLISTIC',
+        subTitle: 'Air Dried Dog Treats Red Meat Beef And Vension, 100G',
+        star: 5,
+        review: 1,
+        mount: '100g',
+        mount2: '200g',
+        price: '$10.35',
+        state: 'none'
+    },
+    {
+        source: Dg16,
+        title: 'BLACKDOG',
+        subTitle: 'Biscuits Regular Multi Mix, 1KG',
+        star: 5,
+        review: 7,
+        mount: '1Kg',
+        mount2: '2kg',
+        price: '$6.46',
+        state: 'none'
+    },
+    {
+        source: Dg17,
+        title: 'BLACKDOG',
+        subTitle: 'Roo Crinkles, 200G',
+        star: 4,
+        review: 6,
+        mount: '200g',
+        mount2: '400g',
+        price: '$6.65',
+        state: 'none'
+    },
+    {
+        source: Dg18,
+        title: 'K9 NATURAL',
+        subTitle: 'Dog Treats Beef Healthy Bites, 50G',
+        star: 5,
+        review: 1,
+        mount: '500g',
+        mount2: '1kg',
+        price: '$9.69',
+        state: 'none'
+    },
+    {
+        source: Dg19,
+        title: 'LOVE EM',
+        subTitle: 'Liver Pup Rewards, 200G',
+        star: 4,
+        review: 6,
+        mount: '200g',
+        mount2: '400g',
+        price: '$6.00',
+        state: 'none'
+    },
+    {
+        source: Dg20,
+        title: 'NATURES CUTS',
+        subTitle: 'Chunky Liver, 100G',
+        star: 4,
+        review: 24,
+        mount: '100g',
+        mount2: '200g',
+        price: '$3.58',
+        state: 'none'
+    },
+    {
+        source: Dg21,
+        title: 'OPTIMUM',
+        subTitle: 'Mature Chicken Veges Rice, 13.7KG',
+        star: 4,
+        review: 99,
+        mount: '100g',
+        mount2: '200g',
+        price: '$4.66',
+        state: 'none'
+    },
+    {
+        source: Dg22,
+        title: 'SCHMACKOS',
+        subTitle: 'Tasty Bites Cheesy Nibbles Cheese Beef, 140G',
+        star: 5,
+        review: 3,
+        mount: '140g',
+        mount2: '280g',
+        price: '$3.80',
+        state: 'none'
+    },
+    {
+        source: Dg23,
+        title: 'TIDBITS',
+        subTitle: ' Dog Treats Banana And Yoghurt Buttons, 250G',
+        star: 5,
+        review: 1,
+        mount: '250g',
+        mount2: '500g',
+        price: '$8.29',
+        state: 'none'
+    },
+    {
+        source: Dg24,
+        title: 'VITAPET',
+        subTitle: 'Jerhigh Chicken Sticks, 100G',
+        star: 4,
+        review: 15,
+        mount: '100g',
+        mount2: '200g',
+        price: '$6.24',
+        state: 'none'
+    },
+    {
+        source: Dg25,
+        title: 'VITAPET',
+        subTitle: 'Trainers Chicken And Vegetable Bone Dog Treat, 70G',
+        star: 5,
+        review: 2,
+        mount: '70g',
+        mount2: '140g',
+        price: '$5.50',
+        state: 'none'
+    },
+    {
+        source: Dg26,
+        title: 'ZEEZ',
+        subTitle: 'Kangaroo Chips Sweet Potato And Parsley, 600G',
+        star: 5,
+        review: 1,
+        mount: '600g',
+        mount2: '1.2kg',
+        price: '$17.00',
+        state: 'none'
+    },
+    {
+        source: Dg27,
+        title: 'ZIWI',
+        subTitle: 'Peak Good Dog Treat Beef, 85G',
+        star: 5,
+        review: 4,
+        mount: '85g',
+        mount2: '500g',
+        price: '$9.34',
+        state: 'none'
+    },
+]
+
+export const DiscoverList = [
+    {source: Discover1 ,title:'PUPPY ESSENTIALS',subtitle:'getting ready for a new puppy'},
+    {source: Discover2 ,title:'ASSIE MADE',subtitle: 'Shop local brands' },
+    {source: Discover3 ,title:'NATURAL LIVING',subtitle: 'natural grooming,accessories and more'}
 ]
