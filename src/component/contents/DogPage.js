@@ -76,7 +76,7 @@ const DogPage = () => {
                     <DogMenuBox>
                         <CapitalMenu>Treats</CapitalMenu>
                         <MenuLane></MenuLane>
-                        <GoSpan>Natural Treats</GoSpan>
+                        <GoSpan>Natural Treatss</GoSpan>
                         <GoSpan>Dental Treats</GoSpan>
                         <GoSpan>Training Treats</GoSpan>
                         <GoSpan>Freeze and Air Dried</GoSpan>

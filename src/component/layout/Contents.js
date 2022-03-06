@@ -80,7 +80,7 @@ const Contents = () => {
         {name : 'Ad3', src: Ad3 }
     ]
 
-    const productList = [
+    const ProductList = [
         {name : 'P1', src : P1},
         {name : 'P2', src : P2},
         {name : 'P3', src : P3},
@@ -102,12 +102,12 @@ const Contents = () => {
                     <BetterRange>Better Range</BetterRange>
                     <BigDogButton>
                         <BigDogImg src={Dog1} />
-                        <DogButtonLetter> Shop Dog ></DogButtonLetter>
+                        <DogButtonLetter>{'Shop Dog >'}</DogButtonLetter>
                     </BigDogButton>
 
                     <BigCatButton>
                         <BigDogImg src={Cat1} />
-                        <DogButtonLetter> Shop Cat ></DogButtonLetter>
+                        <DogButtonLetter>{'Shop Cat >'}</DogButtonLetter>
                     </BigCatButton>
 
 
@@ -118,7 +118,7 @@ const Contents = () => {
                                borderRadius : index === 0 ? '8px 8px 0px 0px' :  index === petList.length -1 ? ' 0px 0px 8px 8px' : ''
                             }}>
                                 <SmallPetImg src={value.src} />
-                                <SubText>{value.name} ></SubText>
+                                <SubText>{value.name + '>'}</SubText>
                             </div>
                         })}
 

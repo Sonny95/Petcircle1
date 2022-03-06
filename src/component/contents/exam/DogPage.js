@@ -3,7 +3,7 @@ import {Button, Divider, Input, Rate, Slider, Tag, space} from "antd";
 import DogBanner from "../../../resources/img/dog/DogPageBanner.png"
 import Checkbox from "antd/es/checkbox/Checkbox";
 import {useEffect, useState} from "react";
-import {BrandList, FlavourList, productList, TypeList, VarietyList} from "../../../util/sample";
+import {BrandList, FlavourList, ProductList, TypeList, VarietyList} from "../../../util/sample";
 import {DogDogContainer} from "../../../resources/styledComponent/dog-dogPage";
 import {CloseCircleOutlined} from '@ant-design/icons';
 
@@ -20,17 +20,22 @@ export default function DogPage() {
 
     const [varietyCheck, setVarietyCheck] = useState([]);
     const [brandCheck, setBrandCheck] = useState([]);
+    const [typeCheck, setTypeCheck] = useState([]);
+    const [flavourCheck, setFlavourCheck] = useState([]);
+    const [ratingCheck, setRatingCheck] = useState([]);
+
     const [maxPrice, setMaxPrice] = useState(0);
     const [price, setPrice] = useState([0, 0]);
-    const [initSlider, setInitSlider] = useState([0,0]);
+    const [initSlider, setInitSlider] = useState([0, 0]);
 
-    const [dataList, setDataList] = useState(productList)
+    const [dataList, setDataList] = useState(ProductList)
     const [sliderInit, setSliderInit] = useState(true)
 
 
     // variety CHECK 관리
     const varChangeChecked = (param, value) => {
         const copyList = varietyCheck;
+        // dataList.filter
         if (param) {
             copyList.push(value.name);
             setVarietyCheck(copyList);
@@ -38,6 +43,26 @@ export default function DogPage() {
             const resultData = varietyCheck.filter(src => src !== value.name);
             setVarietyCheck(resultData);
         }
+
+
+        // ex)
+        // varietyCheck ->  ['biscuit', 'cake and rollies']  || 우리가 체크한 사항을 보아둔 배열
+
+
+        const resultData = varietyCheck.map(value => {
+            console.log(value,'value')
+            const filterData = ProductList.filter((src) => {
+                console.log(src,'::src')
+                if(src.variety === value){
+                    return src
+                }
+            });
+            return filterData;
+            console.log(filterData,'filterData')
+        }).flatMap(x => x);
+
+
+        setDataList(resultData);
     }
 
     // brand CHECK 관리
@@ -52,19 +77,37 @@ export default function DogPage() {
         }
     }
 
+    const typeChangeChecked = (param, value) => {
+        const copyList = typeCheck;
+        if (param) {
+            copyList.push(value.name);
+            setTypeCheck(copyList);
+        } else {
+            const resultData = typeCheck.filter(src => src !== value.name);
+            setTypeCheck(resultData);
+        }
+    }
 
-
+    const flavourChangeChecked = (param, value) => {
+        const copyList = flavourCheck;
+        if (param) {
+            copyList.push(value.name);
+            setFlavourCheck(copyList);
+        } else {
+            const resultData = flavourCheck.filter(src => src !== value.name);
+            setFlavourCheck(resultData);
+        }
+    }
 
 
     useEffect(() => {
-        const maxPrice = productList.reduce((acc, cur, index) => {
+        const maxPrice = ProductList.reduce((acc, cur, index) => {
             return acc > cur.price ? acc : cur.price
         }, dataList[0].price);
         setMaxPrice(maxPrice);
         setPrice([1, maxPrice]);
         setInitSlider([1, maxPrice]);
     }, []);
-
 
 
     // 두배열이 같은지 다른지 판단하는 함수
@@ -76,16 +119,13 @@ export default function DogPage() {
     }
 
 
-
     const searchRangePro = (e) => {
         const firstPrice = price[0];
         const lastPrice = price[1];
-        const reData = productList.filter(value => firstPrice <= value.price && lastPrice >= value.price)
+        const reData = ProductList.filter(value => firstPrice <= value.price && lastPrice >= value.price)
         setDataList(reData);
         setSliderInit(arrayEquals(initSlider, price))
     }
-
-
 
 
     const slideInitPro = () => {
@@ -95,12 +135,12 @@ export default function DogPage() {
 
         //실제 상품도 초기화상태에 따른 update해주기
         console.log('업데이트 필요!')
-        const reData = productList.filter(value => 1 <= value.price && maxPrice >= value.price);
+        const reData = ProductList.filter(value => 1 <= value.price && maxPrice >= value.price);
         setDataList(reData);
-        
+
         // clear selected
         setSliderInit(true);
-        // const reData = productList.filter(value => firstPrice <= value.price && lastPrice >= value.price)
+        // const reData = ProductList.filter(value => firstPrice <= value.price && lastPrice >= value.price)
     }
 
     return (
@@ -118,6 +158,13 @@ export default function DogPage() {
                     {brandCheck.map(value => <Tag color="volcano">{value} <CloseCircleOutlined
                         onClick={() => brandChangeChecked(false, {name: value})}/>
                     </Tag>)}
+
+                    {typeCheck.map(value => <Tag color="yellow">{value}
+                        <CloseCircleOutlined onClick={() => typeChangeChecked(false, {name: value})}/></Tag>)}
+
+                    {flavourCheck.map(value => <Tag color="green">{value}
+                        <CloseCircleOutlined onClick={() => flavourChangeChecked(false, {name: value})}/></Tag>)}
+
 
                     <div style={{fontSize: 18, fontWeight: 700, paddingBottom: 10}}>Variety
                         {varietyCheck.length !== 0 && <span style={{
@@ -141,28 +188,41 @@ export default function DogPage() {
                         }
                     })}
 
-                    <div style={{color : 'blue', cursor : 'pointer'}} onClick={() => setVarietyTrigger(!varietyTrigger)}>{varietyTrigger ? '- See less' : '+ See more'} </div>
+                    <div style={{color: '#1cb1b8', cursor: 'pointer'}}
+                         onClick={() => setVarietyTrigger(!varietyTrigger)}>{varietyTrigger ? '- See less' : '+ See more'} </div>
 
                     <Divider/>
 
 
-                    <div style={{fontSize: 18, fontWeight: 700, paddingBottom: 10}}>Type</div>
+                    <div style={{fontSize: 18, fontWeight: 700, paddingBottom: 10}}>Type
+                        {typeCheck.length !== 0 &&
+                        <span style={{color: `#1cb1b8`, float: 'right', fontSize: 11, marginTop: 5, cursor: 'pointer'}}
+                              onClick={() => setTypeCheck([])}>Clear Selected</span>}
+                    </div>
                     {TypeList.map((value, index) => {
                         if (index > 4 && !TypeTrigger) {
                             return null;
                         } else {
                             return <div
                                 style={{width: 250, height: 28}}>
-                                <Checkbox style={{float: 'left'}}> {value.name}</Checkbox>
+                                <Checkbox checked={typeCheck.filter(src => src === value.name) [0]}
+                                          style={{float: 'left'}}
+                                          onChange={(e) => typeChangeChecked(e.target.checked, value)}> {value.name}</Checkbox>
                                 <span style={{float: 'right', paddingRight: 10}}>{value.count}</span></div>
                         }
                     })}
 
-                    <div
-                        onClick={() => setTypeTrigger(!TypeTrigger)}>{TypeTrigger ? '- See less' : '+ See more'} </div>
+                    <div style={{color: '#1cb1b8', cursor: 'pointer'}}
+                         onClick={() => setTypeTrigger(!TypeTrigger)}>{TypeTrigger ? '- See less' : '+ See more'} </div>
+
+                    <Divider/>
+
+                    <div style={{fontSize: 18, fontWeight: 700, paddingBottom: 10}}>Customer Rating
+                    </div>
 
 
                     <Divider/>
+
                     <div style={{fontSize: 18, fontWeight: 700, paddingBottom: 10}}>price
 
                         {!sliderInit && <span style={{
@@ -179,50 +239,59 @@ export default function DogPage() {
                     </div>
                     <Divider/>
 
+
                     <div style={{fontSize: 18, fontWeight: 700, paddingBottom: 10}}>Brand
-                        {!!brandCheck.length && <span style={{
-                            color: `#1cb1b8`,
-                            float: 'right',
-                            fontSize: 11,
+                        {brandCheck.length !== 0 && <span style={{
+                            color: `#1cb1b8`, float: 'right', fontSize: 11,
                             marginTop: 5,
                             cursor: 'pointer'
-                        }} onClick={()=>setBrandCheck([])}>Clear Seleceted</span>}
+                        }} onClick={() => setBrandCheck([])}>Clear Seleceted</span>}
                     </div>
                     {BrandList.map((value, index) => {
                         if (index > 4 && !BrandTrigger) {
                             return null;
                         } else {
                             return <div style={{width: 250, height: 28}}>
-                                <Checkbox style={{float: 'left'}} checked={brandCheck.filter(src => src === value.name)[0]} onChange={(e)=>brandChangeChecked(e.target.checked, value)}> {value.name}</Checkbox>
+                                <Checkbox style={{float: 'left'}}
+                                          checked={brandCheck.filter(src => src === value.name)[0]}
+                                          onChange={(e) => brandChangeChecked(e.target.checked, value)}> {value.name}</Checkbox>
                                 <span style={{float: 'right', paddingRight: 10}}>{value.count}</span></div>
                         }
                     })}
 
-                    <div
-                        onClick={() => setBrandTrigger(!BrandTrigger)}>{BrandTrigger ? '- See less' : '+ See more'} </div>
+                    <div style={{color: '#1cb1b8', cursor: 'pointer'}}
+                         onClick={() => setBrandTrigger(!BrandTrigger)}>{BrandTrigger ? '- See less' : '+ See more'} </div>
 
                     <Divider/>
 
-                    <div style={{fontSize: 18, fontWeight: 700, paddingBottom: 10}}>Flavour</div>
+
+                    <div style={{fontSize: 18, fontWeight: 700, paddingBottom: 10}}>Flavour
+                        {flavourCheck.length !== 0 &&
+                        <span style={{color: `#1cb1b8`, float: 'right', fontSize: 11, marginTop: 5, cursor: 'pointer'}}
+                              onClick={() => setFlavourCheck([])}>Clear Selected</span>}
+                    </div>
                     {FlavourList.map((value, index) => {
                         if (index > 4 && !FlavourTrigger) {
                             return null;
                         } else {
                             return <div style={{width: 250, height: 28}}>
-                                <Checkbox style={{float: 'left'}}
-                                          > {value.name}</Checkbox>
+                                <Checkbox checked={flavourCheck.filter(src => src === value.name)[0]}
+                                          style={{float: 'left'}}
+                                          onChange={(e) => flavourChangeChecked(e.target.checked, value)}
+                                > {value.name}</Checkbox>
                                 <span style={{float: 'right', paddingRight: 10}}>{value.count}</span></div>
                         }
                     })}
 
-                    <div
-                        onClick={() => setFlavourTrigger(!FlavourTrigger)}>{FlavourTrigger ? '- See less' : '+ See more'} </div>
+                    <div style={{color: '#1cb1b8', cursor: 'pointer'}}
+                         onClick={() => setFlavourTrigger(!FlavourTrigger)}>{FlavourTrigger ? '- See less' : '+ See more'} </div>
 
                 </div>
 
 
                 {/*PRODUCT COMTPONENT*/}
                 <div style={{width: 'calc(100% - 260px)', float: 'right', padding: 30}}>
+                    <div>abcd</div>
                     {dataList.map(value => {
                         return <div
                             style={{width: 200, height: 350, margin: 20, float: 'left', textAlign: 'center'}}>

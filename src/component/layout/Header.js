@@ -39,7 +39,7 @@ const Header = (props) => {
     const {activeKey, setActiveKey} = menuStore(state => state);
 
     const [text, setText] = useState('');
-    const [productlist, setProductList] = useState([]);
+    const [ProductList, setProductList] = useState([]);
 
     const [fontTrigger, setFontTrigger] = useState(null);
 
@@ -115,7 +115,7 @@ const Header = (props) => {
                             <SearchInput placeholder={'search for eg.brands litter, flea, shampoo...'} value={text} onChange={changeText} type="text"/>
                             {text.length !== 0 &&
                             <div style={{backgroundColor: 'white', width: 'calc(100% + 6.5px)', color: 'black'}}>
-                                {productlist.map(value => <div>{value}</div>)}
+                                {ProductList.map(value => <div>{value}</div>)}
                             </div>}
                         </SearchBox>
                         <LetterContainer>

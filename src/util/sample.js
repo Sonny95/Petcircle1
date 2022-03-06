@@ -33,29 +33,22 @@ import Discover3 from "../resources/img/dog/DogAddImg/Discover3.png"
 
 
 export const VarietyList = [
-    {name: 'Natural Food', count: 1, key: 0},
-    {name: 'Natural Treats', count: 2, key: 1},
-    {name: 'Biscuits', count: 3, key: 2},
-    {name: 'Bundle Boxes', count: 4, key: 3},
-    {name: 'Cakes and Lollies', count: 5, key: 4},
-    {name: 'Dental Treats', count: 6, key: 5},
-    {name: 'Freeze and Air Dried', count: 7, key: 6},
-    {name: 'Liquid and Paste Treats', count: 8, key: 7},
-    {name: 'Long Lasting Treats', count: 9, key: 8},
-    {name: 'Meal Toppers', count: 10, key: 9},
-    {name: 'Premium', count: 11, key: 10},
-    {name: 'Training Treats', count: 12, key: 11}
+    {name: 'Natural Treats', count: 2, key: 0},
+    {name: 'Biscuits', count: 3, key: 1},
+    {name: 'Cakes and Lollies', count: 5, key: 2},
+    {name: 'Dental Treats', count: 6, key: 3},
+    {name: 'Freeze and Air Dried', count: 7, key: 4},
+    {name: 'Premium', count: 11, key: 5},
+    {name: 'Training Treats', count: 12, key: 6}
 
 ]
 export const TypeList = [
-    {name: 'Bones and Antlers', count: 1, key: 1},
-    {name: 'Bully Sticks', count: 2, key: 2},
-    {name: 'Carob', count: 3, key: 3},
-    {name: 'Jerky', count: 4, key: 4},
-    {name: 'Liver', count: 5, key: 5},
-    {name: 'Rawhide', count: 6, key: 6},
-    {name: 'Straps', count: 7, key: 7},
-    {name: 'Yoghurt', count: 8, key: 8}
+    {name: 'Carob', count: 3, key: 1},
+    {name: 'Jerky', count: 4, key: 2},
+    {name: 'Liver', count: 5, key: 3},
+    {name: 'Rawhide', count: 6, key: 4},
+    {name: 'Straps', count: 7, key: 5},
+    {name: 'Yoghurt', count: 8, key: 6}
 ]
 export const BrandList = [
     {name: 'FuzzYard', count: 1, key: 0},
@@ -65,7 +58,17 @@ export const BrandList = [
     {name: 'Ziwi', count: 5, key: 4},
     {name: 'Natures Cuts', count: 6, key: 5},
     {name: 'Big Dog', count: 7, key: 6},
-    {name: 'BlackDog', count: 8, key: 7}
+    {name: 'BlackDog', count: 8, key: 7},
+    {name: 'Bell And Bone', count: 9, key: 8},
+    {name: 'Huds And Toke', count: 10, key: 9},
+    {name: 'Pooch Treats', count: 11, key: 10},
+    {name: 'Absolute Holistic', count: 12, key: 11},
+    {name: 'K9 Natural', count: 13, key: 12},
+    {name: 'Love Em', count: 14, key: 13},
+    {name: 'Vitapet', count: 15, key: 14},
+    {name: 'Tidbits', count: 16, key: 15},
+    {name: 'Schmackos', count: 17, key: 16},
+    {name: 'Zeez', count: 18, key: 17},
 ]
 export const FlavourList = [
     {name: 'Chicken Flavour', count: 1, key: 0},
@@ -75,9 +78,10 @@ export const FlavourList = [
     {name: 'Liver Flavour', count: 5, key: 4},
     {name: 'Peanut Butter Flavour', count: 6, key: 5},
     {name: 'Fish Flavour', count: 7, key: 6},
+    {name: 'Venison Flavour', count: 8, key: 7},
 ]
 
-export const productList = [
+export const ProductList = [
     {
         source: DG1,
         title: 'BELL AND BONE',
@@ -90,8 +94,8 @@ export const productList = [
         state: 'none',
         variety : 'Freeze and Air Dried',
         type : 'Carob',
-        brand : 'Big Dog',
-        flavour : 'Bacon Flavour'
+        flavour : 'Bacon Flavour',
+        brand : 'Bell And Bone'
     },
     {
         source: DG2,
@@ -102,7 +106,11 @@ export const productList = [
         mount: '150g',
         mount2: '300g',
         price: 8.99,
-        state: 'none'
+        state: 'none',
+        variety : 'Training Treats',
+        type : 'Jerky',
+        flavour : 'Chicken Flavour',
+        brand : 'Huds And Toke'
     },
     {
         source: DG3,
@@ -113,7 +121,11 @@ export const productList = [
         mount: '160g',
         mount2: '320g',
         price: 15.29,
-        state: 'none'
+        state: 'none',
+        variety : 'Freeze and Air Dried',
+        type : 'Jerky',
+        flavour : 'Kangaroo Flavour',
+        brand : 'Big Dog'
     },
     {
         source: DG4,
@@ -123,7 +135,11 @@ export const productList = [
         review: 6,
         mount: '1kg',
         price: 38.00,
-        state: 'normal'
+        state: 'normal',
+        variety : 'Biscuits',
+        type : 'Jerky',
+        flavour : 'Chicken Flavour',
+        brand : 'Blackdog'
     },
     {
         source: DG5,
@@ -134,7 +150,11 @@ export const productList = [
         mount: '100g',
         mount2: '200g',
         price: 6.26,
-        state: 'none'
+        state: 'none',
+        variety : 'Natural Treats',
+        type : 'straps',
+        flavour : 'Beef Flavour',
+        brand : 'Natures Cuts'
     },
     {
         source: DG6,
@@ -144,18 +164,26 @@ export const productList = [
         review: 10,
         mount: '200g',
         price: 8.96,
-        state: 'none'
+        state: 'none',
+        variety : 'Natural Treats',
+        type : 'straps',
+        flavour : 'Beef Flavour',
+        brand : 'Natures Cuts'
     },
     {
         source: DG7,
-        title: 'Kangaroo Chews, 150G',
-        subTitle: '1',
+        title: 'NATURES CUTS',
+        subTitle: 'Kangaroo Chews, 150G',
         star: 5,
         review: 4,
         mount: '150g',
         mount2: '300g',
         price: 8.87,
-        state: 'none'
+        state: 'none',
+        variety : 'Natural Treats',
+        type : 'straps',
+        flavour : 'Kangaroo Flavour',
+        brand : 'Natures Cuts'
     },
     {
         source: DG8,
@@ -166,7 +194,11 @@ export const productList = [
         mount: '200g',
         mount2: '400g',
         price: 5.94,
-        state: 'none'
+        state: 'none',
+        variety : 'Natural Treats',
+        type : 'Liver',
+        flavour : 'Beef Flavour',
+        brand : 'pooch Treats'
     },
     {
         source: DG9,
@@ -177,7 +209,11 @@ export const productList = [
         mount: '300g',
         mount2: '600g',
         price: 17.96,
-        state: 'none'
+        state: 'none',
+        variety : 'Natural Treats',
+        type : 'straps',
+        flavour : 'Kangaroo Flavour',
+        Brand : 'Natures Cuts'
     },
     {
         source: DG10,
@@ -188,7 +224,11 @@ export const productList = [
         mount: '250g',
         mount2: '500g',
         price: 17.06,
-        state: 'none'
+        state: 'none',
+        variety : 'Natural Treats',
+        type : 'Liver',
+        flavour : 'Liver Flavour',
+        brand : 'Natures cuts'
     },
     {
         source: DG11,
@@ -199,7 +239,11 @@ export const productList = [
         mount: '4packs',
         mount2: '8packs',
         price: 6.99,
-        state: 'none'
+        state: 'none',
+        variety : ['Biscuits','Cakes and Lollies'],
+        type : 'Liver',
+        flavour : 'Peanut Butter Flavour',
+        Brand : 'pooch Treats'
     },
     {
         source: DG12,
@@ -210,7 +254,11 @@ export const productList = [
         mount: '85g',
         mount2: '500g',
         price: 16.14,
-        state: 'none'
+        state: 'none',
+        variety : 'Natural Treats',
+        type : 'Jerky',
+        flavour : 'Venison Flavour',
+        brand : 'Ziwi'
     },
     {
         source: Dg13,
@@ -221,7 +269,11 @@ export const productList = [
         mount: '100g',
         mount2: '200g',
         price: 11.04,
-        state: 'none'
+        state: 'none',
+        variety : 'Freeze and Air Dried',
+        type : 'Jerky',
+        flavour : 'Lamb Flavour',
+        Brand : 'Absolute Holistic'
     },
     {
         source: Dg14,
@@ -232,7 +284,11 @@ export const productList = [
         mount: '100g',
         mount2: '200g',
         price: 10.35,
-        state: 'none'
+        state: 'none',
+        variety : 'Freeze and Air Dried',
+        type : 'Jerky',
+        flavour : ['Lamb Flavour','Fish Flavour'],
+        brand : 'Absolute Holistic'
     },
     {
         source: Dg15,
@@ -243,7 +299,11 @@ export const productList = [
         mount: '100g',
         mount2: '200g',
         price: 10.35,
-        state: 'none'
+        state: 'none',
+        variety : 'Freeze and Air Dried',
+        type : 'Jerky',
+        flavour : ['Beef Flavour','Venison Flavour'],
+        brand : 'Absolute Holistic'
     },
     {
         source: Dg16,
@@ -254,7 +314,11 @@ export const productList = [
         mount: '1Kg',
         mount2: '2kg',
         price: 6.46,
-        state: 'none'
+        state: 'none',
+        variety : 'Biscuits',
+        type : 'Jerky',
+        flavour : ['Beef Flavour','Venison Flavour','Lamb Flavour','Fish Flavour'],
+        brand : 'Blackdog'
     },
     {
         source: Dg17,
@@ -265,7 +329,11 @@ export const productList = [
         mount: '200g',
         mount2: '400g',
         price: 6.65,
-        state: 'none'
+        state: 'none',
+        variety : 'Natural Treats',
+        type : 'Jerky',
+        flavour : 'Kangaroo Flavour',
+        brand : 'Blackdog'
     },
     {
         source: Dg18,
@@ -276,7 +344,11 @@ export const productList = [
         mount: '500g',
         mount2: '1kg',
         price: 9.69,
-        state: 'none'
+        state: 'none',
+        variety : 'Training Treats',
+        type : 'Jerky',
+        flavour : 'Kangaroo Flavour',
+        brand : 'K9 Natural'
     },
     {
         source: Dg19,
@@ -287,7 +359,11 @@ export const productList = [
         mount: '200g',
         mount2: '400g',
         price: 6.00,
-        state: 'none'
+        state: 'none',
+        variety : ['Training Treats','Natural Treats'],
+        type : ['Rawhide','Liver'],
+        flavour : 'Liver Flavour',
+        brand : 'Lve Em'
     },
     {
         source: Dg20,
@@ -298,7 +374,11 @@ export const productList = [
         mount: '100g',
         mount2: '200g',
         price: 3.58,
-        state: 'none'
+        state: 'none',
+        variety : 'Natural Treats',
+        type : 'Liver',
+        flavour : 'Liver Flavour',
+        brand : 'Natures cuts'
     },
     {
         source: Dg21,
@@ -309,7 +389,11 @@ export const productList = [
         mount: '100g',
         mount2: '200g',
         price: 4.66,
-        state: 'none'
+        state: 'none',
+        variety : 'Training Treats',
+        type : 'Jerky',
+        flavour : 'Chicken Flavour',
+        brand : 'Optimum'
     },
     {
         source: Dg22,
@@ -320,7 +404,11 @@ export const productList = [
         mount: '140g',
         mount2: '280g',
         price: 3.80,
-        state: 'none'
+        state: 'none',
+        variety : 'Biscuits',
+        type : 'Jerky',
+        flavour : 'Beef Flavour',
+        Brand : 'Schmackos'
     },
     {
         source: Dg23,
@@ -331,7 +419,11 @@ export const productList = [
         mount: '250g',
         mount2: '500g',
         price: 8.29,
-        state: 'none'
+        state: 'none',
+        variety : 'Natural Treats',
+        type : 'Yoghurt',
+        flavour : ['Kangaroo Flavour','Cheese Flavour'],
+        brand : 'Tidbits'
     },
     {
         source: Dg24,
@@ -342,7 +434,11 @@ export const productList = [
         mount: '100g',
         mount2: '200g',
         price: 6.24,
-        state: 'none'
+        state: 'none',
+        variety : 'Training Treats',
+        type : 'Jerky',
+        flavour : 'Peanut Butter Flavour',
+        brand : 'Vitapet'
     },
     {
         source: Dg25,
@@ -353,7 +449,11 @@ export const productList = [
         mount: '70g',
         mount2: '140g',
         price: 5.50,
-        state: 'none'
+        state: 'none',
+        variety : 'Dental Treats',
+        type : 'Straps',
+        flavour : 'Kangaroo Flavour',
+        Brand : 'Vitapet'
     },
     {
         source: Dg26,
@@ -364,7 +464,11 @@ export const productList = [
         mount: '600g',
         mount2: '1.2kg',
         price: 17.00,
-        state: 'none'
+        state: 'none',
+        variety : 'Natural Treats',
+        type : 'Jerky',
+        flavour : 'Beef Flavour',
+        brand : 'Zeez'
     },
     {
         source: Dg27,
@@ -375,7 +479,11 @@ export const productList = [
         mount: '85g',
         mount2: '500g',
         price: 9.34,
-        state: 'none'
+        state: 'none',
+        variety : 'Training Treats',
+        type : 'Strap',
+        flavour : 'Kangaroo Flavour',
+        brand : 'Ziwi'
     },
 ]
 
