@@ -126,6 +126,7 @@ export const ProductList = [
         type : 'Jerky',
         flavour : 'Kangaroo Flavour',
         brand : 'Big Dog'
+
     },
     {
         source: DG4,
@@ -140,6 +141,7 @@ export const ProductList = [
         type : 'Jerky',
         flavour : 'Chicken Flavour',
         brand : 'Blackdog'
+
     },
     {
         source: DG5,

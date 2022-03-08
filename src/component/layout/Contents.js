@@ -110,12 +110,11 @@ const Contents = () => {
                         <DogButtonLetter>{'Shop Cat >'}</DogButtonLetter>
                     </BigCatButton>
 
-
                     <SmallPetContainer>
 
                         {petList.map((value, index) => {
                             return <div style={{height: 65, width: 400, marginBottom: 2, backgroundColor: '#f5f6f8',
-                               borderRadius : index === 0 ? '8px 8px 0px 0px' :  index === petList.length -1 ? ' 0px 0px 8px 8px' : ''
+                                   borderRadius : index === 0 ? '8px 8px 0px 0px' :  index === petList.length -1 ? ' 0px 0px 8px 8px' : ''
                             }}>
                                 <SmallPetImg src={value.src} />
                                 <SubText>{value.name + '>'}</SubText>

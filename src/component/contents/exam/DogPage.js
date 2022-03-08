@@ -4,7 +4,18 @@ import DogBanner from "../../../resources/img/dog/DogPageBanner.png"
 import Checkbox from "antd/es/checkbox/Checkbox";
 import {useEffect, useState} from "react";
 import {BrandList, FlavourList, ProductList, TypeList, VarietyList} from "../../../util/sample";
-import {DogDogContainer} from "../../../resources/styledComponent/dog-dogPage";
+import {
+    DogDogBanner,
+    DogDogBigContainer,
+    DogDogCheckBoxSelected,
+    DogDogContainer,
+    DogDogLeftContainer,
+    DogDogMenuNameBox, DogDogRightContainer, DogDogRightLetter,
+    DogDogVarietyBox,
+    DogDogVarietyContainer,
+    DogDogVarietyCountBox,
+    VerietyTrigger
+} from "../../../resources/styledComponent/dog-dogPage";
 import {CloseCircleOutlined} from '@ant-design/icons';
 
 const {Search} = Input;
@@ -143,13 +154,19 @@ export default function DogPage() {
         // const reData = ProductList.filter(value => firstPrice <= value.price && lastPrice >= value.price)
     }
 
+    const getProductLength = (name) =>{
+        const reulstData = ProductList.filter(e => e.variety === name);
+        return reulstData.length
+    }
+
+
     return (
         <DogDogContainer>
-            <img width={'100%'} src={DogBanner}/>
-            <div style={{margin: '0px auto', width: 1350}}>
+            <DogDogBanner src={DogBanner}/>
+            <DogDogBigContainer>
 
 
-                <div style={{width: 260, float: 'left', padding: 10}}>
+                <DogDogLeftContainer >
 
                     {varietyCheck.map(value => <Tag color="cyan">{value} <CloseCircleOutlined
                         onClick={() => varChangeChecked(false, {name: value})}/>
@@ -166,15 +183,10 @@ export default function DogPage() {
                         <CloseCircleOutlined onClick={() => flavourChangeChecked(false, {name: value})}/></Tag>)}
 
 
-                    <div style={{fontSize: 18, fontWeight: 700, paddingBottom: 10}}>Variety
-                        {varietyCheck.length !== 0 && <span style={{
-                            color: `#1cb1b8`,
-                            float: 'right',
-                            fontSize: 11,
-                            marginTop: 5,
-                            cursor: 'pointer'
-                        }} onClick={() => setVarietyCheck([])}>Clear Seleceted</span>}
-                    </div>
+                    <DogDogMenuNameBox>Variety
+                        {varietyCheck.length !== 0 && <DogDogCheckBoxSelected
+                            onClick={() => setVarietyCheck([])}>Clear Seleceted</DogDogCheckBoxSelected>}
+                    </DogDogMenuNameBox>
 
                     {VarietyList.map((value, index) => {
                         if (index > 4 && !varietyTrigger) {
@@ -184,21 +196,27 @@ export default function DogPage() {
                                 <Checkbox checked={varietyCheck.filter(src => src === value.name)[0]}
                                           style={{float: 'left'}}
                                           onChange={(e) => varChangeChecked(e.target.checked, value)}> {value.name}</Checkbox>
-                                <span style={{float: 'right', paddingRight: 10}}>{value.count}</span></div>
+
+
+                                <DogDogVarietyCountBox>{getProductLength(value.name)}</DogDogVarietyCountBox>
+
+                                </div>
+
                         }
+
                     })}
 
-                    <div style={{color: '#1cb1b8', cursor: 'pointer'}}
-                         onClick={() => setVarietyTrigger(!varietyTrigger)}>{varietyTrigger ? '- See less' : '+ See more'} </div>
+                    <VerietyTrigger
+                         onClick={() => setVarietyTrigger(!varietyTrigger)}>{varietyTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
 
                     <Divider/>
 
 
-                    <div style={{fontSize: 18, fontWeight: 700, paddingBottom: 10}}>Type
+                    <DogDogMenuNameBox>Type
                         {typeCheck.length !== 0 &&
-                        <span style={{color: `#1cb1b8`, float: 'right', fontSize: 11, marginTop: 5, cursor: 'pointer'}}
-                              onClick={() => setTypeCheck([])}>Clear Selected</span>}
-                    </div>
+                        <DogDogCheckBoxSelected
+                              onClick={() => setTypeCheck([])}>Clear Selected</DogDogCheckBoxSelected>}
+                    </DogDogMenuNameBox>
                     {TypeList.map((value, index) => {
                         if (index > 4 && !TypeTrigger) {
                             return null;
@@ -208,12 +226,12 @@ export default function DogPage() {
                                 <Checkbox checked={typeCheck.filter(src => src === value.name) [0]}
                                           style={{float: 'left'}}
                                           onChange={(e) => typeChangeChecked(e.target.checked, value)}> {value.name}</Checkbox>
-                                <span style={{float: 'right', paddingRight: 10}}>{value.count}</span></div>
+                                <DogDogVarietyCountBox>{value.count}</DogDogVarietyCountBox></div>
                         }
                     })}
 
-                    <div style={{color: '#1cb1b8', cursor: 'pointer'}}
-                         onClick={() => setTypeTrigger(!TypeTrigger)}>{TypeTrigger ? '- See less' : '+ See more'} </div>
+                    <VerietyTrigger
+                         onClick={() => setTypeTrigger(!TypeTrigger)}>{TypeTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
 
                     <Divider/>
 
@@ -223,16 +241,10 @@ export default function DogPage() {
 
                     <Divider/>
 
-                    <div style={{fontSize: 18, fontWeight: 700, paddingBottom: 10}}>price
+                    <DogDogMenuNameBox>price
 
-                        {!sliderInit && <span style={{
-                            color: `#1cb1b8`,
-                            float: 'right',
-                            fontSize: 11,
-                            marginTop: 5,
-                            cursor: 'pointer'
-                        }} onClick={slideInitPro}>Clear Seleceted</span>}
-                    </div>
+                        {!sliderInit && <DogDogCheckBoxSelected onClick={slideInitPro}>Clear Seleceted</DogDogCheckBoxSelected>}
+                    </DogDogMenuNameBox>
                     <Slider range value={price} max={maxPrice} onChange={(e) => setPrice(e)}
                             onAfterChange={searchRangePro}/>
                     <div style={{paddingTop: 20}}>${price[0]} - ${price[1]} <span style={{float: 'right'}}>31</span>
@@ -240,13 +252,9 @@ export default function DogPage() {
                     <Divider/>
 
 
-                    <div style={{fontSize: 18, fontWeight: 700, paddingBottom: 10}}>Brand
-                        {brandCheck.length !== 0 && <span style={{
-                            color: `#1cb1b8`, float: 'right', fontSize: 11,
-                            marginTop: 5,
-                            cursor: 'pointer'
-                        }} onClick={() => setBrandCheck([])}>Clear Seleceted</span>}
-                    </div>
+                    <DogDogMenuNameBox>Brand
+                        {brandCheck.length !== 0 && <DogDogCheckBoxSelected onClick={() => setBrandCheck([])}>Clear Seleceted</DogDogCheckBoxSelected>}
+                    </DogDogMenuNameBox>
                     {BrandList.map((value, index) => {
                         if (index > 4 && !BrandTrigger) {
                             return null;
@@ -255,21 +263,21 @@ export default function DogPage() {
                                 <Checkbox style={{float: 'left'}}
                                           checked={brandCheck.filter(src => src === value.name)[0]}
                                           onChange={(e) => brandChangeChecked(e.target.checked, value)}> {value.name}</Checkbox>
-                                <span style={{float: 'right', paddingRight: 10}}>{value.count}</span></div>
+                                <DogDogVarietyCountBox>{value.count}</DogDogVarietyCountBox></div>
                         }
                     })}
 
-                    <div style={{color: '#1cb1b8', cursor: 'pointer'}}
-                         onClick={() => setBrandTrigger(!BrandTrigger)}>{BrandTrigger ? '- See less' : '+ See more'} </div>
+                    <VerietyTrigger
+                         onClick={() => setBrandTrigger(!BrandTrigger)}>{BrandTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
 
                     <Divider/>
 
 
-                    <div style={{fontSize: 18, fontWeight: 700, paddingBottom: 10}}>Flavour
+                    <DogDogMenuNameBox>Flavour
                         {flavourCheck.length !== 0 &&
-                        <span style={{color: `#1cb1b8`, float: 'right', fontSize: 11, marginTop: 5, cursor: 'pointer'}}
-                              onClick={() => setFlavourCheck([])}>Clear Selected</span>}
-                    </div>
+                        <DogDogCheckBoxSelected
+                              onClick={() => setFlavourCheck([])}>Clear Selected</DogDogCheckBoxSelected>}
+                    </DogDogMenuNameBox>
                     {FlavourList.map((value, index) => {
                         if (index > 4 && !FlavourTrigger) {
                             return null;
@@ -279,19 +287,27 @@ export default function DogPage() {
                                           style={{float: 'left'}}
                                           onChange={(e) => flavourChangeChecked(e.target.checked, value)}
                                 > {value.name}</Checkbox>
-                                <span style={{float: 'right', paddingRight: 10}}>{value.count}</span></div>
+                                <DogDogVarietyCountBox>{value.count}</DogDogVarietyCountBox></div>
                         }
                     })}
 
-                    <div style={{color: '#1cb1b8', cursor: 'pointer'}}
-                         onClick={() => setFlavourTrigger(!FlavourTrigger)}>{FlavourTrigger ? '- See less' : '+ See more'} </div>
+                    <VerietyTrigger
+                         onClick={() => setFlavourTrigger(!FlavourTrigger)}>{FlavourTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
 
-                </div>
+                </DogDogLeftContainer>
 
 
                 {/*PRODUCT COMTPONENT*/}
-                <div style={{width: 'calc(100% - 260px)', float: 'right', padding: 30}}>
-                    <div>abcd</div>
+                <DogDogRightContainer>
+                    <div style={{width:'100%',height:80}}>
+                        <DogDogRightLetter>Dog Training Treats</DogDogRightLetter>
+                        <span styled={{float: 'left', paddigTop: 30}}> 1 -  out of 167 products</span>
+
+
+
+                    </div>
+
+
                     {dataList.map(value => {
                         return <div
                             style={{width: 200, height: 350, margin: 20, float: 'left', textAlign: 'center'}}>
@@ -318,8 +334,8 @@ export default function DogPage() {
 
                         </div>
                     })}
-                </div>
-            </div>
+                </DogDogRightContainer>
+            </DogDogBigContainer>
 
 
         </DogDogContainer>
