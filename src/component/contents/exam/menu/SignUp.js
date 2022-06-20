@@ -1,5 +1,5 @@
-import "../../App"
-import SignUpDogCat from "../../resources/Photo/cats___dogs.jpeg"
+import "../../../../App"
+import SignUpDogCat from "../../../../resources/Photo/cats___dogs.jpeg"
 import {
     BottomContainer,
     FirstnameContainer,
@@ -7,7 +7,7 @@ import {
     SignUpBanner,
     SignUpBodyContainer, SignUpBox, SignUpButton, SignUpContainer, SignUpInput,
     SignUpInputContainer, SignUpQuestion
-} from "../../resources/styledComponent/signup";
+} from "../../../../resources/styledComponent/signup";
 
 const SignUp = () =>
     <>

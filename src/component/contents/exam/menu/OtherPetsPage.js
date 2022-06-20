@@ -1,29 +1,29 @@
-import App from "../../App";
+import App from "../../../../App";
 import {
     CapitalMenu, DogButtonBox,
     DogMenuBox, DogSaleImg, DpLetter,
     DpMenuContainer, DpSmallButton,
     MenuLane,
     ShopAllLetter
-} from "../../resources/styledComponent/dogPage";
+} from "../../../../resources/styledComponent/dogPage";
 import {
     OtherPetsBanner,
     OtherPetsBox,
     OtherPetsContainer, PetsBannerBox, petsBannerContainer,
     PetsMenuBox,
     PetsMenuLane
-} from "../../resources/styledComponent/otherPets";
-import O1 from "../../resources/Photo/O1.png"
-import O2 from "../../resources/Photo/O2.png"
-import O3 from "../../resources/Photo/O3.png"
-import O4 from "../../resources/Photo/O4.png"
-import O5 from "../../resources/Photo/O5.png"
-import O6 from "../../resources/Photo/O6.png"
-import O7 from "../../resources/Photo/O7.png"
-import O8 from "../../resources/Photo/O8.png"
+} from "../../../../resources/styledComponent/otherPets";
+import O1 from "../../../../resources/Photo/O1.png"
+import O2 from "../../../../resources/Photo/O2.png"
+import O3 from "../../../../resources/Photo/O3.png"
+import O4 from "../../../../resources/Photo/O4.png"
+import O5 from "../../../../resources/Photo/O5.png"
+import O6 from "../../../../resources/Photo/O6.png"
+import O7 from "../../../../resources/Photo/O7.png"
+import O8 from "../../../../resources/Photo/O8.png"
 
 import {useNavigate} from "react-router-dom";
-import {menuStore} from "../../util/zustandStore";
+import {menuStore} from "../../../../util/zustandStore";
 
 
 const OtherPetsPage = () => {

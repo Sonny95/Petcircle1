@@ -31,6 +31,30 @@ export const BetterPrice = styled.div`
   color: black;
   font-size: 25px;
   `
+export const BetterAd1 = styled.img`
+height: 150px; 
+width: 400px; 
+margin-top: 15px; 
+border-radius: 10px;
+float: left
+`
+
+export const BetterAd2 = styled.img`
+  height: 150px;
+  width: 400px;
+  margin-top: 15px;
+  margin-left: 25px;
+  borderR-rdius: 10px;
+  float: left;
+  `
+export const BetterAd3 = styled.img`
+  height: 150px; 
+  width: 400px;
+  margin-top: 15p;
+  border-radius: 10px;
+  float: right
+`
+
 export const ProductLetter = styled.div`
   color: black;
   font-size: 25px;
@@ -185,7 +209,7 @@ export const LitterImg = styled.img`
 export const ToysImg = styled.img`
   height: 80px;
   width: 100px;
-  marginTop: 20px;
+  margin-top: 20px;
   margin-left: 30px;
 `
 export const AdContainer = styled.div`

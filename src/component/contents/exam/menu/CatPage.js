@@ -1,4 +1,4 @@
-import App from "../../App";
+import App from "../../../../App";
 import {
     CapitalMenu,
     DogButtonBox,
@@ -6,15 +6,15 @@ import {
     DpLetter,
     DpMenuContainer, DpSmallButton,
     MenuLane, ShopAllLetter
-} from "../../resources/styledComponent/dogPage";
-import CatSale from "../../resources/Photo/shop-cat-sale.png";
-import CS1 from "../../resources/Photo/shop-kitten.png"
-import CS2 from "../../resources/Photo/shop-indoor.png"
-import CS3 from "../../resources/Photo/shop-outdoor.png"
-import CatAll from "../../resources/Photo/cat-shop-all.png"
+} from "../../../../resources/styledComponent/dogPage";
+import CatSale from "../../../../resources/Photo/shop-cat-sale.png";
+import CS1 from "../../../../resources/Photo/shop-kitten.png"
+import CS2 from "../../../../resources/Photo/shop-indoor.png"
+import CS3 from "../../../../resources/Photo/shop-outdoor.png"
+import CatAll from "../../../../resources/Photo/cat-shop-all.png"
 
 import {useNavigate} from "react-router-dom";
-import {menuStore} from "../../util/zustandStore";
+import {menuStore} from "../../../../util/zustandStore";
 
 
 

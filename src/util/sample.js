@@ -40,7 +40,6 @@ export const VarietyList = [
     {name: 'Freeze and Air Dried', count: 7, key: 4},
     {name: 'Premium', count: 11, key: 5},
     {name: 'Training Treats', count: 12, key: 6}
-
 ]
 export const TypeList = [
     {name: 'Carob', count: 3, key: 1},
@@ -242,7 +241,7 @@ export const ProductList = [
         mount2: '8packs',
         price: 6.99,
         state: 'none',
-        variety : ['Biscuits','Cakes and Lollies'],
+        variety : 'Cakes and Lollies',
         type : 'Liver',
         flavour : 'Peanut Butter Flavour',
         Brand : 'pooch Treats'
@@ -304,7 +303,7 @@ export const ProductList = [
         state: 'none',
         variety : 'Freeze and Air Dried',
         type : 'Jerky',
-        flavour : ['Beef Flavour','Venison Flavour'],
+        flavour : 'Beef Flavour',
         brand : 'Absolute Holistic'
     },
     {
@@ -319,7 +318,7 @@ export const ProductList = [
         state: 'none',
         variety : 'Biscuits',
         type : 'Jerky',
-        flavour : ['Beef Flavour','Venison Flavour','Lamb Flavour','Fish Flavour'],
+        flavour : 'Fish Flavour',
         brand : 'Blackdog'
     },
     {
@@ -362,8 +361,8 @@ export const ProductList = [
         mount2: '400g',
         price: 6.00,
         state: 'none',
-        variety : ['Training Treats','Natural Treats'],
-        type : ['Rawhide','Liver'],
+        variety : 'Training Treats',
+        type : 'Rawhide',
         flavour : 'Liver Flavour',
         brand : 'Lve Em'
     },

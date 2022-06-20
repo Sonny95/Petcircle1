@@ -26,23 +26,70 @@ import CP25 from "../../src/resources/img/cat/Ziwi3.png"
 import CP26 from "../../src/resources/img/cat/RoyalCanin3.png"
 
 
+
+
+export const CatVarietyList = [
+    {name: 'Natural Food', count: 1, key: 0},
+    {name: 'Freeze and Air Dried', count: 2, key: 1},
+    {name: 'Premium', count: 3, key: 2}
+]
+
+export const CatFeatureList = [
+    {name: 'Australian Made', count: 1, key: 0},
+    {name: 'Grain Free', count: 2, key: 1},
+    {name: 'Human Grade', count: 3, key: 2},
+    {name: 'Hypoallergenic', count: 4, key: 3},
+    {name: 'Limited Ingredients', count: 5, key: 4},
+    {name: 'Natural', count: 6, key: 7},
+    {name: 'Superfood', count: 7, key: 8},
+//Type
+]
+
+export const ProteinList = [
+    {name: 'Chicken', count: 1, key: 0},
+    {name: 'Beef', count: 2, key: 1},
+    {name: 'Kangaroo', count: 3, key: 2},
+    {name: 'Turkey', count: 4, key: 3},
+    {name: 'Vension', count: 5, key: 4},
+    {name: 'Salmon', count: 6, key: 5},
+    {name: 'Fish', count: 7, key: 6},
+    {name: 'Lamb', count: 8, key: 7},
+//Flavour
+]
+
+
+export const CatBrandList = [
+    {name: 'Advance', count: 1, key: 0},
+    {name: 'Applaws', count: 2, key: 1},
+    {name: 'Black Hawk', count: 3, key: 2},
+    {name: 'Hills Science Diet', count: 4, key: 3},
+    {name: 'Pro Plan', count: 5, key: 4},
+    {name: 'Purina One', count: 6, key: 5},
+    {name: 'Royal Canin', count: 7, key: 6},
+    {name: 'Vetalogica', count: 8, key: 7},
+    {name: 'Ziwi', count: 9, key: 8},
+]
+
+
 export const CatProductList = [
     {
+        Product:1,
         source: CP1,
         title: 'ADVANCE',
         subTitle: 'Adult Dry Cat Food Chicken With Rice, 20KG',
         star: 5,
-        review: 79,
+        review: 83,
         mount: '3kg',
-        mount2: '6kg',
-        price: 31.99,
+        mount2: '12kg',
+        price: 139.65,
         state: 'none',
         variety : 'Premium',
-        brand : 'Advace',
+        brand : 'Advance',
         Feature : 'Australian Made',
         ProteinSource : 'Chicken'
     },
     {
+        Product:2,
         source: CP2,
         title: 'BLACK HWAK',
         subTitle: 'Dry Cat Food Adult Chicken And Rice, 15KG',
@@ -58,6 +105,7 @@ export const CatProductList = [
         ProteinSource : 'Chicken'
     },
     {
+        Product:3,
         source: CP3,
         title: 'FELINE NATURAL',
         subTitle: 'Beef And Hoki Freeze Dried Cat Food, 320G',
@@ -72,6 +120,7 @@ export const CatProductList = [
         ProteinSource : 'Beef'
     },
     {
+        Product:4,
         source: CP4,
         title: 'HEALTHY EVERYDAY PETS',
         subTitle: 'Dry Cat Food Adult Poultry, 7KG',
@@ -87,6 +136,7 @@ export const CatProductList = [
         ProteinSource : 'Chicken'
     },
     {
+        Product:5,
         source: CP5,
         title: 'HILLS SCIENCE DIET',
         subTitle: 'Senior 7 Plus Hairball Control Dry Cat Food, 4KG',
@@ -102,6 +152,7 @@ export const CatProductList = [
         ProteinSource : 'Chicken'
     },
     {
+        Product:6,
         source: CP6,
         title: 'IVORY COAT',
         subTitle: 'Dry Cat Food Chicken And Kangaroo, 6KG',
@@ -116,6 +167,7 @@ export const CatProductList = [
         ProteinSource : 'Kangaroo'
     },
     {
+        Product:7,
         source: CP7,
         title: 'Meals For Meows',
         subTitle: 'Dry Cat Food Adult Kangaroo And Turkey, 20KG',
@@ -127,10 +179,11 @@ export const CatProductList = [
         state: 'none',
         variety : 'Natural Food',
         brand : 'Black Hwak',
-        Feature : 'Australian Made',
+        Feature : 'Superfood',
         ProteinSource : 'Kangaroo'
     },
     {
+        Product:8,
         source: CP8,
         title: 'OPEN FARM',
         subTitle: 'Homestead Turkey And Chicken Cat Dry Food, 3.6KG',
@@ -146,6 +199,7 @@ export const CatProductList = [
         ProteinSource : ['Chicken','Turkey'],
     },
     {
+        Product:9,
         source: CP9,
         title: 'ORIJEN',
         subTitle: 'Biologically Appropriate Cat And Kitten Dry Cat Food, 5.45KG',
@@ -157,10 +211,11 @@ export const CatProductList = [
         state: 'none',
         variety : 'Premium',
         brand : 'Orijen',
-        Feature : 'Human Grade',
+        Feature : 'Natural',
         ProteinSource : 'Chicken'
     },
     {
+        Product:10,
         source: CP10,
         title: 'PRO PLAN',
         subTitle: 'Adult Chicken Dry Cat Food, 7KG',
@@ -176,6 +231,7 @@ export const CatProductList = [
         ProteinSource : 'Chicken'
     },
     {
+        Product:11,
         source: CP11,
         title: 'ROYAL CANIN',
         subTitle: 'Indoor Adult Dry Cat Food, 10KG',
@@ -191,6 +247,7 @@ export const CatProductList = [
         ProteinSource : 'Chicken'
     },
     {
+        Product:12,
         source: CP12,
         title: 'TASTE OF THE WILD',
         subTitle: 'Rocky Mountain Venison Salmon, 6.6KG',
@@ -206,6 +263,7 @@ export const CatProductList = [
         ProteinSource : 'Venison'
     },
     {
+        Product:13,
         source: CP13,
         title: 'VETALOGICA',
         subTitle: 'Biologically Appropriate Adult Hunter Valley Harvest Dry Cat Food, 3KG',
@@ -221,6 +279,7 @@ export const CatProductList = [
         ProteinSource : 'Chicken'
     },
     {
+        Product:14,
         source: CP14,
         title: 'WELLNESS',
         subTitle: 'Core Grain Free Indoor Chicken Dry Cat Food, 4.99KG',
@@ -236,6 +295,7 @@ export const CatProductList = [
         ProteinSource : 'Chicken'
     },
     {
+        Product:15,
         source: CP15,
         title: 'WHISKAS',
         subTitle: 'Adult 1 Plus Year Beef And Lamb Dry Cat Food, 12KG',
@@ -250,6 +310,7 @@ export const CatProductList = [
         ProteinSource : 'Beef'
     },
     {
+        Product:16,
         source: CP16,
         title: 'ZIWI',
         subTitle: 'Peak Air Dried Chicken Cat Food, 1KG',
@@ -265,6 +326,7 @@ export const CatProductList = [
         ProteinSource : 'Chicken'
     },
     {
+        Product:17,
         source: CP17,
         title: 'ADVANCE',
         subTitle: 'Multi Cat Dry Cat Food Salmon And Chicken With Rice, 20KG',
@@ -280,6 +342,7 @@ export const CatProductList = [
         ProteinSource : ['Beef','Salmon'],
     },
     {
+        Product:18,
         source: CP18,
         title: 'HEALTHY EVERYDAY PETS',
         subTitle: 'Dry Cat Food Adult Seafood, 7KG',
@@ -295,6 +358,7 @@ export const CatProductList = [
         ProteinSource : 'Fish',
     },
     {
+        Product:19,
         source: CP19,
         title: 'HILLS SCIENCE DIET',
         subTitle: 'Kitten Dry Cat Food, 4KG',
@@ -310,6 +374,7 @@ export const CatProductList = [
         ProteinSource : 'Chicken',
     },
     {
+        Product:20,
         source: CP20,
         title: 'MEALS FOR MEOWS',
         subTitle: 'Grain Free Dry Cat Food Adult Mackerel And Salmon, 20KG',
@@ -325,6 +390,7 @@ export const CatProductList = [
         ProteinSource : 'Salmon',
     },
     {
+        Product:21,
         source: CP21,
         title: 'ORIJEN',
         subTitle: 'Biologically Appropriate Six Fish Dry Cat Food, 5.45KG',
@@ -340,6 +406,7 @@ export const CatProductList = [
         ProteinSource : 'Fish',
     },
     {
+        Product:22,
         source: CP22,
         title: 'ROYAL CANIN',
         subTitle: 'Persian Adult Dry Cat Food, 10KG',
@@ -355,6 +422,7 @@ export const CatProductList = [
         ProteinSource : 'Chicken',
     },
     {
+        Product:23,
         source: CP23,
         title: 'ZIWI',
         subTitle: 'Peak Dry Cat Food Mackerel And Lamb, 1KG',
@@ -370,6 +438,7 @@ export const CatProductList = [
         ProteinSource : 'Fish',
     },
     {
+        Product:24,
         source: CP24,
         title: 'ADVANCE',
         subTitle: 'Kitten Dry Cat Food Chicken With Rice, 20KG',
@@ -385,6 +454,7 @@ export const CatProductList = [
         ProteinSource : 'Chicken',
     },
     {
+        Product:25,
         source: CP24,
         title: 'ADVANCE',
         subTitle: 'Kitten Dry Cat Food Chicken With Rice, 20KG',
@@ -400,6 +470,7 @@ export const CatProductList = [
         ProteinSource : 'Chicken',
     },
     {
+        Product:26,
         source: CP25,
         title: 'ZIWI',
         subTitle: 'Peak Dry Cat Food Lamb, 1KG',
@@ -415,6 +486,7 @@ export const CatProductList = [
         ProteinSource : 'Lamb',
     },
     {
+        product:27,
         source: CP26,
         title: 'ROYAL CANIN',
         subTitle: 'Kitten Dry Cat Food, 10KG',

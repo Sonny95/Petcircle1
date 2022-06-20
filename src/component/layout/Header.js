@@ -1,11 +1,11 @@
 import Login from "../../resources/Photo/head image.png";
 import Cart from "../../resources/Photo/cart.svg";
 import React, {useEffect, useState} from "react";
-import DogPage from "../contents/DogPage";
-import CatPage from "../contents/CatPage";
-import BirdPage from "../contents/BirdPage";
-import OtherPetsPage from "../contents/OtherPetsPage";
-import SignUp from "../contents/SignUp"
+import DogPage from "../contents/exam/menu/DogPage";
+import CatPage from "../contents/exam/menu/CatPage";
+import BirdPage from "../contents/exam/menu/BirdPage";
+import OtherPetsPage from "../contents/exam/menu/OtherPetsPage";
+import SignUp from "../contents/exam/menu/SignUp"
 import {
     AutoImg,
     CartBox,

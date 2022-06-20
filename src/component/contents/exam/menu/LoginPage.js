@@ -1,5 +1,5 @@
-import "../../App"
-import SignUpDogCat from "../../resources/Photo/cats___dogs.jpeg"
+import "../../../../App"
+import SignUpDogCat from "../../../../resources/Photo/cats___dogs.jpeg"
 import {
     Forgot, IntroduceLogin,
     LeftBox,
@@ -7,13 +7,13 @@ import {
     LoginBody,
     Loginimg,
     RightContainer
-} from "../../resources/styledComponent/login";
+} from "../../../../resources/styledComponent/login";
 import {
     NewCustomer,
     SignUpButton,
     SignUpInput,
     SignUpQuestion
-} from "../../resources/styledComponent/signup";
+} from "../../../../resources/styledComponent/signup";
 
 const LoginPage = () =>
     <div>

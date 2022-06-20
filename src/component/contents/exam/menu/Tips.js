@@ -1,13 +1,13 @@
-import Vet1 from "../../resources/Photo/Vet1.png"
-import Vet2 from "../../resources/Photo/VetTips2.png"
-import Vet3 from "../../resources/Photo/VetTips3.png"
-import Vet4 from "../../resources/Photo/VetTips4.png"
-import Vet5 from "../../resources/Photo/VetArticles1.jpg"
-import Vet6 from "../../resources/Photo/VetArticles2.jpg"
-import Vet7 from "../../resources/Photo/VetArticles3.png"
-import Vet8 from "../../resources/img/dog/DogAddImg/VetArticles4.png"
-import Vet9 from "../../resources/img/dog/DogAddImg/VetArticles5.png"
-import Vet10 from "../../resources/img/dog/DogAddImg/VetArticles6.png"
+import Vet1 from "../../../../resources/Photo/Vet1.png"
+import Vet2 from "../../../../resources/Photo/VetTips2.png"
+import Vet3 from "../../../../resources/Photo/VetTips3.png"
+import Vet4 from "../../../../resources/Photo/VetTips4.png"
+import Vet5 from "../../../../resources/Photo/VetArticles1.jpg"
+import Vet6 from "../../../../resources/Photo/VetArticles2.jpg"
+import Vet7 from "../../../../resources/Photo/VetArticles3.png"
+import Vet8 from "../../../../resources/img/dog/DogAddImg/VetArticles4.png"
+import Vet9 from "../../../../resources/img/dog/DogAddImg/VetArticles5.png"
+import Vet10 from "../../../../resources/img/dog/DogAddImg/VetArticles6.png"
 
 import {
     ArticleCapital,
@@ -26,10 +26,10 @@ import {
     VetSearchBar,
     VetSearchBarContainer,
     VetSearchButton, VetTipLetter1, VetTipLetter2, VetTipsArticleImgBox, VetTipsArticleTitle, VetTipsExplain
-} from "../../resources/styledComponent/tips";
+} from "../../../../resources/styledComponent/tips";
 import {Space} from 'antd';
 import {PlusSquareTwoTone} from '@ant-design/icons';
-import {DiscoverList} from "../../util/sample";
+import {DiscoverList} from "../../../../util/sample";
 
 const VetList = [
     {src: Vet2, key: '1'},

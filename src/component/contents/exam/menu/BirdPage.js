@@ -1,18 +1,18 @@
-import App from "../../App";
+import App from "../../../../App";
 import {
     CapitalMenu, DogButtonBox,
     DogMenuBox, DogSaleImg, DpLetter,
     DpMenuContainer, DpSmallButton,
     MenuLane,
     ShopAllLetter
-} from "../../resources/styledComponent/dogPage";
-import S1 from "../../resources/Photo/shop-puppy.png";
-import S2 from "../../resources/Photo/shop-small-dog.png";
-import S3 from "../../resources/Photo/shop-large-dog.png";
-import BirdSaleBanner from "../../resources/Photo/shop-bird-sale.png"
-import BirdSaleAll from "../../resources/Photo/bird-shop-all-new.png"
+} from "../../../../resources/styledComponent/dogPage";
+import S1 from "../../../../resources/Photo/shop-puppy.png";
+import S2 from "../../../../resources/Photo/shop-small-dog.png";
+import S3 from "../../../../resources/Photo/shop-large-dog.png";
+import BirdSaleBanner from "../../../../resources/Photo/shop-bird-sale.png"
+import BirdSaleAll from "../../../../resources/Photo/bird-shop-all-new.png"
 import {useNavigate} from "react-router-dom";
-import {menuStore} from "../../util/zustandStore";
+import {menuStore} from "../../../../util/zustandStore";
 
 
 

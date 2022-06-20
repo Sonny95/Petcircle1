@@ -26,7 +26,7 @@ import P6 from "../../resources/Photo/66.png";
 import React from "react";
 import {
     AdBox,
-    AdContainer,
+    AdContainer, BetterAd1, BetterAd2, BetterAd3,
     BetterPrice,
     BetterRange,
     BigCatButton,
@@ -182,18 +182,9 @@ const Contents = () => {
                     {/*})}*/}
 
 
-                    <img src={Ad1}
-                         style={{height: 150, width: 400, marginTop: 15, borderRadius: 10, float: 'left'}}/>
-                    <img src={Ad2} style={{
-                        height: 150,
-                        width: 400,
-                        marginTop: 15,
-                        marginLeft: 25,
-                        borderRadius: 10,
-                        float: 'left'
-                    }}/>
-                    <img src={Ad3}
-                         style={{height: 150, width: 400, marginTop: 15, borderRadius: 10, float: 'right'}}/>
+                    <BetterAd1 src={Ad1}/>
+                    <BetterAd2 src={Ad2}/>
+                    <BetterAd3 src={Ad3}/>
                 </AdBox>
             </AdContainer>
 

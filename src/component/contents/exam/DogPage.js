@@ -17,6 +17,10 @@ import {
     VerietyTrigger
 } from "../../../resources/styledComponent/dog-dogPage";
 import {CloseCircleOutlined} from '@ant-design/icons';
+import AutoDelivery from "../../../resources/img/dog/autoDelivery.svg"
+
+
+
 
 const {Search} = Input;
 export default function DogPage() {
@@ -55,21 +59,13 @@ export default function DogPage() {
             setVarietyCheck(resultData);
         }
 
-
-        // ex)
-        // varietyCheck ->  ['biscuit', 'cake and rollies']  || 우리가 체크한 사항을 보아둔 배열
-
-
         const resultData = varietyCheck.map(value => {
-            console.log(value,'value')
             const filterData = ProductList.filter((src) => {
-                console.log(src,'::src')
                 if(src.variety === value){
                     return src
                 }
             });
             return filterData;
-            console.log(filterData,'filterData')
         }).flatMap(x => x);
 
 
@@ -160,6 +156,12 @@ export default function DogPage() {
     }
 
 
+
+
+
+
+
+
     return (
         <DogDogContainer>
             <DogDogBanner src={DogBanner}/>
@@ -185,7 +187,7 @@ export default function DogPage() {
 
                     <DogDogMenuNameBox>Variety
                         {varietyCheck.length !== 0 && <DogDogCheckBoxSelected
-                            onClick={() => setVarietyCheck([])}>Clear Seleceted</DogDogCheckBoxSelected>}
+                            onClick={() => setVarietyCheck([])}>Clear Selected</DogDogCheckBoxSelected>}
                     </DogDogMenuNameBox>
 
                     {VarietyList.map((value, index) => {
@@ -301,7 +303,7 @@ export default function DogPage() {
                 <DogDogRightContainer>
                     <div style={{width:'100%',height:80}}>
                         <DogDogRightLetter>Dog Training Treats</DogDogRightLetter>
-                        <span styled={{float: 'left', paddigTop: 30}}> 1 -  out of 167 products</span>
+                        <span styled={{float: 'left', paddigTop: 30}}> 1 -  out of 27 products</span>
 
 
 
@@ -310,12 +312,12 @@ export default function DogPage() {
 
                     {dataList.map(value => {
                         return <div
-                            style={{width: 200, height: 350, margin: 20, float: 'left', textAlign: 'center'}}>
+                            style={{width: 200, height: 400, margin: 20, float: 'left', textAlign: 'center'}}>
                             <img src={value.source} style={{margin: '0px auto', width: '70%'}} width={100} alt=""/>
-                            <div style={{textAlign: 'left'}}>
+                            <div style={{textAlign: 'left',marginTop:'10px'}}>
                                     <span style={{
                                         fontWeight: 700,
-                                        marginRight: '5px'
+                                        marginRight: '5px',
                                     }}>{value.title}</span>{value.subTitle}
                             </div>
                             <div style={{width: 200, height: 38}}><Rate style={{float: 'left'}} disabled
@@ -328,9 +330,21 @@ export default function DogPage() {
                                 <Tag color='#f5f6f8'
                                      style={{color: 'black', fontWeight: 700, float: 'left'}}>{value.mount2}</Tag>
                             </div>
-                            <div style={{fontSize: 25, fontWeight: 700, float: 'left'}}>
-                                ${value.price}
+
+                            <div style={{width:'100%', height:100}}>
+
+                                <div style={{width:'100%', height:37}}>
+                                    <div style={{fontSize: 23, fontWeight: 700, float: 'left'}}>
+                                               ${(value.price).toFixed(2)}</div>
+                                    <img style={{float:'right', height:30}} src={AutoDelivery}></img>
+                                </div>
+                                <div style={{width:'100%', height:30}}>
+                                    <div style={{fontSize: 23, fontWeight: 700, float: 'left'}}>
+                                        ${(value.price).toFixed(2)}</div>
+                                </div>
                             </div>
+
+
 
                         </div>
                     })}

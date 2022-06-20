@@ -1,7 +1,7 @@
-import DogSale from "../../resources/Photo/shop-dog-sale.png"
-import S1 from "../../resources/Photo/shop-puppy.png"
-import S2 from "../../resources/Photo/shop-small-dog.png"
-import S3 from "../../resources/Photo/shop-large-dog.png"
+import DogSale from "../../../../resources/Photo/shop-dog-sale.png"
+import S1 from "../../../../resources/Photo/shop-puppy.png"
+import S2 from "../../../../resources/Photo/shop-small-dog.png"
+import S3 from "../../../../resources/Photo/shop-large-dog.png"
 import {
     CapitalMenu,
     DogButtonBox,
@@ -12,12 +12,12 @@ import {
     DpSmallButton,
     MenuLane,
     ShopAllLetter
-} from "../../resources/styledComponent/dogPage";
-import DogSaleAll from "../../resources/Photo/dog-shop-all.png"
+} from "../../../../resources/styledComponent/dogPage";
+import DogSaleAll from "../../../../resources/Photo/dog-shop-all.png"
 
 import {Link, useNavigate} from "react-router-dom";
 import {useRef} from "react";
-import {menuStore} from "../../util/zustandStore";
+import {menuStore} from "../../../../util/zustandStore";
 
 
 const DogPage = () => {
