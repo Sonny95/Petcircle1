@@ -65,7 +65,12 @@ export default function BirdPage() {
             console.log(setOtherVarietyCheck(copyList),'whoareyou')
         }
         else {
-            const resultData = otherVarietyChecrietyCheck.map(value => {
+            const resultData = otherVarietyCheck.filter(src => src !== value.name);
+            setOtherVarietyCheck(resultData);
+            console.log(resultData,'tlqkf')
+        }
+
+        // const resultData = otherVarietyCheck.map(value => {
         //     const filterData = BirdProductList.filter((src) => {
         //         if(src.variety === value){
         //             return src
@@ -75,12 +80,7 @@ export default function BirdPage() {
         //     console.log(filterData,'tqkf')
         // }).flatMap(x => x);
 
-        k.filter(src => src !== value.name);
-        setOtherVarietyCheck(resultData);
-        console.log(resultData,'tlqkf')
-    }
 
-    // const resultData = otherVa
         // setDataList(resultData);
     }
 
