@@ -1,9 +1,8 @@
 import {useNavigate, useParams} from "react-router-dom";
 import {Button, Divider, Input, Rate, Slider, Tag, space} from "antd";
-import DogBanner from "../../../resources/img/dog/DogPageBanner.png"
+import DogBanner from "../../../../resources/img/dog/DogPageBanner.png"
 import Checkbox from "antd/es/checkbox/Checkbox";
 import {useEffect, useState} from "react";
-import {BrandList, FlavourList, ProductList} from "../../../util/sample";
 import {
     DogDogBanner,
     DogDogBigContainer,
@@ -15,10 +14,16 @@ import {
     DogDogVarietyContainer,
     DogDogVarietyCountBox,
     VerietyTrigger
-} from "../../../resources/styledComponent/dog-dogPage";
+} from "../../../../resources/styledComponent/dog-dogPage";
 import {CloseCircleOutlined} from '@ant-design/icons';
-import AutoDelivery from "../../../resources/img/dog/autoDelivery.svg"
-import {BirdBrandList, BirdBreedList, BirdProductList, BirdTypeList, BirdVarietyList} from "../../../util/BirdSample";
+import AutoDelivery from "../../../../resources/img/dog/autoDelivery.svg"
+import {
+    OtherBrandList,
+    OtherBreedList,
+    OtherProductList,
+    OtherTypeList,
+    OtherVarietyList
+} from "../../../../util/OtherSample";
 
 
 
@@ -30,42 +35,42 @@ export default function BirdPage() {
     let navigate = useNavigate();
 
 
-    const [birdVarietyTrigger, setBirdVarietyTrigger] = useState(false);
-    const [birdTypeTrigger, setBirdTypeTrigger] = useState(false);
-    const [birdBreedTrigger, setBirdBreedTrigger] = useState(false);
-    const [birdBrandTrigger, setBirdBrandTrigger] = useState(false);
+    const [otherVarietyTrigger, setOtherVarietyTrigger] = useState(false);
+    const [otherTypeTrigger, setOtherTypeTrigger] = useState(false);
+    const [otherBreedTrigger, setOtherBreedTrigger] = useState(false);
+    const [otherBrandTrigger, setOtherBrandTrigger] = useState(false);
 
-    const [birdVarietyCheck, setBirdVarietyCheck] = useState([]);
-    const [birdBrandCheck, setBirdBrandCheck] = useState([]);
-    const [birdTypeCheck, setBirdTypeCheck] = useState([]);
-    const [birdBreedCheck, setBirdBreedCheck] = useState([]);
+    const [otherVarietyCheck, setOtherVarietyCheck] = useState([]);
+    const [otherBrandCheck, setOtherBrandCheck] = useState([]);
+    const [otherTypeCheck, setOtherTypeCheck] = useState([]);
+    const [otherBreedCheck, setOtherBreedCheck] = useState([]);
     const [ratingCheck, setRatingCheck] = useState([]);
 
     const [maxPrice, setMaxPrice] = useState(0);
     const [price, setPrice] = useState([0, 0]);
     const [initSlider, setInitSlider] = useState([0, 0]);
 
-    const [dataList, setDataList] = useState(BirdProductList)
+    const [dataList, setDataList] = useState(OtherProductList)
     const [sliderInit, setSliderInit] = useState(true)
 
 
-    // BirdVariety CHECK 관리
+    // OtherVariety CHECK 관리
     const varChangeChecked = (param, value) => {
-        const copyList = birdVarietyCheck;
+        const copyList = otherVarietyCheck;
         // dataList.filter
         if (param) {
             copyList.push(value.name);
-            setBirdVarietyCheck(copyList);
+            setOtherVarietyCheck(copyList);
             console.log(copyList,'open')
-            console.log(setBirdVarietyCheck(copyList),'whoareyou')
+            console.log(setOtherVarietyCheck(copyList),'whoareyou')
         }
         else {
-            const resultData = birdVarietyCheck.filter(src => src !== value.name);
-            setBirdVarietyCheck(resultData);
+            const resultData = otherVarietyCheck.filter(src => src !== value.name);
+            setOtherVarietyCheck(resultData);
             console.log(resultData,'tlqkf')
         }
 
-        // const resultData = birdVarietyCheck.map(value => {
+        // const resultData = otherVarietyCheck.map(value => {
         //     const filterData = BirdProductList.filter((src) => {
         //         if(src.variety === value){
         //             return src
@@ -80,42 +85,42 @@ export default function BirdPage() {
     }
 
     // brand CHECK 관리
-    const birdBrandChangeChecked = (param, value) => {
-        const copyList = birdBrandCheck;
+    const otherBrandChangeChecked = (param, value) => {
+        const copyList = otherBrandCheck;
         if (param) {
             copyList.push(value.name);
-            setBirdBrandCheck(copyList);
+            setOtherBrandCheck(copyList);
         } else {
-            const resultData = birdBrandCheck.filter(src => src !== value.name);
-            setBirdBrandCheck(resultData);
+            const resultData = otherBrandCheck.filter(src => src !== value.name);
+            setOtherBrandCheck(resultData);
         }
     }
 
-    const birdTypeChangeChecked = (param, value) => {
-        const copyList = birdTypeCheck;
+    const otherTypeChangeChecked = (param, value) => {
+        const copyList = otherTypeCheck;
         if (param) {
             copyList.push(value.name);
-            setBirdTypeCheck(copyList);
+            setOtherTypeCheck(copyList);
         } else {
-            const resultData = birdTypeCheck.filter(src => src !== value.name);
-            setBirdTypeCheck(resultData);
+            const resultData = otherTypeCheck.filter(src => src !== value.name);
+            setOtherTypeCheck(resultData);
         }
     }
 
-    const birdBreedChangeChecked = (param, value) => {
-        const copyList = birdBreedCheck;
+    const otherBreedChangeChecked = (param, value) => {
+        const copyList = otherBreedCheck;
         if (param) {
             copyList.push(value.name);
-            setBirdBreedCheck(copyList);
+            setOtherBreedCheck(copyList);
         } else {
-            const resultData = birdBreedCheck.filter(src => src !== value.name);
-            setBirdBreedCheck(resultData);
+            const resultData = otherBreedCheck.filter(src => src !== value.name);
+            setOtherBreedCheck(resultData);
         }
     }
 
 
     useEffect(() => {
-        const maxPrice = BirdProductList.reduce((acc, cur, index) => {
+        const maxPrice = OtherProductList.reduce((acc, cur, index) => {
             return acc > cur.price ? acc : cur.price
         }, dataList[0].price);
         setMaxPrice(maxPrice);
@@ -136,7 +141,7 @@ export default function BirdPage() {
     const searchRangePro = (e) => {
         const firstPrice = price[0];
         const lastPrice = price[1];
-        const reData = BirdProductList.filter(value => firstPrice <= value.price && lastPrice >= value.price)
+        const reData = OtherProductList.filter(value => firstPrice <= value.price && lastPrice >= value.price)
         setDataList(reData);
         setSliderInit(arrayEquals(initSlider, price))
     }
@@ -149,7 +154,7 @@ export default function BirdPage() {
 
         //실제 상품도 초기화상태에 따른 update해주기
         console.log('업데이트 필요!')
-        const reData = BirdProductList.filter(value => 1 <= value.price && maxPrice >= value.price);
+        const reData = OtherProductList.filter(value => 1 <= value.price && maxPrice >= value.price);
         setDataList(reData);
 
         // clear selected
@@ -158,7 +163,7 @@ export default function BirdPage() {
     }
 
     const getProductLength = (name) =>{
-        const reulstData = BirdProductList.filter(e => e.birdVariety === name);
+        const reulstData = OtherProductList.filter(e => e.otherVariety === name);
         return reulstData.length
     }
 
@@ -177,32 +182,32 @@ export default function BirdPage() {
 
                 <DogDogLeftContainer >
 
-                    {birdVarietyCheck.map(value => <Tag color="cyan">{value} <CloseCircleOutlined
+                    {otherVarietyCheck.map(value => <Tag color="cyan">{value} <CloseCircleOutlined
                         onClick={() => varChangeChecked(false, {name: value})}/>
                     </Tag>)}
 
-                    {birdBrandCheck.map(value => <Tag color="volcano">{value} <CloseCircleOutlined
-                        onClick={() => birdBrandChangeChecked(false, {name: value})}/>
+                    {otherBrandCheck.map(value => <Tag color="volcano">{value} <CloseCircleOutlined
+                        onClick={() => otherBrandChangeChecked(false, {name: value})}/>
                     </Tag>)}
 
-                    {birdTypeCheck.map(value => <Tag color="yellow">{value}
-                        <CloseCircleOutlined onClick={() => birdTypeChangeChecked(false, {name: value})}/></Tag>)}
+                    {otherTypeCheck.map(value => <Tag color="yellow">{value}
+                        <CloseCircleOutlined onClick={() => otherTypeChangeChecked(false, {name: value})}/></Tag>)}
 
-                    {birdBreedCheck.map(value => <Tag color="green">{value}
-                        <CloseCircleOutlined onClick={() => birdBreedChangeChecked(false, {name: value})}/></Tag>)}
+                    {otherBreedCheck.map(value => <Tag color="green">{value}
+                        <CloseCircleOutlined onClick={() => otherBreedChangeChecked(false, {name: value})}/></Tag>)}
 
 
                     <DogDogMenuNameBox>Variety
-                        {birdVarietyCheck.length !== 0 && <DogDogCheckBoxSelected
-                            onClick={() => setBirdVarietyCheck([])}>Clear Selected</DogDogCheckBoxSelected>}
+                        {otherVarietyCheck.length !== 0 && <DogDogCheckBoxSelected
+                            onClick={() => setOtherVarietyCheck([])}>Clear Selected</DogDogCheckBoxSelected>}
                     </DogDogMenuNameBox>
 
-                    {BirdVarietyList.map((value, index) => {
-                        if (index > 4 && !birdVarietyTrigger) {
+                    {OtherVarietyList.map((value, index) => {
+                        if (index > 4 && !otherVarietyTrigger) {
                             return null;
                         } else {
                             return <div style={{width: 250, height: 28}}>
-                                <Checkbox checked={birdVarietyCheck.filter(src => src === value.name)[0]}
+                                <Checkbox checked={otherVarietyCheck.filter(src => src === value.name)[0]}
                                           style={{float: 'left'}}
                                           onChange={(e) => varChangeChecked(e.target.checked, value)}> {value.name}</Checkbox>
 
@@ -216,33 +221,36 @@ export default function BirdPage() {
                     })}
 
                     <VerietyTrigger
-                        onClick={() => setBirdVarietyTrigger(!birdVarietyTrigger)}>{birdVarietyTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
+                        onClick={() => setOtherVarietyTrigger(!otherVarietyTrigger)}>{otherVarietyTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
 
                     <Divider/>
 
 
                     <DogDogMenuNameBox>Type
-                        {birdTypeCheck.length !== 0 &&
+                        {otherTypeCheck.length !== 0 &&
                             <DogDogCheckBoxSelected
-                                onClick={() => setBirdTypeCheck([])}>Clear Selected</DogDogCheckBoxSelected>}
+                                onClick={() => setOtherTypeCheck([])}>Clear Selected</DogDogCheckBoxSelected>}
                     </DogDogMenuNameBox>
-                    {BirdTypeList.map((value, index) => {
-                        if (index > 4 && !birdTypeTrigger) {
+                    {OtherTypeList.map((value, index) => {
+                        if (index > 4 && !otherTypeTrigger) {
                             return null;
                         } else {
                             return <div
                                 style={{width: 250, height: 28}}>
-                                <Checkbox checked={birdTypeCheck.filter(src => src === value.name) [0]}
+                                <Checkbox checked={otherTypeCheck.filter(src => src === value.name) [0]}
                                           style={{float: 'left'}}
-                                          onChange={(e) => birdTypeChangeChecked(e.target.checked, value)}> {value.name}</Checkbox>
+                                          onChange={(e) => otherTypeChangeChecked(e.target.checked, value)}> {value.name}</Checkbox>
                                 <DogDogVarietyCountBox>{value.count}</DogDogVarietyCountBox></div>
                         }
                     })}
 
                     <VerietyTrigger
-                        onClick={() => setBirdTypeTrigger(!birdTypeTrigger)}>{birdTypeTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
+                        onClick={() => setOtherTypeTrigger(!otherTypeTrigger)}>{otherTypeTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
 
                     <Divider/>
+
+
+
 
                     <div style={{fontSize: 18, fontWeight: 700, paddingBottom: 10}}>Customer Rating
                         <Rate defaultValue={5}></Rate>
@@ -254,6 +262,10 @@ export default function BirdPage() {
 
 
                     <Divider/>
+
+
+
+
 
                     <DogDogMenuNameBox>price
 
@@ -267,46 +279,46 @@ export default function BirdPage() {
 
 
                     <DogDogMenuNameBox>Brand
-                        {birdBrandCheck.length !== 0 && <DogDogCheckBoxSelected onClick={() => setBirdBrandCheck([])}>Clear Seleceted</DogDogCheckBoxSelected>}
+                        {otherBrandCheck.length !== 0 && <DogDogCheckBoxSelected onClick={() => setOtherBrandCheck([])}>Clear Seleceted</DogDogCheckBoxSelected>}
                     </DogDogMenuNameBox>
-                    {BirdBrandList.map((value, index) => {
-                        if (index > 4 && !birdBrandTrigger) {
+                    {OtherBrandList.map((value, index) => {
+                        if (index > 4 && !otherBrandTrigger) {
                             return null;
                         } else {
                             return <div style={{width: 250, height: 28}}>
                                 <Checkbox style={{float: 'left'}}
-                                          checked={birdBrandCheck.filter(src => src === value.name)[0]}
-                                          onChange={(e) => birdBrandChangeChecked(e.target.checked, value)}> {value.name}</Checkbox>
+                                          checked={otherBrandCheck.filter(src => src === value.name)[0]}
+                                          onChange={(e) => otherBrandChangeChecked(e.target.checked, value)}> {value.name}</Checkbox>
                                 <DogDogVarietyCountBox>{value.count}</DogDogVarietyCountBox></div>
                         }
                     })}
 
                     <VerietyTrigger
-                        onClick={() => setBirdBrandTrigger(!birdBrandTrigger)}>{birdBrandTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
+                        onClick={() => setOtherBrandTrigger(!otherBrandTrigger)}>{otherBrandTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
 
                     <Divider/>
 
 
                     <DogDogMenuNameBox>Breed
-                        {birdBreedCheck.length !== 0 &&
+                        {otherBreedCheck.length !== 0 &&
                             <DogDogCheckBoxSelected
-                                onClick={() => setBirdBreedCheck([])}>Clear Selected</DogDogCheckBoxSelected>}
+                                onClick={() => setOtherBreedCheck([])}>Clear Selected</DogDogCheckBoxSelected>}
                     </DogDogMenuNameBox>
-                    {BirdBreedList.map((value, index) => {
-                        if (index > 4 && !birdBreedTrigger) {
+                    {OtherBreedList.map((value, index) => {
+                        if (index > 4 && !otherBreedTrigger) {
                             return null;
                         } else {
                             return <div style={{width: 250, height: 28}}>
-                                <Checkbox checked={birdBreedCheck.filter(src => src === value.name)[0]}
+                                <Checkbox checked={otherBreedCheck.filter(src => src === value.name)[0]}
                                           style={{float: 'left'}}
-                                          onChange={(e) => birdBreedChangeChecked(e.target.checked, value)}
+                                          onChange={(e) => otherBreedChangeChecked(e.target.checked, value)}
                                 > {value.name}</Checkbox>
                                 <DogDogVarietyCountBox>{value.count}</DogDogVarietyCountBox></div>
                         }
                     })}
 
                     <VerietyTrigger
-                        onClick={() => setBirdBreedTrigger(!birdBreedTrigger)}>{birdBreedTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
+                        onClick={() => setOtherBreedTrigger(!otherBreedTrigger)}>{otherBreedTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
 
                 </DogDogLeftContainer>
 
@@ -315,7 +327,7 @@ export default function BirdPage() {
                 <DogDogRightContainer>
                     <div style={{width:'100%',height:80}}>
                         <DogDogRightLetter>Bird Food & Treats Online</DogDogRightLetter>
-                        <span styled={{float: 'left', paddigTop: 30}}> 1 -  out of 27 products</span>
+                        <span styled={{float: 'left', paddigTop: 30}}> 1 -  out of 29 products</span>
 
 
 

@@ -7,15 +7,15 @@ import {
 } from "react-router-dom";
 import Header from "./component/layout/Header";
 import Footer from "./component/layout/Footer";
-import CatPage from "./component/contents/exam/CatPage";
-import DogPage from "./component/contents/exam/DogPage";
+import CatPage from "./component/contents/exam/products/CatPage";
+import DogPage from "./component/contents/exam/products/DogPage";
 import Contents from "./component/layout/Contents";
 import SignUp from "./component/contents/exam/menu/SignUp";
 import Brands from "./component/contents/exam/menu/Brands";
 import Tips from "./component/contents/exam/menu/Tips";
 import LoginPage from "./component/contents/exam/menu/LoginPage";
-import BirdPage from "./component/contents/exam/BirdPage";
-import OtherPetsPage from "./component/contents/exam/OtherPetsPage";
+import BirdPage from "./component/contents/exam/products/BirdPage";
+import OtherPetsPage from "./component/contents/exam/products/OtherPetsPage";
 import { Space } from 'antd';
 import {CommentOutlined} from '@ant-design/icons';
 

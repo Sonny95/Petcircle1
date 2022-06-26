@@ -1,9 +1,8 @@
 import {useNavigate, useParams} from "react-router-dom";
 import {Button, Divider, Input, Rate, Slider, Tag, space} from "antd";
-import DogBanner from "../../../resources/img/dog/DogPageBanner.png"
 import Checkbox from "antd/es/checkbox/Checkbox";
+import CatBanner from "../../../../resources/img/cat/CatBanner.png"
 import {useEffect, useState} from "react";
-import {BrandList, FlavourList, ProductList, TypeList, VarietyList} from "../../../util/sample";
 import {
     DogDogBanner,
     DogDogBigContainer,
@@ -15,52 +14,53 @@ import {
     DogDogVarietyContainer,
     DogDogVarietyCountBox,
     VerietyTrigger
-} from "../../../resources/styledComponent/dog-dogPage";
+} from "../../../../resources/styledComponent/dog-dogPage";
 import {CloseCircleOutlined} from '@ant-design/icons';
-import AutoDelivery from "../../../resources/img/dog/autoDelivery.svg"
-
-
-
+import {CatBrandList, CatFeatureList, CatProductList, CatVarietyList, ProteinList} from "../../../../util/CatSample";
+import AutoDelivery from "../../../../resources/img/dog/autoDelivery.svg";
 
 const {Search} = Input;
-export default function DogPage() {
+
+
+
+export default function CatPage() {
     let params = useParams();
     let navigate = useNavigate();
 
 
-    const [varietyTrigger, setVarietyTrigger] = useState(false);
-    const [TypeTrigger, setTypeTrigger] = useState(false);
-    const [FlavourTrigger, setFlavourTrigger] = useState(false);
-    const [BrandTrigger, setBrandTrigger] = useState(false);
+    const [catVarietyTrigger, setCatVarietyTrigger] = useState(false);
+    const [FeatureTrigger, setFeatureTrigger] = useState(false);
+    const [proteinTrigger, setProteinTrigger] = useState(false);
+    const [catBrandTrigger, setCatBrandTrigger] = useState(false);
 
-    const [varietyCheck, setVarietyCheck] = useState([]);
-    const [brandCheck, setBrandCheck] = useState([]);
-    const [typeCheck, setTypeCheck] = useState([]);
-    const [flavourCheck, setFlavourCheck] = useState([]);
+    const [catVarietyCheck, setCatVarietyCheck] = useState([]);
+    const [catBrandCheck, setCatBrandCheck] = useState([]);
+    const [featureCheck, setFeatureCheck] = useState([]);
+    const [proteinCheck, setProteinCheck] = useState([]);
     const [ratingCheck, setRatingCheck] = useState([]);
 
     const [maxPrice, setMaxPrice] = useState(0);
     const [price, setPrice] = useState([0, 0]);
     const [initSlider, setInitSlider] = useState([0, 0]);
 
-    const [dataList, setDataList] = useState(ProductList)
+    const [dataList, setDataList] = useState(CatProductList)
     const [sliderInit, setSliderInit] = useState(true)
 
 
-    // variety CHECK 관리
+    // catVariety CHECK 관리
     const varChangeChecked = (param, value) => {
-        const copyList = varietyCheck;
+        const copyList = catVarietyCheck;
         // dataList.filter
         if (param) {
             copyList.push(value.name);
-            setVarietyCheck(copyList);
+            setCatVarietyCheck(copyList);
         } else {
-            const resultData = varietyCheck.filter(src => src !== value.name);
-            setVarietyCheck(resultData);
+            const resultData = catVarietyCheck.filter(src => src !== value.name);
+            setCatVarietyCheck(resultData);
         }
 
-        const resultData = varietyCheck.map(value => {
-            const filterData = ProductList.filter((src) => {
+        const resultData = catVarietyCheck.map(value => {
+            const filterData = CatProductList.filter((src) => {
                 if(src.variety === value){
                     return src
                 }
@@ -73,42 +73,42 @@ export default function DogPage() {
     }
 
     // brand CHECK 관리
-    const brandChangeChecked = (param, value) => {
-        const copyList = brandCheck;
+    const catBrandChangeChecked = (param, value) => {
+        const copyList = catBrandCheck;
         if (param) {
             copyList.push(value.name);
-            setBrandCheck(copyList);
+            setCatBrandCheck(copyList);
         } else {
-            const resultData = brandCheck.filter(src => src !== value.name);
-            setBrandCheck(resultData);
+            const resultData = catBrandCheck.filter(src => src !== value.name);
+            setCatBrandCheck(resultData);
         }
     }
 
-    const typeChangeChecked = (param, value) => {
-        const copyList = typeCheck;
+    const featureChangeChecked = (param, value) => {
+        const copyList = featureCheck;
         if (param) {
             copyList.push(value.name);
-            setTypeCheck(copyList);
+            setFeatureCheck(copyList);
         } else {
-            const resultData = typeCheck.filter(src => src !== value.name);
-            setTypeCheck(resultData);
+            const resultData = featureCheck.filter(src => src !== value.name);
+            setFeatureCheck(resultData);
         }
     }
 
-    const flavourChangeChecked = (param, value) => {
-        const copyList = flavourCheck;
+    const proteinChangeChecked = (param, value) => {
+        const copyList = proteinCheck;
         if (param) {
             copyList.push(value.name);
-            setFlavourCheck(copyList);
+            setProteinCheck(copyList);
         } else {
-            const resultData = flavourCheck.filter(src => src !== value.name);
-            setFlavourCheck(resultData);
+            const resultData = proteinCheck.filter(src => src !== value.name);
+            setProteinCheck(resultData);
         }
     }
 
 
     useEffect(() => {
-        const maxPrice = ProductList.reduce((acc, cur, index) => {
+        const maxPrice = CatProductList.reduce((acc, cur, index) => {
             return acc > cur.price ? acc : cur.price
         }, dataList[0].price);
         setMaxPrice(maxPrice);
@@ -129,7 +129,7 @@ export default function DogPage() {
     const searchRangePro = (e) => {
         const firstPrice = price[0];
         const lastPrice = price[1];
-        const reData = ProductList.filter(value => firstPrice <= value.price && lastPrice >= value.price)
+        const reData = CatProductList.filter(value => firstPrice <= value.price && lastPrice >= value.price)
         setDataList(reData);
         setSliderInit(arrayEquals(initSlider, price))
     }
@@ -142,7 +142,7 @@ export default function DogPage() {
 
         //실제 상품도 초기화상태에 따른 update해주기
         console.log('업데이트 필요!')
-        const reData = ProductList.filter(value => 1 <= value.price && maxPrice >= value.price);
+        const reData = CatProductList.filter(value => 1 <= value.price && maxPrice >= value.price);
         setDataList(reData);
 
         // clear selected
@@ -150,8 +150,8 @@ export default function DogPage() {
         // const reData = ProductList.filter(value => firstPrice <= value.price && lastPrice >= value.price)
     }
 
-    const getProductLength = (name) =>{
-        const reulstData = ProductList.filter(e => e.variety === name);
+    const getCatProductLength = (name) =>{
+        const reulstData = CatProductList.filter(e => e.catVariety === name);
         return reulstData.length
     }
 
@@ -164,76 +164,76 @@ export default function DogPage() {
 
     return (
         <DogDogContainer>
-            <DogDogBanner src={DogBanner}/>
+            <DogDogBanner src={CatBanner}/>
             <DogDogBigContainer>
 
 
                 <DogDogLeftContainer >
 
-                    {varietyCheck.map(value => <Tag color="cyan">{value} <CloseCircleOutlined
+                    {catVarietyCheck.map(value => <Tag color="cyan">{value} <CloseCircleOutlined
                         onClick={() => varChangeChecked(false, {name: value})}/>
                     </Tag>)}
 
-                    {brandCheck.map(value => <Tag color="volcano">{value} <CloseCircleOutlined
-                        onClick={() => brandChangeChecked(false, {name: value})}/>
+                    {catBrandCheck.map(value => <Tag color="volcano">{value} <CloseCircleOutlined
+                        onClick={() => catBrandChangeChecked(false, {name: value})}/>
                     </Tag>)}
 
-                    {typeCheck.map(value => <Tag color="yellow">{value}
-                        <CloseCircleOutlined onClick={() => typeChangeChecked(false, {name: value})}/></Tag>)}
+                    {featureCheck.map(value => <Tag color="yellow">{value}
+                        <CloseCircleOutlined onClick={() => featureChangeChecked(false, {name: value})}/></Tag>)}
 
-                    {flavourCheck.map(value => <Tag color="green">{value}
-                        <CloseCircleOutlined onClick={() => flavourChangeChecked(false, {name: value})}/></Tag>)}
+                    {proteinCheck.map(value => <Tag color="green">{value}
+                        <CloseCircleOutlined onClick={() => proteinChangeChecked(false, {name: value})}/></Tag>)}
 
 
                     <DogDogMenuNameBox>Variety
-                        {varietyCheck.length !== 0 && <DogDogCheckBoxSelected
-                            onClick={() => setVarietyCheck([])}>Clear Selected</DogDogCheckBoxSelected>}
+                        {catVarietyCheck.length !== 0 && <DogDogCheckBoxSelected
+                            onClick={() => setCatVarietyCheck([])}>Clear Selected</DogDogCheckBoxSelected>}
                     </DogDogMenuNameBox>
 
-                    {VarietyList.map((value, index) => {
-                        if (index > 4 && !varietyTrigger) {
+                    {CatVarietyList.map((value, index) => {
+                        if (index > 4 && !catVarietyTrigger) {
                             return null;
                         } else {
                             return <div style={{width: 250, height: 28}}>
-                                <Checkbox checked={varietyCheck.filter(src => src === value.name)[0]}
+                                <Checkbox checked={catVarietyCheck.filter(src => src === value.name)[0]}
                                           style={{float: 'left'}}
                                           onChange={(e) => varChangeChecked(e.target.checked, value)}> {value.name}</Checkbox>
 
 
-                                <DogDogVarietyCountBox>{getProductLength(value.name)}</DogDogVarietyCountBox>
+                                <DogDogVarietyCountBox>{getCatProductLength(value.name)}</DogDogVarietyCountBox>
 
-                                </div>
+                            </div>
 
                         }
 
                     })}
 
                     <VerietyTrigger
-                         onClick={() => setVarietyTrigger(!varietyTrigger)}>{varietyTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
+                        onClick={() => setCatVarietyTrigger(!catVarietyTrigger)}>{catVarietyTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
 
                     <Divider/>
 
 
-                    <DogDogMenuNameBox>Type
-                        {typeCheck.length !== 0 &&
-                        <DogDogCheckBoxSelected
-                              onClick={() => setTypeCheck([])}>Clear Selected</DogDogCheckBoxSelected>}
+                    <DogDogMenuNameBox>Feature
+                        {featureCheck.length !== 0 &&
+                            <DogDogCheckBoxSelected
+                                onClick={() => setFeatureCheck([])}>Clear Selected</DogDogCheckBoxSelected>}
                     </DogDogMenuNameBox>
-                    {TypeList.map((value, index) => {
-                        if (index > 4 && !TypeTrigger) {
+                    {CatFeatureList.map((value, index) => {
+                        if (index > 4 && !FeatureTrigger) {
                             return null;
                         } else {
                             return <div
                                 style={{width: 250, height: 28}}>
-                                <Checkbox checked={typeCheck.filter(src => src === value.name) [0]}
+                                <Checkbox checked={featureCheck.filter(src => src === value.name) [0]}
                                           style={{float: 'left'}}
-                                          onChange={(e) => typeChangeChecked(e.target.checked, value)}> {value.name}</Checkbox>
+                                          onChange={(e) => featureChangeChecked(e.target.checked, value)}> {value.name}</Checkbox>
                                 <DogDogVarietyCountBox>{value.count}</DogDogVarietyCountBox></div>
                         }
                     })}
 
                     <VerietyTrigger
-                         onClick={() => setTypeTrigger(!TypeTrigger)}>{TypeTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
+                        onClick={() => setFeatureTrigger(!FeatureTrigger)}>{FeatureTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
 
                     <Divider/>
 
@@ -249,52 +249,52 @@ export default function DogPage() {
                     </DogDogMenuNameBox>
                     <Slider range value={price} max={maxPrice} onChange={(e) => setPrice(e)}
                             onAfterChange={searchRangePro}/>
-                    <div style={{paddingTop: 20}}>${price[0]} - ${price[1]} <span style={{float: 'right'}}>31</span>
+                    <div style={{paddingTop: 20}}>${price[0]} - ${price[1]} <span style={{float: 'right'}}>27</span>
                     </div>
                     <Divider/>
 
 
                     <DogDogMenuNameBox>Brand
-                        {brandCheck.length !== 0 && <DogDogCheckBoxSelected onClick={() => setBrandCheck([])}>Clear Seleceted</DogDogCheckBoxSelected>}
+                        {catBrandCheck.length !== 0 && <DogDogCheckBoxSelected onClick={() => setCatBrandCheck([])}>Clear Seleceted</DogDogCheckBoxSelected>}
                     </DogDogMenuNameBox>
-                    {BrandList.map((value, index) => {
-                        if (index > 4 && !BrandTrigger) {
+                    {CatBrandList.map((value, index) => {
+                        if (index > 4 && !catBrandTrigger) {
                             return null;
                         } else {
                             return <div style={{width: 250, height: 28}}>
                                 <Checkbox style={{float: 'left'}}
-                                          checked={brandCheck.filter(src => src === value.name)[0]}
-                                          onChange={(e) => brandChangeChecked(e.target.checked, value)}> {value.name}</Checkbox>
+                                          checked={catBrandCheck.filter(src => src === value.name)[0]}
+                                          onChange={(e) => catBrandChangeChecked(e.target.checked, value)}> {value.name}</Checkbox>
                                 <DogDogVarietyCountBox>{value.count}</DogDogVarietyCountBox></div>
                         }
                     })}
 
                     <VerietyTrigger
-                         onClick={() => setBrandTrigger(!BrandTrigger)}>{BrandTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
+                        onClick={() => setCatBrandTrigger(!catBrandTrigger)}>{catBrandTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
 
                     <Divider/>
 
 
-                    <DogDogMenuNameBox>Flavour
-                        {flavourCheck.length !== 0 &&
-                        <DogDogCheckBoxSelected
-                              onClick={() => setFlavourCheck([])}>Clear Selected</DogDogCheckBoxSelected>}
+                    <DogDogMenuNameBox>Protein
+                        {proteinCheck.length !== 0 &&
+                            <DogDogCheckBoxSelected
+                                onClick={() => setProteinCheck([])}>Clear Selected</DogDogCheckBoxSelected>}
                     </DogDogMenuNameBox>
-                    {FlavourList.map((value, index) => {
-                        if (index > 4 && !FlavourTrigger) {
+                    {ProteinList.map((value, index) => {
+                        if (index > 4 && !proteinTrigger) {
                             return null;
                         } else {
                             return <div style={{width: 250, height: 28}}>
-                                <Checkbox checked={flavourCheck.filter(src => src === value.name)[0]}
+                                <Checkbox checked={proteinCheck.filter(src => src === value.name)[0]}
                                           style={{float: 'left'}}
-                                          onChange={(e) => flavourChangeChecked(e.target.checked, value)}
+                                          onChange={(e) => proteinChangeChecked(e.target.checked, value)}
                                 > {value.name}</Checkbox>
                                 <DogDogVarietyCountBox>{value.count}</DogDogVarietyCountBox></div>
                         }
                     })}
 
                     <VerietyTrigger
-                         onClick={() => setFlavourTrigger(!FlavourTrigger)}>{FlavourTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
+                        onClick={() => setProteinTrigger(!proteinTrigger)}>{proteinTrigger ? '- See less' : '+ See more'} </VerietyTrigger>
 
                 </DogDogLeftContainer>
 
@@ -312,12 +312,12 @@ export default function DogPage() {
 
                     {dataList.map(value => {
                         return <div
-                            style={{width: 200, height: 400, margin: 20, float: 'left', textAlign: 'center'}}>
+                            style={{width: 200, height: 350, margin: 20, float: 'left', textAlign: 'center'}}>
                             <img src={value.source} style={{margin: '0px auto', width: '70%'}} width={100} alt=""/>
                             <div style={{textAlign: 'left',marginTop:'10px'}}>
                                     <span style={{
                                         fontWeight: 700,
-                                        marginRight: '5px',
+                                        marginRight: '5px'
                                     }}>{value.title}</span>{value.subTitle}
                             </div>
                             <div style={{width: 200, height: 38}}><Rate style={{float: 'left'}} disabled
@@ -330,12 +330,11 @@ export default function DogPage() {
                                 <Tag color='#f5f6f8'
                                      style={{color: 'black', fontWeight: 700, float: 'left'}}>{value.mount2}</Tag>
                             </div>
-
                             <div style={{width:'100%', height:100}}>
 
                                 <div style={{width:'100%', height:37}}>
                                     <div style={{fontSize: 23, fontWeight: 700, float: 'left'}}>
-                                               ${(value.price).toFixed(2)}</div>
+                                        ${(value.price).toFixed(2)}</div>
                                     <img style={{float:'right', height:30}} src={AutoDelivery}></img>
                                 </div>
                                 <div style={{width:'100%', height:30}}>
@@ -343,7 +342,6 @@ export default function DogPage() {
                                         ${(value.price).toFixed(2)}</div>
                                 </div>
                             </div>
-
 
 
                         </div>
