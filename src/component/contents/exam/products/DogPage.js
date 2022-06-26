@@ -51,6 +51,9 @@ export default function DogPage() {
     const varChangeChecked = (param, value) => {
         const copyList = varietyCheck;
         // dataList.filter
+
+
+
         if (param) {
             copyList.push(value.name);
             setVarietyCheck(copyList);
