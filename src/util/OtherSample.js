@@ -95,7 +95,7 @@ export const OtherProductList = [
         star: 5,
         review: 23,
         mount: '43g',
-        mount2: '100kg',
+        mount2: '100g',
         price: 10.65,
         state: 'none',
         variety : 'Betta Food',

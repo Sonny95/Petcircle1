@@ -68,17 +68,17 @@ export const BirdBreedList = [
 
 
 export const BirdBrandList = [
-    {name: 'avione', count: 1, key: 0},
-    {name: 'barastoc', count: 2, key: 1},
-    {name: 'harmony', count: 3, key: 2},
-    {name: 'country', count: 4, key: 3},
-    {name: 'golden', count: 5, key: 4},
-    {name: 'laucke', count: 6, key: 5},
+    {name: 'Avione', count: 1, key: 0},
+    {name: 'Barastoc', count: 2, key: 1},
+    {name: 'Harmony', count: 3, key: 2},
+    {name: 'Country', count: 4, key: 3},
+    {name: 'Golden', count: 5, key: 4},
+    {name: 'Laucke', count: 6, key: 5},
     {name: 'Peters', count: 7, key: 6},
-    {name: 'trill', count: 8, key: 7},
-    {name: 'vetafarm', count: 9, key: 8},
-    {name: 'whistler', count: 9, key: 8},
-    {name: 'wombaroo', count: 9, key: 8},
+    {name: 'Trill', count: 8, key: 7},
+    {name: 'Vetafarm', count: 9, key: 8},
+    {name: 'Whistler', count: 9, key: 8},
+    {name: 'Wombaroo', count: 9, key: 8},
 
 ]
 

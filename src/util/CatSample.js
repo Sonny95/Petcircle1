@@ -161,7 +161,7 @@ export const CatProductList = [
         mount: '6kg',
         price: 108.00,
         state: 'none',
-        variety : ['Premium','Natural Food'],
+        variety : 'Natural Food',
         brand : 'Ivory Coat',
         Feature : 'Australian Made',
         ProteinSource : 'Kangaroo'
@@ -193,10 +193,10 @@ export const CatProductList = [
         mount2: '7.2kg',
         price: 63.00,
         state: 'none',
-        variety : ['Premium','Natural Food'],
+        variety : 'Natural Food',
         brand : 'Open Farm',
         Feature : 'Human Grade',
-        ProteinSource : ['Chicken','Turkey'],
+        ProteinSource : 'Turkey',
     },
     {
         Product:9,
@@ -257,7 +257,7 @@ export const CatProductList = [
         mount2: '6.6kg',
         price: 27.99,
         state: 'none',
-        variety : ['Premium','Natural Food'],
+        variety : 'Premium',
         brand : 'Taste Of The Wild',
         Feature : 'Human Grade',
         ProteinSource : 'Venison'
@@ -289,7 +289,7 @@ export const CatProductList = [
         mount2: '4.99kg',
         price: 45.60,
         state: 'Sold Out',
-        variety : ['Premium','Natural Food'],
+        variety : 'Natural Food',
         brand : 'Wellness',
         Feature : 'Grain Free',
         ProteinSource : 'Chicken'
@@ -339,7 +339,7 @@ export const CatProductList = [
         variety : 'Premium',
         brand : 'Advance',
         Feature : 'Australian Made',
-        ProteinSource : ['Beef','Salmon'],
+        ProteinSource : 'Salmon',
     },
     {
         Product:18,

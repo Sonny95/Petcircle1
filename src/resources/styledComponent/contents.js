@@ -50,7 +50,7 @@ export const BetterAd2 = styled.img`
 export const BetterAd3 = styled.img`
   height: 150px; 
   width: 400px;
-  margin-top: 15p;
+  margin-top: 15px;
   border-radius: 10px;
   float: right
 `

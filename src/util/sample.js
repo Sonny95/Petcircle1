@@ -50,10 +50,10 @@ export const TypeList = [
     {name: 'Yoghurt', count: 8, key: 6}
 ]
 export const BrandList = [
-    {name: 'FuzzYard', count: 1, key: 0},
+    {name: 'Fuzz Yard', count: 1, key: 0},
     {name: 'Kazoo', count: 2, key: 1},
     {name: 'Optimum', count: 3, key: 2},
-    {name: 'WAG', count: 4, key: 3},
+    {name: 'Wag', count: 4, key: 3},
     {name: 'Ziwi', count: 5, key: 4},
     {name: 'Natures Cuts', count: 6, key: 5},
     {name: 'Big Dog', count: 7, key: 6},
@@ -92,7 +92,7 @@ export const ProductList = [
         price: 15.20,
         state: 'none',
         variety : 'Freeze and Air Dried',
-        type : 'Carob',
+            type : 'Carob',
         flavour : 'Bacon Flavour',
         brand : 'Bell And Bone'
     },
@@ -115,8 +115,8 @@ export const ProductList = [
         source: DG3,
         title: 'BIG DOG',
         subTitle: 'Freeze Dried Kangaroo Little Bites, 160G',
-        // star: 'none',
-        // review: 'Leave the first review',
+        star: 'none',
+        review: 'Leave the first review',
         mount: '160g',
         mount2: '320g',
         price: 15.29,
@@ -199,7 +199,7 @@ export const ProductList = [
         variety : 'Natural Treats',
         type : 'Liver',
         flavour : 'Beef Flavour',
-        brand : 'pooch Treats'
+        brand : 'Pooch Treats'
     },
     {
         source: DG9,
@@ -288,7 +288,7 @@ export const ProductList = [
         state: 'none',
         variety : 'Freeze and Air Dried',
         type : 'Jerky',
-        flavour : ['Lamb Flavour','Fish Flavour'],
+        flavour : 'Fish Flavour',
         brand : 'Absolute Holistic'
     },
     {
@@ -364,7 +364,7 @@ export const ProductList = [
         variety : 'Training Treats',
         type : 'Rawhide',
         flavour : 'Liver Flavour',
-        brand : 'Lve Em'
+        brand : 'Love Em'
     },
     {
         source: Dg20,
@@ -384,7 +384,7 @@ export const ProductList = [
     {
         source: Dg21,
         title: 'OPTIMUM',
-        subTitle: 'Mature Chicken Veges Rice, 13.7KG',
+        subTitle: 'Nature Chicken Veges Rice, 13.7KG',
         star: 4,
         review: 99,
         mount: '100g',
@@ -423,7 +423,7 @@ export const ProductList = [
         state: 'none',
         variety : 'Natural Treats',
         type : 'Yoghurt',
-        flavour : ['Kangaroo Flavour','Cheese Flavour'],
+        flavour : 'Cheese Flavour',
         brand : 'Tidbits'
     },
     {
